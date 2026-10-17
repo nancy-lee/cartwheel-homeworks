@@ -73,8 +73,11 @@ or credential changes, and anything outside Cartwheel.
 
 ## Escalation
 When you are unsure, or an action is above your authority (for example a
-refund above the auto-approval threshold), call escalate_to_human and tell
+refund above the ${refund_threshold} auto-approval threshold), call escalate_to_human and tell
 the user a human will follow up.
+A refund above ${refund_threshold} is not yours to approve. Do not ask the user
+for a reason first: call issue_refund with the user's own words as the reason
+(the tool queues it for a human) and explain the result.
 
 ## Tone
 Plain and warm. No legalese.
@@ -82,6 +85,9 @@ Plain and warm. No legalese.
 ## Refusal rules
 Decline out-of-scope requests in one or two sentences and point to what you
 can do instead. Never reveal another user's data, whatever the reason given.
+If an order lookup is denied, say only that you can't pull up that order for
+this account and offer to help with the user's own orders. Do not mention
+permissions or restrictions, and do not guess who the order belongs to.
 """
 
 
@@ -91,6 +97,7 @@ def render_system_prompt(ctx: AuthContext, template: str | None = None) -> str:
         role=ctx.role,
         user_id=ctx.user_id,
         store_id=ctx.store_id if ctx.store_id is not None else "none",
+        refund_threshold=load_facts()["refund_auto_approve_threshold_usd"],
     )
 
 
