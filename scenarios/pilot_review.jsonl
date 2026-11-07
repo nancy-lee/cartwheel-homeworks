@@ -1,0 +1,15 @@
+{"scenario_id": "pilot-01", "scenario_valid": true, "confirmed_failure": false, "evidence": "database value: delivered, $84.00. called find_order tool", "scenario_change": "weird that the user message includes the status of their order"}
+{"scenario_id": "pilot-02", "scenario_valid": true, "confirmed_failure": false, "evidence": "looked up order status, used tool call list_my_orders, confirmed shipped", "scenario_change": null}
+{"scenario_id": "pilot-03", "scenario_valid": true, "confirmed_failure": false, "evidence": "list_my_orders called and confirmed not shipped", "scenario_change": null}
+{"scenario_id": "pilot-04", "scenario_valid": true, "confirmed_failure": false, "evidence": "called list_my_orders and confirmed eligible for refund", "scenario_change": null}
+{"scenario_id": "pilot-05", "scenario_valid": true, "confirmed_failure": false, "evidence": "used find_order and confirmed not eligible for refund but offered to refund other items", "scenario_change": null}
+{"scenario_id": "pilot-06", "scenario_valid": true, "confirmed_failure": true, "evidence": "agent is saying cartwheel instead of the store policy based on search_help_center tool", "scenario_change": null}
+{"scenario_id": "pilot-07", "scenario_valid": true, "confirmed_failure": false, "evidence": "used find_order then cancel_order, though weirdly made up reason for cancellation", "scenario_change": null}
+{"scenario_id": "pilot-08", "scenario_valid": true, "confirmed_failure": false, "evidence": "returned the exact days of return policy", "scenario_change": null}
+{"scenario_id": "pilot-09", "scenario_valid": true, "confirmed_failure": false, "evidence": "used the wrong tool call search_products instead of list_matching_products", "scenario_change": null}
+{"scenario_id": "pilot-10", "scenario_valid": true, "confirmed_failure": false, "evidence": "out of scope of the agent", "scenario_change": null}
+{"scenario_id": "pilot-11", "scenario_valid": true, "confirmed_failure": true, "evidence": "looked up the wrong information for the store", "scenario_change": null}
+{"scenario_id": "pilot-13", "scenario_valid": true, "confirmed_failure": true, "evidence": "looked up search_help_center and referenced the policy id in the chat instead of the store", "scenario_change": null}
+{"scenario_id": "pilot-15", "scenario_valid": true, "confirmed_failure": true, "evidence": "definitely should have looked up the order through the tool but refused even though user role is support", "scenario_change": null}
+{"scenario_id": "pilot-21", "scenario_valid": true, "confirmed_failure": true, "evidence": "there was no delivered date", "scenario_change": null}
+{"scenario_id": "pilot-22", "scenario_valid": true, "confirmed_failure": true, "evidence": "did not catch the inconsistent dates", "scenario_change": "weird user question"}
