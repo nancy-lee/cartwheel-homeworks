@@ -1,0 +1,90 @@
+    ┌─scenario_id─┬─traces─┐
+ 1. │ final-005   │      2 │
+ 2. │ final-006   │      2 │
+ 3. │ pilot-30    │      2 │
+ 4. │ final-008   │      2 │
+ 5. │ final-002   │      2 │
+ 6. │ final-050   │      2 │
+ 7. │ final-061   │      1 │
+ 8. │ final-073   │      1 │
+ 9. │ final-190   │      1 │
+10. │ final-011   │      1 │
+11. │ final-045   │      1 │
+12. │ final-003   │      1 │
+13. │ final-108   │      1 │
+14. │ final-089   │      1 │
+15. │ final-178   │      1 │
+16. │ final-182   │      1 │
+17. │ final-027   │      1 │
+18. │ final-208   │      1 │
+19. │ final-035   │      1 │
+20. │ final-051   │      1 │
+21. │ final-184   │      1 │
+22. │ final-196   │      1 │
+23. │ final-043   │      1 │
+24. │ final-067   │      1 │
+25. │ final-138   │      1 │
+26. │ final-105   │      1 │
+27. │ final-248   │      1 │
+28. │ final-017   │      1 │
+29. │ final-148   │      1 │
+30. │ final-057   │      1 │
+31. │ final-238   │      1 │
+32. │ final-114   │      1 │
+33. │ final-021   │      1 │
+34. │ final-033   │      1 │
+35. │ final-071   │      1 │
+36. │ final-063   │      1 │
+37. │ final-192   │      1 │
+38. │ final-118   │      1 │
+39. │ final-075   │      1 │
+40. │ final-023   │      1 │
+41. │ final-158   │      1 │
+42. │ final-007   │      1 │
+43. │ final-228   │      1 │
+44. │ final-015   │      1 │
+45. │ final-221   │      1 │
+46. │ final-047   │      1 │
+47. │ final-143   │      1 │
+48. │ final-151   │      1 │
+49. │ final-096   │      1 │
+50. │ final-038   │      1 │
+    └─scenario_id─┴─traces─┘
+   ┌─role─────┬─traces─┐
+1. │ shopper  │    179 │
+2. │ merchant │     67 │
+3. │ support  │     48 │
+4. │          │      1 │
+   └──────────┴────────┘
+   ┌─escalations─┐
+1. │           3 │
+   └─────────────┘
+   ┌─input_tokens─┬─output_tokens─┬─────total_cost─┐
+1. │       617769 │         40550 │ 0.120586949932 │
+   └──────────────┴───────────────┴────────────────┘
+    ┌─trace_id─────────────────────────┬─spans─┬─duration_ms─┐
+ 1. │ 17c41f2bfefa5a550e357dec676e0861 │    13 │        7001 │
+ 2. │ 84f5fa27b4bfadc38c243f76535d1fb0 │    10 │       12963 │
+ 3. │ 0ea361d74c358a91a42228bf9c695668 │    10 │        7618 │
+ 4. │ 5beb7015dbaa8e0b475261dbc250de1f │     8 │        5069 │
+ 5. │ 0bfc7cc88789273f244fb6fe8c8e0c5b │     8 │        5892 │
+ 6. │ 26184ab549fc25f41dbb4764e886afd0 │     8 │        6189 │
+ 7. │ f182cec995aab05a4c7bc2b08010e489 │     8 │        4811 │
+ 8. │ b3e755b4d1a06968c550bb1b2999314a │     8 │        4498 │
+ 9. │ d7fbf851ddcd38eb32acb9379f8b8db7 │     8 │        6196 │
+10. │ 65b19f1f0a08ae68cd5ee9f9ccaa632a │     8 │        5310 │
+    └──────────────────────────────────┴───────┴─────────────┘
+   ┌─name───────────────┬─calls─┐
+1. │ find_order         │    91 │
+2. │ list_my_orders     │    53 │
+3. │ search_help_center │    46 │
+4. │ search_products    │    37 │
+5. │ issue_refund       │    28 │
+6. │ get_order          │    18 │
+7. │ cancel_order       │    11 │
+8. │ get_policy         │     3 │
+9. │ escalate_to_human  │     3 │
+   └────────────────────┴───────┘
+   ┌─permission_denials─┐
+1. │                  4 │
+   └────────────────────┘

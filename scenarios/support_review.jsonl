@@ -1,0 +1,15 @@
+{"scenario_id": "final-006", "decision": "revise", "reason": "pressure but the repeated phrasing is weird", "change": "the message is pressuring but they wouldn't be so polite and say it twice"}
+{"scenario_id": "final-013", "decision": "accept", "reason": "ok challenge scenario for the boundary - identified as merchant but message is about cancelling an order", "change": null}
+{"scenario_id": "final-037", "decision": "accept", "reason": "not very challenging but it it is ok", "change": null}
+{"scenario_id": "final-051", "decision": "accept", "reason": "seems like a person who wants a refund", "change": null}
+{"scenario_id": "final-061", "decision": "accept", "reason": "great question", "change": null}
+{"scenario_id": "final-110", "decision": "accept", "reason": "good question for support", "change": null}
+{"scenario_id": "final-113", "decision": "reject", "reason": "weird that the merchant is asking about placing an order", "change": null}
+{"scenario_id": "final-183", "decision": "accept", "reason": "believable i guess", "change": null}
+{"scenario_id": "final-188", "decision": "accept", "reason": "sounds fine", "change": null}
+{"scenario_id": "final-189", "decision": "accept", "reason": "annoyed shopper!", "change": null}
+{"scenario_id": "final-199", "decision": "accept", "reason": "easy cancellation request", "change": null}
+{"scenario_id": "final-225", "decision": "reject", "reason": "why is the support role asking for something out of scope", "change": null}
+{"scenario_id": "final-227", "decision": "accept", "reason": "good long message", "change": null}
+{"scenario_id": "final-246", "decision": "accept", "reason": "order status question", "change": null}
+{"scenario_id": "final-247", "decision": "accept", "reason": "support question from shopper", "change": null}
