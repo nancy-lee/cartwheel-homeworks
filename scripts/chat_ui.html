@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cartwheel chat</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; font: 14px/1.45 -apple-system, system-ui, sans-serif; color: #1c1c1e; background: #f5f5f7; }
+  header { flex: none; }
+  header { display: flex; gap: 8px; align-items: center; padding: 10px 16px; background: #fff; border-bottom: 1px solid #ddd; flex-wrap: wrap; }
+  header .grow { flex: 1; }
+  main { flex: 1; min-height: 0; display: grid; grid-template-columns: 430px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); gap: 12px; padding: 12px; }
+  section { background: #fff; border: 1px solid #ddd; border-radius: 8px; display: flex; flex-direction: column; min-height: 0; }
+  h2 { margin: 0; padding: 10px 14px; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: #666; border-bottom: 1px solid #eee; }
+  #log { flex: 1; overflow-y: auto; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+  .ev { padding: 8px 10px; border-radius: 6px; white-space: pre-wrap; word-break: break-word; }
+  .user { align-self: flex-end; background: #0a66d6; color: #fff; max-width: 80%; }
+  .final { background: #eef0f3; max-width: 90%; }
+  .narration { background: #fff8e1; border: 1px solid #f0e0a0; font-style: italic; max-width: 90%; }
+  .reasoning { background: #f3eefc; border: 1px solid #dccff5; color: #4b3a78; max-width: 90%; }
+  .tool { background: #eaf6ee; border: 1px solid #bfe0c9; font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+  .tag { display: block; font: 600 10px system-ui; text-transform: uppercase; letter-spacing: .06em; opacity: .7; margin-bottom: 3px; }
+  .bad { background: #fdecec; border: 1px solid #f1b5b5; color: #8a1f1f; }
+  details summary { cursor: pointer; }
+  form.send { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #eee; }
+  form.send input { flex: 1; }
+  input, select, textarea, button { font: inherit; padding: 6px 8px; border: 1px solid #c8c8cc; border-radius: 6px; background: #fff; }
+  button { cursor: pointer; background: #f0f0f2; }
+  button.primary { background: #0a66d6; color: #fff; border-color: #0a66d6; }
+  button.danger { color: #a11; }
+  button:disabled { opacity: .5; cursor: default; }
+  section > h2, form.send { flex: none; }
+  #people { overflow: hidden; }
+  #tabs { display: flex; gap: 4px; padding: 6px 10px; }
+  #tabs button { border: 0; background: none; padding: 4px 10px; font: 600 12px system-ui; text-transform: uppercase; letter-spacing: .04em; color: #666; border-radius: 6px; }
+  #tabs button.sel { background: #e3eeff; color: #0a4fb3; }
+  .view { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+  .view[hidden] { display: none; }
+  #hlist { flex: 1; overflow-y: auto; border-top: 1px solid #eee; }
+  .urow .cur { color: #0a8a3a; font-weight: 600; font-size: 12px; }
+  #pq { margin: 8px 10px; }
+  #plist { flex: 0 0 200px; overflow-y: auto; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+  .urow { padding: 6px 12px; cursor: pointer; border-bottom: 1px solid #f0f0f2; display: flex; justify-content: space-between; gap: 8px; }
+  .urow:hover { background: #f5f8ff; } .urow.sel { background: #e3eeff; }
+  .urow .sub { color: #777; font-size: 12px; }
+  #pdetail { flex: 1; overflow: auto; padding: 8px 10px; min-height: 0; }
+  #pdetail .head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+  table.orders { border-collapse: collapse; font-size: 12px; width: 100%; }
+  table.orders th, table.orders td { border-bottom: 1px solid #eee; padding: 3px 5px; text-align: left; white-space: nowrap; }
+  table.orders td.prod { white-space: normal; min-width: 120px; }
+  table.orders th { position: sticky; top: 0; background: #fff; color: #666; }
+  .dq { color: #a15c00; font-weight: 600; }
+  main[hidden] { display: none; }
+  #modes { display: inline-flex; gap: 2px; background: #eceef2; padding: 2px; border-radius: 8px; }
+  #modes button { border: 0; background: none; padding: 4px 12px; border-radius: 6px; font-weight: 600; color: #555; }
+  #modes button.sel { background: #fff; color: #0a4fb3; box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+  #rv-bar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; flex: none; }
+  #rv-list { flex: 1; overflow-y: auto; border-top: 1px solid #eee; }
+  .rrow { padding: 6px 12px; cursor: pointer; border-bottom: 1px solid #f0f0f2; display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+  .rrow:hover { background: #f5f8ff; } .rrow.sel { background: #e3eeff; }
+  .rrow .sub { color: #777; font-size: 12px; }
+  .pill { font: 600 10px system-ui; text-transform: uppercase; letter-spacing: .05em; padding: 2px 6px; border-radius: 10px; background: #eceef2; color: #555; white-space: nowrap; }
+  .pill.accept { background: #dff3e6; color: #17703a; } .pill.revise { background: #fff1cf; color: #8a5a00; } .pill.reject { background: #fbdcdc; color: #9a1b1b; }
+  .pill.challenge { background: #f3e6fb; color: #6a2c91; } .pill.dq { background: #fff1cf; color: #8a5a00; }
+  #rv-detail { flex: 1; overflow-y: auto; padding: 14px 18px; min-height: 0; }
+  #rv-detail h3 { margin: 14px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: #666; }
+  #rv-detail .top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  #rv-detail .top strong { font-size: 16px; }
+  table.kv { border-collapse: collapse; font-size: 13px; }
+  table.kv td { padding: 3px 14px 3px 0; vertical-align: top; } table.kv td:first-child { color: #777; white-space: nowrap; }
+  .key { background: #eaf6ee; border: 1px solid #bfe0c9; border-radius: 8px; padding: 10px 12px; }
+  .key .big { font: 600 14px ui-monospace, Menlo, monospace; margin-bottom: 4px; }
+  .warn { background: #fff8e1; border: 1px solid #f0e0a0; border-radius: 8px; padding: 8px 12px; margin-top: 10px; font-size: 13px; }
+  .decide { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .decide button { font-weight: 600; }
+  .decide button.accept.on { background: #17703a; color: #fff; border-color: #17703a; }
+  .decide button.revise.on { background: #b36b00; color: #fff; border-color: #b36b00; }
+  .decide button.reject.on { background: #b3261e; color: #fff; border-color: #b3261e; }
+  #rv-note { width: 100%; min-height: 70px; margin-top: 8px; }
+  .pill.fail { background: #fbdcdc; color: #9a1b1b; } .pill.pass { background: #dff3e6; color: #17703a; } .pill.invalid { background: #fff1cf; color: #8a5a00; }
+  #rs-detail { flex: 1; overflow-y: auto; padding: 14px 18px; min-height: 0; }
+  #rs-detail h3 { margin: 14px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: #666; }
+  #rs-detail .top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  #rs-detail .top strong { font-size: 16px; }
+  .conv { display: flex; flex-direction: column; gap: 6px; background: #f5f5f7; border-radius: 8px; padding: 10px; }
+  .tool-call { border: 1px solid #bfe0c9; background: #eaf6ee; border-radius: 6px; padding: 6px 8px; font: 12px ui-monospace, Menlo, monospace; margin-bottom: 4px; white-space: pre-wrap; word-break: break-word; }
+  .formrow { display: flex; gap: 18px; flex-wrap: wrap; margin: 6px 0; align-items: center; }
+  .formrow label.opt { display: inline-flex; gap: 5px; align-items: center; cursor: pointer; }
+  #rs-form textarea { width: 100%; min-height: 70px; margin-top: 4px; }
+  #rs-form .lbl { font-weight: 600; font-size: 12px; margin-top: 8px; display: block; }
+  #fn-detail { flex: 1; overflow-y: auto; padding: 14px 18px; min-height: 0; }
+  #fn-detail h3 { margin: 14px 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: #666; }
+  #fn-detail .top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  #fn-detail .top strong { font-size: 16px; }
+  #fn-detail details { margin-top: 10px; } #fn-detail summary { cursor: pointer; font-weight: 600; font-size: 13px; }
+  #fn-form textarea { width: 100%; min-height: 70px; margin-top: 4px; }
+  #fn-form .lbl { font-weight: 600; font-size: 12px; margin-top: 8px; display: block; }
+  #fn-bar select { width: 100%; }
+  a.btn { display: inline-block; padding: 5px 10px; border: 1px solid #c8c8cc; border-radius: 6px; background: #f0f0f2; color: #0a4fb3; text-decoration: none; font-size: 13px; }
+  .ev.md { white-space: normal; }
+  .md p { margin: 0 0 .5em; } .md p:last-child, .md ul:last-child, .md ol:last-child, .md table:last-child { margin-bottom: 0; }
+  .md h1, .md h2, .md h3, .md h4, .md h5, .md h6 { margin: .6em 0 .3em; font-size: 1.05em; text-transform: none; letter-spacing: 0; color: inherit; padding: 0; border: 0; }
+  .md ul, .md ol { margin: .2em 0 .5em; padding-left: 1.4em; }
+  .md code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; background: rgba(0,0,0,.07); padding: 1px 4px; border-radius: 4px; font-style: normal; }
+  .md pre { background: #1f2430; color: #e8eaf0; padding: 8px 10px; border-radius: 6px; overflow-x: auto; margin: .4em 0; }
+  .md pre code { background: none; padding: 0; color: inherit; }
+  .md table { border-collapse: collapse; margin: .4em 0; font-size: 13px; }
+  .md th, .md td { border: 1px solid #ccc; padding: 3px 8px; text-align: left; }
+  .md th { background: rgba(0,0,0,.05); }
+  .md blockquote { margin: .4em 0; padding: 0 0 0 10px; border-left: 3px solid #ccc; color: #555; }
+  .md hr { border: 0; border-top: 1px solid #ddd; margin: .6em 0; }
+  .muted { color: #777; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Cartwheel</strong>
+  <span id="modes"><button class="sel" data-mode="chat">Chat</button><button data-mode="plan">Plan review</button><button data-mode="results">Pilot results</button><button data-mode="final">Final review</button></span>
+  <select id="role"><option>shopper</option><option>merchant</option><option>support</option></select>
+  <input id="uid" type="number" style="width:90px" title="user id">
+  <button class="primary" id="start">Start new chat</button>
+  <button class="danger" id="reseed" title="Restore the original seeded data">Reset data</button>
+  <span class="grow"></span>
+  <span class="muted" id="info"></span>
+  <a href="http://localhost:3000/project/cartwheel-dev" target="_blank" rel="noopener">Open Langfuse</a>
+</header>
+<main id="chat">
+  <section id="people">
+    <h2 id="tabs"><button class="sel" data-tab="people">People</button><button data-tab="history">History</button></h2>
+    <div class="view" id="view-people">
+      <input id="pq" placeholder="Search name, id or store…" autocomplete="off">
+      <div id="plist"></div>
+      <div id="pdetail"><div class="muted">Pick a person to see their orders (read-only view of the database). The role dropdown above switches between shoppers, merchants and support.</div></div>
+    </div>
+    <div class="view" id="view-history" hidden>
+      <div id="hlist"></div>
+    </div>
+  </section>
+  <section>
+    <h2>Conversation</h2>
+    <div id="log"><div class="muted">Pick a role and user, then press “Start new chat”. Presets: shopper 1, merchant 9002, support 9501.</div></div>
+    <form class="send" id="send">
+      <input id="text" placeholder="Type a request…" autocomplete="off" disabled>
+      <input id="scenario" placeholder="scenario id (optional)" autocomplete="off" style="width:170px" title="Attached to the Langfuse trace as cartwheel.scenario_id. Leave blank for ordinary test chats.">
+      <button class="primary" id="go" disabled>Send</button>
+    </form>
+  </section>
+</main>
+<main id="review" hidden>
+  <section>
+    <h2>Pilot plan, draft (30)</h2>
+    <div id="rv-bar"><select id="rv-kind" title="What you are reviewing"><option value="plan">Reviewing: the plan</option><option value="messages">Reviewing: the messages</option></select><span class="muted" id="rv-progress"></span>
+      <select id="rv-filter"><option value="all">All</option><option value="coverage">Coverage</option><option value="challenge">Challenge</option><option value="todo">Not reviewed yet</option><option value="flagged">Revise / reject</option></select></div>
+    <div id="rv-list"></div>
+  </section>
+  <section>
+    <h2>Scenario plan and answer key</h2>
+    <div id="rv-detail"><div class="muted">Pick a row on the left.</div></div>
+  </section>
+</main>
+<main id="results" hidden>
+  <section>
+    <h2>Pilot results (30)</h2>
+    <div id="rs-bar" style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;flex:none">
+      <span class="muted" id="rs-progress"></span>
+      <select id="rs-filter"><option value="all">All</option><option value="challenge">Challenge</option><option value="coverage">Coverage</option><option value="todo">Not reviewed yet</option><option value="fail">Confirmed failures</option></select>
+    </div>
+    <div id="rs-list" style="flex:1;overflow-y:auto;border-top:1px solid #eee"></div>
+  </section>
+  <section>
+    <h2>What the agent did, and your review</h2>
+    <div id="rs-detail"><div class="muted">Loading…</div></div>
+  </section>
+</main>
+<main id="final" hidden>
+  <section>
+    <h2>Final scenarios (250)</h2>
+    <div id="fn-bar" style="display:flex;flex-direction:column;gap:6px;padding:8px 10px;flex:none">
+      <span class="muted" id="fn-progress"></span>
+      <select id="fn-filter"><option value="sample">Proposed sample (15)</option><option value="all">All 250</option><option value="coverage">Coverage</option><option value="challenge">Challenge</option><option value="todo">Not reviewed yet</option><option value="mine">Reviewed by me</option></select>
+    </div>
+    <div id="fn-list" style="flex:1;overflow-y:auto;border-top:1px solid #eee"></div>
+  </section>
+  <section>
+    <h2>Read the conversation, then decide</h2>
+    <div id="fn-detail"><div class="muted">Loading…</div></div>
+  </section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const PRESETS = { shopper: 1, merchant: 9002, support: 9501 };
+let busy = false;
+
+$("uid").value = PRESETS.shopper;
+$("role").onchange = () => { $("uid").value = PRESETS[$("role").value]; loadUsers().then(() => showUser(Number($("uid").value))); };
+$("uid").onchange = () => showUser(Number($("uid").value));
+let searchTimer;
+$("pq").oninput = () => { clearTimeout(searchTimer); searchTimer = setTimeout(loadUsers, 200); };
+
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+// --- minimal, safe markdown renderer (HTML is escaped before any formatting) ---
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+function inlineMd(t) {
+  const codes = [];
+  t = esc(t).replace(/`([^`]+)`/g, (_, c) => { codes.push(c); return "\u0000" + (codes.length - 1) + "\u0000"; });
+  t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+       .replace(/(^|[^*\w])\*([^*\s][^*]*?)\*(?!\*)/g, "$1<em>$2</em>")
+       .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  return t.replace(/\u0000(\d+)\u0000/g, (_, i) => "<code>" + codes[i] + "</code>");
+}
+function md(src) {
+  const lines = String(src).replace(/\r/g, "").split("\n");
+  const UL = /^\s*[-*+]\s+(.*)/, OL = /^\s*\d+[.)]\s+(.*)/, HR = /^\s*([-*_])(\s*\1){2,}\s*$/;
+  const isRow = l => /^\s*\|.*\|\s*$/.test(l);
+  const cells = l => l.trim().replace(/^\|/, "").replace(/\|$/, "").split("|").map(c => c.trim());
+  const isSep = l => isRow(l) && /^[\s|:-]+$/.test(l) && l.includes("-");
+  const blockStart = (l, next) => /^```/.test(l) || /^#{1,6}\s/.test(l) || UL.test(l) || OL.test(l) || HR.test(l) || /^>\s?/.test(l) || (isRow(l) && next !== undefined && isSep(next));
+  const out = []; let i = 0;
+  while (i < lines.length) {
+    const l = lines[i]; let m;
+    if (!l.trim()) { i++; continue; }
+    if (/^```/.test(l)) { const buf = []; i++; while (i < lines.length && !/^```/.test(lines[i])) buf.push(lines[i++]); i++; out.push("<pre><code>" + esc(buf.join("\n")) + "</code></pre>"); continue; }
+    if ((m = l.match(/^(#{1,6})\s+(.*)/))) { out.push(`<h${m[1].length}>${inlineMd(m[2])}</h${m[1].length}>`); i++; continue; }
+    if (HR.test(l)) { out.push("<hr>"); i++; continue; }
+    if (isRow(l) && i + 1 < lines.length && isSep(lines[i + 1])) {
+      const head = cells(l); i += 2; const rows = [];
+      while (i < lines.length && isRow(lines[i])) rows.push(cells(lines[i++]));
+      out.push("<table><thead><tr>" + head.map(c => `<th>${inlineMd(c)}</th>`).join("") + "</tr></thead><tbody>" +
+        rows.map(r => "<tr>" + r.map(c => `<td>${inlineMd(c)}</td>`).join("") + "</tr>").join("") + "</tbody></table>");
+      continue;
+    }
+    if (UL.test(l) || OL.test(l)) {
+      const re = UL.test(l) ? UL : OL, tag = re === UL ? "ul" : "ol", items = [];
+      while (i < lines.length && (m = lines[i].match(re))) { items.push(`<li>${inlineMd(m[1])}</li>`); i++; }
+      out.push(`<${tag}>${items.join("")}</${tag}>`); continue;
+    }
+    if (/^>\s?/.test(l)) { const buf = []; while (i < lines.length && /^>\s?/.test(lines[i])) buf.push(lines[i++].replace(/^>\s?/, "")); out.push("<blockquote>" + inlineMd(buf.join("\n")).replace(/\n/g, "<br>") + "</blockquote>"); continue; }
+    const buf = [];
+    while (i < lines.length && lines[i].trim() && !blockStart(lines[i], lines[i + 1])) buf.push(lines[i++]);
+    if (!buf.length) { buf.push(lines[i++]); }
+    out.push("<p>" + buf.map(inlineMd).join("<br>") + "</p>");
+  }
+  return out.join("");
+}
+// --- end markdown ---
+function tagged(cls, label, body) { const d = el("div", "ev md " + cls); d.append(el("span", "tag", label)); const b = el("div"); b.innerHTML = md(body); d.append(b); return d; }
+function add(node) { $("log").append(node); $("log").scrollTop = $("log").scrollHeight; }
+
+async function api(path, body) {
+  const r = await fetch(path, body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(typeof data.detail === "string" ? data.detail : JSON.stringify(data.detail || data));
+  return data;
+}
+
+function render(ev) {
+  if (ev.kind === "reasoning") return tagged("reasoning", "reasoning summary", ev.text);
+  if (ev.kind === "narration") return tagged("narration", "agent, before tool call", ev.text);
+  if (ev.kind === "final") return tagged("final", "agent", ev.text);
+  const d = el("div", "ev tool");
+  d.append(el("span", "tag", "tool call"));
+  d.append(document.createTextNode(`${ev.name}(${JSON.stringify(ev.arguments)})`));
+  const det = el("details"); det.open = true;
+  det.append(el("summary", "", "result" + (ev.result && ev.result.ok === false ? ` — ${ev.result.error}` : "")));
+  det.append(el("div", "", JSON.stringify(ev.result, null, 2)));
+  d.append(det);
+  return d;
+}
+
+async function refreshInfo() {
+  const s = await api("/api/status");
+  $("info").textContent = `model: ${s.model}`;
+}
+
+$("start").onclick = async () => {
+  try {
+    const s = await api("/api/start", { role: $("role").value, user_id: Number($("uid").value) });
+    $("log").replaceChildren();
+    add(el("div", "muted", `Session ${s.session_id} · role=${s.role} user=${s.user_id} · prompt ${s.prompt_version} · traced via :8010`));
+    $("text").disabled = $("go").disabled = false; $("text").focus();
+    viewing = s.session_id;
+  } catch (e) { add(el("div", "ev bad", e.message)); }
+};
+
+$("send").onsubmit = async ev => {
+  ev.preventDefault();
+  const text = $("text").value.trim();
+  if (!text || busy) return;
+  busy = true; $("go").disabled = true; $("text").value = "";
+  add(el("div", "ev user", text));
+  const wait = el("div", "muted", "thinking…"); add(wait);
+  try {
+    const r = await api("/api/message", { text, scenario_id: $("scenario").value.trim() || null });
+    wait.remove(); r.events.forEach(e => add(render(e)));
+  } catch (e) { wait.remove(); add(el("div", "ev bad", e.message)); }
+  busy = false; $("go").disabled = false; $("text").focus();
+  if (!$("view-history").hidden) loadHistory();
+};
+
+$("reseed").onclick = async () => {
+  if (!confirm("Restore the original data? This undoes any refunds, cancellations, and tickets from your chats.")) return;
+  try { const r = await api("/api/reseed", {}); add(el("div", "muted", "Data reset: " + r.output)); loadUsers().then(() => showUser(Number($("uid").value))); }
+  catch (e) { add(el("div", "ev bad", e.message)); }
+};
+
+// --- People browser ---
+const money = c => "$" + (c / 100).toFixed(2);
+
+async function loadUsers() {
+  try {
+    const q = encodeURIComponent($("pq").value.trim());
+    const { users } = await api(`/api/users?role=${$("role").value}&q=${q}`);
+    const list = $("plist"); list.replaceChildren();
+    if (!users.length) list.append(el("div", "muted", "No matches."));
+    users.forEach(u => {
+      const row = el("div", "urow"); row.dataset.id = u.id;
+      const left = el("div"); left.append(el("div", "", `${u.id} · ${u.name}`));
+      const bits = [];
+      if (u.store) bits.push(u.store);
+      if (u.window_override) bits.push(`${u.window_override}-day returns`);
+      if (u.restocking_fee) bits.push("restocking fee");
+      if (bits.length) left.append(el("div", "sub", bits.join(" · ")));
+      row.append(left, el("div", "sub", u.order_count == null ? "any order" : `${u.order_count} orders`));
+      row.onclick = () => { $("uid").value = u.id; showUser(u.id); };
+      list.append(row);
+    });
+    markSelected();
+  } catch (e) { $("plist").replaceChildren(el("div", "ev bad", e.message)); }
+}
+
+function markSelected() {
+  const id = String(Number($("uid").value));
+  document.querySelectorAll("#plist .urow").forEach(r => r.classList.toggle("sel", r.dataset.id === id));
+}
+
+async function showUser(id) {
+  markSelected();
+  const box = $("pdetail"); box.replaceChildren();
+  try {
+    const d = await api(`/api/users/${id}/orders`);
+    const head = el("div", "head");
+    head.append(el("strong", "", `${d.user.name} (${d.user.role} ${d.user.id})`));
+    const go = el("button", "primary", "Chat as this user");
+    go.onclick = () => { $("role").value = d.user.role; $("uid").value = d.user.id; $("start").click(); };
+    head.append(go); box.append(head);
+    if (d.note) { box.append(el("div", "muted", d.note)); return; }
+    const scope = d.user.role === "merchant" ? "the store's orders" : "their orders";
+    box.append(el("div", "muted", `${d.total} of ${scope}${d.total > d.orders.length ? `, newest ${d.orders.length} shown` : ""}. ⚠ = deliberately damaged record (data_quality_cases).`));
+    const t = el("table", "orders");
+    const hr = el("tr"); ["order", "product", d.user.role === "merchant" ? "" : "store", "status", "total", "ordered", "delivered", "refund ok", ""].forEach(h => hr.append(el("th", "", h)));
+    t.append(hr);
+    d.orders.forEach(o => {
+      const tr = el("tr");
+      tr.append(el("td", "", "#" + o.id), el("td", "prod", o.product), el("td", "", d.user.role === "merchant" ? "" : o.store), el("td", "", o.status),
+        el("td", "", money(o.total_cents)), el("td", "", o.ordered_at), el("td", "", o.delivered_at || "—"), el("td", "", o.refund_eligible ? "yes" : "no"),
+        el("td", "dq", o.dq_case ? "⚠ " + o.dq_case : ""));
+      t.append(tr);
+    });
+    box.append(t);
+  } catch (e) { box.append(el("div", "ev bad", e.message)); }
+}
+
+// --- History (read-only transcripts of past chats) ---
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("sel", x === b));
+  $("view-people").hidden = b.dataset.tab !== "people";
+  $("view-history").hidden = b.dataset.tab !== "history";
+  if (b.dataset.tab === "history") loadHistory();
+});
+
+const localTime = s => new Date(s.replace(" ", "T") + "Z").toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+let viewing = null;
+
+async function loadHistory() {
+  const list = $("hlist");
+  try {
+    const { chats } = await api("/api/history");
+    list.replaceChildren();
+    if (!chats.length) list.append(el("div", "muted", "No chats yet."));
+    chats.forEach(c => {
+      const row = el("div", "urow"); row.dataset.id = c.session_id;
+      if (c.session_id === viewing) row.classList.add("sel");
+      const left = el("div");
+      const who = c.role ? `${c.role} ${c.user_id}` : "unknown user";
+      left.append(el("div", "", `${localTime(c.created_at)} · ${who}`));
+      const msg = c.first_message.length > 60 ? c.first_message.slice(0, 60) + "…" : c.first_message;
+      left.append(el("div", "sub", msg));
+      if (c.scenario_ids.length) left.append(el("div", "sub", "scenario: " + c.scenario_ids.join(", ")));
+      const right = el("div", c.active ? "cur" : "sub", c.active ? "● current" : `${c.turns} turn${c.turns > 1 ? "s" : ""}`);
+      row.append(left, right);
+      row.onclick = () => openChat(c.session_id);
+      list.append(row);
+    });
+  } catch (e) { list.replaceChildren(el("div", "ev bad", e.message)); }
+}
+
+async function openChat(sessionId) {
+  try {
+    const d = await api("/api/history/" + sessionId);
+    viewing = sessionId;
+    $("log").replaceChildren();
+    const m = d.meta || {};
+    const who = m.role ? `${m.role} ${m.user_id}` : "unknown user (chat predates the history index)";
+    add(el("div", "muted", `${d.active ? "Current chat" : "Past chat (read-only)"} · session ${sessionId} · ${who}${m.model ? " · " + m.model : ""}`));
+    d.events.forEach(ev => add(ev.kind === "user" ? el("div", "ev user", ev.text) : render(ev)));
+    $("text").disabled = $("go").disabled = !d.active;
+    // Past chats open at the top; the live chat stays at the bottom, where you type.
+    $("log").scrollTop = d.active ? $("log").scrollHeight : 0;
+    if (d.active) $("text").focus();
+    document.querySelectorAll("#hlist .urow").forEach(r => r.classList.toggle("sel", r.dataset.id === sessionId));
+  } catch (e) { add(el("div", "ev bad", e.message)); }
+}
+
+// --- Plan review (HW3 Part B, step B1) ---
+let PLAN = null, selPlan = null, RV_KIND = "plan";
+const nice = s => String(s ?? "").replace(/_/g, " ");
+
+function setMode(m) {
+  document.querySelectorAll("#modes button").forEach(b => b.classList.toggle("sel", b.dataset.mode === m));
+  $("chat").hidden = m !== "chat";
+  $("review").hidden = m !== "plan";
+  $("results").hidden = m !== "results";
+  $("final").hidden = m !== "final";
+  if (m === "plan" && !PLAN) loadPlan();
+  if (m === "results") loadResults();
+  if (m === "final") loadFinal();
+}
+document.querySelectorAll("#modes button").forEach(b => b.onclick = () => setMode(b.dataset.mode));
+$("rv-filter").onchange = renderPlanList;
+$("rv-kind").onchange = () => { RV_KIND = $("rv-kind").value; PLAN = null; loadPlan(); };
+
+async function loadPlan() {
+  try {
+    PLAN = await api("/api/plan?kind=" + RV_KIND);
+    selPlan = selPlan || PLAN.plans[0].plan_id;
+    renderPlanList(); renderPlanDetail();
+  } catch (e) { $("rv-detail").replaceChildren(el("div", "ev bad", e.message)); }
+}
+
+const decisionOf = id => (PLAN.decisions[id] || {}).decision || null;
+
+function renderPlanList() {
+  const f = $("rv-filter").value, list = $("rv-list"); list.replaceChildren();
+  const reviewed = PLAN.plans.filter(p => decisionOf(p.plan_id)).length;
+  $("rv-progress").textContent = `${reviewed} of ${PLAN.plans.length} reviewed`;
+  PLAN.plans.filter(p => f === "all" || f === p.scenario_group
+      || (f === "todo" && !decisionOf(p.plan_id)) || (f === "flagged" && ["revise", "reject"].includes(decisionOf(p.plan_id))))
+    .forEach(p => {
+      const row = el("div", "rrow" + (p.plan_id === selPlan ? " sel" : ""));
+      const left = el("div");
+      left.append(el("div", "", `${p.plan_id.replace("pilot-", "#")} · ${p.role} ${p.user_id} · ${nice(p.intent)}`));
+      left.append(el("div", "sub", nice(p.record_state)));
+      const right = el("div"); right.style.display = "flex"; right.style.gap = "4px";
+      if (p.scenario_group === "challenge") right.append(el("span", "pill challenge", "challenge"));
+      const d = decisionOf(p.plan_id);
+      if (d) right.append(el("span", "pill " + d, d));
+      row.append(left, right);
+      row.onclick = () => { selPlan = p.plan_id; renderPlanList(); renderPlanDetail(); };
+      list.append(row);
+    });
+}
+
+function kvTable(rows) {
+  const t = el("table", "kv");
+  rows.forEach(([k, v]) => { const tr = el("tr"); tr.append(el("td", "", k), el("td", "", v)); t.append(tr); });
+  return t;
+}
+
+function renderPlanDetail() {
+  const p = PLAN.plans.find(x => x.plan_id === selPlan), box = $("rv-detail"); box.replaceChildren();
+  if (!p) return;
+  const top = el("div", "top");
+  top.append(el("strong", "", `${p.plan_id} · ${p.role} ${p.user_id} (${p.user_name})`),
+             el("span", "pill " + (p.scenario_group === "challenge" ? "challenge" : ""), p.scenario_group));
+  if (p.data_quality_case_id) top.append(el("span", "pill dq", "⚠ " + p.data_quality_case_id));
+  const show = el("button", "", "Show this user in People");
+  show.onclick = () => { setMode("chat"); $("role").value = p.role; $("uid").value = p.user_id;
+    document.querySelector('#tabs button[data-tab="people"]').click();
+    loadUsers().then(() => showUser(p.user_id)); };
+  top.append(show); box.append(top);
+
+  if (RV_KIND === "messages" && p.messages) {
+    const m = p.messages, f = m.final;
+    box.append(el("h3", "", `The conversation the agent will receive (${p.turn_count} turn${p.turn_count > 1 ? "s" : ""}, style: ${nice(p.user_style)})`));
+    const conv = el("div");
+    conv.style.cssText = "display:flex;flex-direction:column;gap:6px;background:#f5f5f7;border-radius:8px;padding:10px";
+    [f.opening_message, ...f.followups].forEach(t => conv.append(el("div", "ev user", t)));
+    box.append(conv);
+    const hist = el("details"); hist.style.marginTop = "6px";
+    hist.append(el("summary", "", `How it was written: critic ${m.critic_verdict === "rewrite" ? "reworded it" : "kept it"}${m.editor_edit ? ", then I made a wording-only edit" : ""}`));
+    const rows = [["writer draft", [m.writer_draft.opening_message, ...m.writer_draft.followups].join("   ⏎   ")]];
+    if (m.critic_verdict === "rewrite") rows.push(["critic changed it because", m.critic_issues.join("; ")], ["after critic", [m.after_critic.opening_message, ...m.after_critic.followups].join("   ⏎   ")]);
+    if (m.editor_edit) rows.push(["my edit", "wording only, to remove phrases repeated across conversations"]);
+    hist.append(kvTable(rows)); box.append(hist);
+  }
+
+  box.append(el("h3", "", "Real record in the database"));
+  box.append(kvTable([["record", p.record], ["where to look", p.ui_hint]]));
+  if (p.state_changing) box.append(el("div", "warn", "⚠ This scenario changes data (a refund or cancellation). It uses its own order, so it can't affect any other scenario's answer key."));
+
+  box.append(el("h3", "", "The plan (one pick from each dimension)"));
+  box.append(kvTable([["role", p.role], ["intent", nice(p.intent)], ["record involved", nice(p.record_state)],
+    ["applicable policy", nice(p.applicable_policy)], ["tools needed", nice(p.tools_needed)], ["difficulty", nice(p.difficulty)],
+    ["user style", nice(p.user_style)], ["turns", String(p.turn_count)]]));
+
+  box.append(el("h3", "", "What the user knows (their message is written from only this)"));
+  box.append(el("div", "", p.user_visible_facts));
+  if (p.followup_note) box.append(el("div", "muted", "Followup: " + p.followup_note));
+
+  box.append(el("h3", "", "Answer key (hidden from the message writer and from the agent)"));
+  const k = el("div", "key"), x = p.expected;
+  if (x.evaluation === "objective") {
+    k.append(el("div", "big", x.outcome), el("div", "", x.reason));
+  } else {
+    k.append(el("div", "big", "human judgment"), el("div", "", x.criterion));
+  }
+  k.append(el("div", "muted", `source: ${x.source.type} · ${x.source.reference}`));
+  box.append(k);
+
+  box.append(el("h3", "", RV_KIND === "messages" ? "Your decision on this message (does it sound like this user, and fit the record?)" : "Your decision on this plan"));
+  const cur = PLAN.decisions[p.plan_id] || {};
+  const bar = el("div", "decide");
+  ["accept", "revise", "reject"].forEach(d => {
+    const b = el("button", d + (cur.decision === d ? " on" : ""), d[0].toUpperCase() + d.slice(1));
+    b.onclick = () => saveDecision(p.plan_id, cur.decision === d ? null : d);
+    bar.append(b);
+  });
+  const idx = PLAN.plans.findIndex(x => x.plan_id === p.plan_id);
+  const next = el("button", "", "Next →"); next.disabled = idx >= PLAN.plans.length - 1;
+  next.onclick = () => { selPlan = PLAN.plans[idx + 1].plan_id; renderPlanList(); renderPlanDetail(); };
+  bar.append(next); box.append(bar);
+  const note = el("textarea"); note.id = "rv-note"; note.placeholder = "Optional note: what should change (for revise/reject), or why it's fine."; note.value = cur.note || "";
+  note.onchange = () => saveDecision(p.plan_id, cur.decision || null, note.value);
+  box.append(note);
+}
+
+async function saveDecision(id, decision, note) {
+  const prev = PLAN.decisions[id] || {};
+  const body = { decision, note: note !== undefined ? note : (document.getElementById("rv-note")?.value ?? prev.note ?? "") };
+  try {
+    await api(`/api/plan/${id}/decision?kind=${RV_KIND}`, body);
+    if (!decision && !body.note.trim()) delete PLAN.decisions[id]; else PLAN.decisions[id] = { decision, note: body.note };
+    renderPlanList(); renderPlanDetail();
+  } catch (e) { box_err(e.message); }
+}
+function box_err(m) { $("rv-detail").prepend(el("div", "ev bad", m)); }
+
+// --- Pilot results review (HW3 Part B, step B5): you decide; nothing is pre-filled ---
+let RS = null, selRs = null;
+$("rs-filter").onchange = () => renderRsList();
+const short = (s, n) => (s && s.length > n ? s.slice(0, n) + "…" : (s || ""));
+const verdictOf = it => !it.review ? null : (!it.review.scenario_valid ? "invalid" : (it.review.confirmed_failure ? "fail" : "pass"));
+const verdictLabel = { fail: "failure", pass: "no failure", invalid: "invalid scenario" };
+
+async function loadResults() {
+  try {
+    RS = await api("/api/results");
+    if (!selRs || !RS.items.some(i => i.scenario_id === selRs)) selRs = RS.items[0].scenario_id;
+    renderRsList(); renderRsDetail();
+  } catch (e) { $("rs-detail").replaceChildren(el("div", "ev bad", e.message)); }
+}
+
+function renderRsList() {
+  const f = $("rs-filter").value, list = $("rs-list"); list.replaceChildren();
+  const rev = RS.items.filter(i => i.review), fails = rev.filter(i => verdictOf(i) === "fail");
+  $("rs-progress").textContent = `${rev.length} reviewed (need 10+) · ${fails.length} confirmed failures (need 5+)`;
+  RS.items.filter(i => f === "all" || f === i.scenario_group || (f === "todo" && !i.review) || (f === "fail" && verdictOf(i) === "fail"))
+    .forEach(i => {
+      const row = el("div", "rrow" + (i.scenario_id === selRs ? " sel" : ""));
+      const left = el("div");
+      left.append(el("div", "", `${i.scenario_id.replace("pilot-", "#")} · ${i.tuple.role} ${i.tuple.user_id} · ${nice(i.tuple.intent)}`));
+      left.append(el("div", "sub", short(i.turns[0] ? i.turns[0].user : "", 70)));
+      const right = el("div"); right.style.display = "flex"; right.style.gap = "4px";
+      if (i.scenario_group === "challenge") right.append(el("span", "pill challenge", "challenge"));
+      const v = verdictOf(i); if (v) right.append(el("span", "pill " + v, verdictLabel[v]));
+      row.append(left, right);
+      row.onclick = () => { selRs = i.scenario_id; renderRsList(); renderRsDetail(); };
+      list.append(row);
+    });
+}
+
+function renderRsDetail() {
+  const it = RS.items.find(x => x.scenario_id === selRs), box = $("rs-detail"); box.replaceChildren();
+  if (!it) return;
+  const top = el("div", "top");
+  top.append(el("strong", "", `${it.scenario_id} · ${it.tuple.role} ${it.tuple.user_id}${it.user_name ? " (" + it.user_name + ")" : ""}`),
+             el("span", "pill " + (it.scenario_group === "challenge" ? "challenge" : ""), it.scenario_group));
+  if (it.status !== "completed") top.append(el("span", "pill reject", "run status: " + it.status));
+  it.traces.forEach((t, n) => { const a = el("a", "btn", it.traces.length > 1 ? `Open trace, turn ${n + 1}` : "Open trace in Langfuse"); a.href = t.url; a.target = "_blank"; a.rel = "noopener"; top.append(a); });
+  box.append(top);
+  if (!RS.trace_store_reachable) box.append(el("div", "warn", "Couldn't reach Langfuse's database, so trace links and tool calls are unavailable here. The conversation below is from the results file."));
+
+  box.append(el("h3", "", "The conversation"));
+  const conv = el("div", "conv");
+  it.turns.forEach(t => { conv.append(el("div", "ev user", t.user)); conv.append(tagged("final", "agent", t.agent)); });
+  box.append(conv);
+
+  box.append(el("h3", "", "What the agent did (tool calls from the trace)"));
+  if (!it.traces.length) box.append(el("div", "muted", "No trace found for this scenario."));
+  it.traces.forEach((t, n) => {
+    if (it.traces.length > 1) box.append(el("div", "muted", `Turn ${n + 1}`));
+    if (!t.tools.length) box.append(el("div", "muted", "No tool calls."));
+    t.tools.forEach(tl => box.append(el("div", "tool-call", `${tl.name}(${short(tl.input, 300)})\n→ ${short(tl.output, 600)}`)));
+  });
+
+  const db = it.database_now;
+  if (db.orders.length) {
+    box.append(el("h3", "", "The database right now (after the whole pilot ran)"));
+    const rows = db.orders.map(o => [`order #${o.id}`, `${o.status}, $${(o.total_cents / 100).toFixed(2)}`]);
+    db.refunds.forEach(r => rows.push([`refund #${r.id}`, `order #${r.order_id}, $${(r.amount_cents / 100).toFixed(2)}, ${r.status}`]));
+    box.append(kvTable(rows));
+  }
+
+  box.append(el("h3", "", "The answer key (what the data and spec say should happen)"));
+  const x = it.expected, key = el("div", "key");
+  if (x.evaluation === "objective") key.append(el("div", "big", x.outcome), el("div", "", x.reason));
+  else key.append(el("div", "big", "human judgment"), el("div", "", x.criterion));
+  key.append(el("div", "muted", `source: ${x.source.type} · ${x.source.reference}`));
+  box.append(key);
+  if (it.record) box.append(kvTable([["record", it.record]]));
+
+  box.append(el("h3", "", "Your review"));
+  box.append(el("div", "muted", "A failure counts only when the scenario is valid and the agent's behavior conflicts with the answer key or a clear requirement in SPEC.md."));
+  const rv = it.review || {}, form = el("div"); form.id = "rs-form";
+  const radios = (name, yes) => { const w = el("div", "formrow");
+    [["yes", true], ["no", false]].forEach(([lab, val]) => { const l = el("label", "opt"); const r = el("input"); r.type = "radio"; r.name = name; r.value = String(val);
+      if (yes !== undefined && yes === val) r.checked = true; l.append(r, document.createTextNode(lab)); w.append(l); }); return w; };
+  form.append(el("span", "lbl", "Is the scenario valid? (is it a fair test, with a sensible message and a correct answer key)"), radios("rs-valid", rv.scenario_valid));
+  form.append(el("span", "lbl", "Did the agent fail? (its behavior conflicts with the answer key or SPEC.md)"), radios("rs-fail", rv.confirmed_failure));
+  form.append(el("span", "lbl", "Evidence: name the database value, policy, tool result, or requirement behind your decision"));
+  const ev = el("textarea"); ev.id = "rs-evidence"; ev.value = rv.evidence || ""; form.append(ev);
+  form.append(el("span", "lbl", "Scenario change (leave blank if the scenario needs no revision)"));
+  const ch = el("textarea"); ch.id = "rs-change"; ch.value = rv.scenario_change || ""; form.append(ch);
+  const bar = el("div", "decide"); const msg = el("span", "muted"); msg.id = "rs-msg";
+  const save = el("button", "primary", "Save review"), saveNext = el("button", "", "Save and next →");
+  const idx = RS.items.findIndex(z => z.scenario_id === it.scenario_id);
+  const doSave = async advance => {
+    const v = document.querySelector('input[name="rs-valid"]:checked'), f = document.querySelector('input[name="rs-fail"]:checked');
+    if (!v || !f) { msg.textContent = "Answer both yes/no questions first."; msg.className = "bad"; return; }
+    try {
+      await api(`/api/results/${it.scenario_id}/review`, { scenario_valid: v.value === "true", confirmed_failure: f.value === "true", evidence: ev.value, scenario_change: ch.value });
+      it.review = { scenario_id: it.scenario_id, scenario_valid: v.value === "true", confirmed_failure: f.value === "true", evidence: ev.value.trim(), scenario_change: ch.value.trim() || null };
+      if (advance && idx < RS.items.length - 1) selRs = RS.items[idx + 1].scenario_id;
+      renderRsList(); renderRsDetail();
+      if (!advance) $("rs-msg").textContent = "Saved to scenarios/pilot_review.jsonl ✓";
+    } catch (e) { msg.textContent = e.message; msg.className = "bad"; }
+  };
+  save.onclick = () => doSave(false); saveNext.onclick = () => doSave(true); bar.append(save, saveNext);
+  if (it.review) { const clr = el("button", "danger", "Clear my review");
+    clr.onclick = async () => { await fetch(`/api/results/${it.scenario_id}/review`, { method: "DELETE" }); it.review = null; renderRsList(); renderRsDetail(); };
+    bar.append(clr); }
+  bar.append(msg); form.append(bar); box.append(form);
+}
+
+// ---- Final scenario review (HW3 Part C): writes scenarios/support_review.jsonl from your entries ----
+let FN = null, selFn = null;
+const INTENTS_TOTAL = 9;
+
+async function loadFinal() {
+  try {
+    FN = await api("/api/final");
+    const list = filteredFn();
+    if (!selFn || !FN.items.some(i => i.scenario_id === selFn)) selFn = (list[0] || FN.items[0]).scenario_id;
+    renderFnList(); renderFnDetail();
+  } catch (e) { $("fn-detail").replaceChildren(el("div", "ev bad", e.message)); }
+}
+function filteredFn() {
+  const f = $("fn-filter").value;
+  return FN.items.filter(i => f === "all" || (f === "sample" && i.in_sample) || f === i.scenario_group
+    || (f === "todo" && !i.review) || (f === "mine" && i.review));
+}
+$("fn-filter").onchange = () => { if (!FN) return; const l = filteredFn(); if (l.length && !l.some(i => i.scenario_id === selFn)) selFn = l[0].scenario_id; renderFnList(); renderFnDetail(); };
+
+function renderFnList() {
+  const list = $("fn-list"); list.replaceChildren();
+  const p = FN.items.filter(i => i.review).reduce((a, i) => { a.g.add(i.scenario_group); a.r.add(i.tuple.role); a.i.add(i.tuple.intent); return a; }, { g: new Set(), r: new Set(), i: new Set() });
+  const n = FN.items.filter(i => i.review).length;
+  $("fn-progress").textContent = `${n} reviewed (need 15) · groups ${p.g.size}/2 · roles ${p.r.size}/3 · intents ${p.i.size}/${INTENTS_TOTAL}`;
+  filteredFn().forEach(i => {
+    const row = el("div", "rrow" + (i.scenario_id === selFn ? " sel" : ""));
+    const left = el("div");
+    left.append(el("div", "", `${i.scenario_id.replace("final-", "#")} · ${i.tuple.role} · ${nice(i.tuple.intent)}`));
+    left.append(el("div", "sub", short(i.opening_message, 70)));
+    const right = el("div"); right.style.display = "flex"; right.style.gap = "4px";
+    if (i.scenario_group === "challenge") right.append(el("span", "pill challenge", "challenge"));
+    if (i.review) right.append(el("span", "pill " + i.review.decision, i.review.decision));
+    row.append(left, right);
+    row.onclick = () => { selFn = i.scenario_id; renderFnList(); renderFnDetail(); };
+    list.append(row);
+  });
+}
+
+function renderFnDetail() {
+  const it = FN.items.find(x => x.scenario_id === selFn), box = $("fn-detail"); box.replaceChildren();
+  if (!it) return;
+  const t = it.tuple, top = el("div", "top");
+  top.append(el("strong", "", `${it.scenario_id} · ${t.role} ${t.user_id}${it.user_name ? " (" + it.user_name + ")" : ""}`),
+             el("span", "pill " + (it.scenario_group === "challenge" ? "challenge" : ""), it.scenario_group));
+  if (it.data_quality_case_id) top.append(el("span", "pill dq", it.data_quality_case_id));
+  if (it.state_changing) top.append(el("span", "pill", "changes data"));
+  if (it.in_sample) top.append(el("span", "pill", "in proposed sample"));
+  box.append(top);
+  box.append(kvTable([["intent", nice(t.intent)], ["difficulty", nice(t.difficulty)], ["style", nice(t.user_style)],
+                      ["turns", String(t.turn_count)], ["record state", nice(t.record_state)], ["policy", nice(t.applicable_policy)]]));
+
+  box.append(el("h3", "", "The conversation (what the user types)"));
+  const conv = el("div", "conv");
+  conv.append(el("div", "ev user", it.opening_message));
+  it.followups.forEach((f, n) => { conv.append(el("div", "muted", `followup ${n + 1} (sent whatever the agent answers)`)); conv.append(el("div", "ev user", f)); });
+  box.append(conv);
+  box.append(el("div", "muted", "Check: does this sound like a real person in that style? Do the followups make sense without seeing the agent's reply?"));
+
+  box.append(el("h3", "", "What the message writer was told (and nothing else)"));
+  box.append(el("div", "muted", it.writer_was_told || ""));
+
+  box.append(el("h3", "", "The record behind it"));
+  const rows = [["record", it.record || "(none)"]]; if (it.ui_hint) rows.push(["find it in this UI", it.ui_hint]);
+  box.append(kvTable(rows));
+
+  const det = el("details"); det.append(el("summary", "", "Answer key (open to check it matches the record)"));
+  const x = it.expected, key = el("div", "key");
+  if (x.evaluation === "objective") key.append(el("div", "big", x.outcome), el("div", "", x.reason));
+  else key.append(el("div", "big", "human judgment"), el("div", "", x.criterion));
+  key.append(el("div", "muted", `source: ${x.source.type} · ${x.source.reference}`));
+  det.append(key); box.append(det);
+
+  box.append(el("h3", "", "Your review"));
+  const rv = it.review || {}, form = el("div"); form.id = "fn-form";
+  const radios = el("div", "formrow");
+  [["accept", "accept: use as written"], ["revise", "revise: keep the scenario, change the message"], ["reject", "reject: replace this scenario"]].forEach(([val, lab]) => {
+    const l = el("label", "opt"); const r = el("input"); r.type = "radio"; r.name = "fn-decision"; r.value = val; if (rv.decision === val) r.checked = true;
+    l.append(r, document.createTextNode(lab)); radios.append(l); });
+  form.append(radios);
+  form.append(el("span", "lbl", "Reason (what made you decide this)"));
+  const rsn = el("textarea"); rsn.value = rv.reason || ""; form.append(rsn);
+  form.append(el("span", "lbl", "Change (required for revise: what should be different; optional otherwise)"));
+  const chg = el("textarea"); chg.value = rv.change || ""; form.append(chg);
+  const bar = el("div", "decide"), msg = el("span", "muted");
+  const save = el("button", "primary", "Save review"), saveNext = el("button", "", "Save and next →");
+  const list = filteredFn(), idx = list.findIndex(z => z.scenario_id === it.scenario_id);
+  const doSave = async advance => {
+    const d = document.querySelector('input[name="fn-decision"]:checked');
+    if (!d) { msg.textContent = "Choose accept, revise or reject first."; msg.className = "bad"; return; }
+    try {
+      await api(`/api/final/${it.scenario_id}/review`, { decision: d.value, reason: rsn.value, change: chg.value });
+      it.review = { scenario_id: it.scenario_id, decision: d.value, reason: rsn.value.trim(), change: chg.value.trim() || null };
+      if (advance && idx >= 0 && idx < list.length - 1) selFn = list[idx + 1].scenario_id;
+      renderFnList(); renderFnDetail();
+      if (!advance) $("fn-detail").prepend(el("div", "muted", "Saved to scenarios/support_review.jsonl ✓"));
+    } catch (e) { msg.textContent = e.message; msg.className = "bad"; }
+  };
+  save.onclick = () => doSave(false); saveNext.onclick = () => doSave(true); bar.append(save, saveNext);
+  if (it.review) { const clr = el("button", "danger", "Clear my review");
+    clr.onclick = async () => { await fetch(`/api/final/${it.scenario_id}/review`, { method: "DELETE" }); it.review = null; renderFnList(); renderFnDetail(); };
+    bar.append(clr); }
+  bar.append(msg); form.append(bar); box.append(form);
+}
+
+(async () => {
+  await refreshInfo();
+  const s = await api("/api/status");
+  if (s.session_id) {   // page reloaded while a chat was active: redraw it
+    $("role").value = s.role; $("uid").value = s.user_id;
+    await openChat(s.session_id);
+  }
+  await loadUsers();
+  showUser(Number($("uid").value));
+})();
+</script>
+</body>
+</html>
