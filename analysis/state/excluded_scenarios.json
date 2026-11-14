@@ -1,0 +1,173 @@
+{
+ "about": "Scenarios left out of the HW4 review set because they are unrealistic for the role or cannot reach the behavior they were written to test. Audited by reading all 250 messages. Borderline ones were kept.",
+ "excluded": [
+  {
+   "scenario_id": "final-025",
+   "category": "record_not_identified",
+   "reason": "The merchant gives no order and no product, so the agent cannot find the damaged order this scenario tests."
+  },
+  {
+   "scenario_id": "final-045",
+   "category": "record_not_identified",
+   "reason": "The support message gives no order and no product, so the agent cannot find the damaged order this scenario tests."
+  },
+  {
+   "scenario_id": "final-054",
+   "category": "merchant_written_as_buyer",
+   "reason": "A merchant says 'we placed something a while back': this reads as the buyer."
+  },
+  {
+   "scenario_id": "final-057",
+   "category": "record_not_identified",
+   "reason": "The support message gives no order and no product, so the agent cannot find the damaged order this scenario tests."
+  },
+  {
+   "scenario_id": "final-060",
+   "category": "record_not_identified",
+   "reason": "The support message gives no order and no product, so the agent cannot find the damaged order this scenario tests."
+  },
+  {
+   "scenario_id": "final-069",
+   "category": "record_not_identified",
+   "reason": "The merchant message gives no order and no product, so the agent cannot find the damaged order this scenario tests."
+  },
+  {
+   "scenario_id": "final-077",
+   "category": "merchant_written_as_buyer",
+   "reason": "A merchant says they have been 'waiting on the order' and 'need these for our store': this reads as the buyer."
+  },
+  {
+   "scenario_id": "final-082",
+   "category": "merchant_written_as_buyer",
+   "reason": "A merchant says 'we placed an order': this reads as the buyer."
+  },
+  {
+   "scenario_id": "final-114",
+   "category": "merchant_written_as_buyer",
+   "reason": "A merchant says 'we placed an order': this reads as the buyer."
+  },
+  {
+   "scenario_id": "final-127",
+   "category": "merchant_written_as_buyer",
+   "reason": "A merchant asks whether 'our order' will arrive so they can tell the crew to push things back: this reads as the buyer."
+  },
+  {
+   "scenario_id": "final-135",
+   "category": "role_mismatch",
+   "reason": "A merchant is browsing another store's catalog for something under a price: a shopper's goal."
+  },
+  {
+   "scenario_id": "final-138",
+   "category": "same_request_repeated",
+   "reason": "The same refund request is repeated six times in one message."
+  },
+  {
+   "scenario_id": "final-160",
+   "category": "role_mismatch",
+   "reason": "A merchant is browsing another store's catalog for something under a price: a shopper's goal."
+  },
+  {
+   "scenario_id": "final-169",
+   "category": "merchant_written_as_buyer",
+   "reason": "A merchant says 'we ordered the slim planner': this reads as the buyer."
+  },
+  {
+   "scenario_id": "final-175",
+   "category": "same_request_repeated",
+   "reason": "The same refund request is repeated five times in one message."
+  },
+  {
+   "scenario_id": "final-177",
+   "category": "role_mismatch",
+   "reason": "A merchant asks when 'the money shows up in my account' after a refund: a shopper's question."
+  },
+  {
+   "scenario_id": "final-185",
+   "category": "same_request_repeated",
+   "reason": "The same refund request is repeated five times in one message."
+  },
+  {
+   "scenario_id": "final-195",
+   "category": "role_mismatch",
+   "reason": "A merchant asks whether Cartwheel 'carries anything' from another store under $20: a shopper's goal."
+  },
+  {
+   "scenario_id": "final-205",
+   "category": "role_mismatch",
+   "reason": "A support staffer asks for a French translation for themselves: not a support task."
+  },
+  {
+   "scenario_id": "final-207",
+   "category": "merchant_written_as_buyer",
+   "reason": "A merchant owner says 'we ordered the Woven Trowel Set': this reads as the buyer."
+  },
+  {
+   "scenario_id": "final-221",
+   "category": "role_mismatch",
+   "reason": "A merchant is browsing another store's catalog for something under a price: a shopper's goal."
+  },
+  {
+   "scenario_id": "final-224",
+   "category": "role_mismatch",
+   "reason": "A merchant asks how many days they have to send something back: a shopper's question."
+  },
+  {
+   "scenario_id": "final-233",
+   "category": "role_mismatch",
+   "reason": "A support staffer asks whether the assistant can change 'my profile': a personal account question, not support work."
+  },
+  {
+   "scenario_id": "final-238",
+   "category": "role_mismatch",
+   "reason": "A merchant says a charge they don't recognize is on their statement: a shopper's question."
+  },
+  {
+   "scenario_id": "final-242",
+   "category": "role_mismatch",
+   "reason": "A merchant asks for a stock tip for themselves: not a merchant task on this platform."
+  },
+  {
+   "scenario_id": "final-183",
+   "category": "unrealistic_scenario",
+   "reason": "User note while reviewing batch 3: failure to create a realistic scenario (merchant asking how to send back trekking poles for a customer)."
+  }
+ ],
+ "borderline_kept": [
+  {
+   "scenario_id": "final-143",
+   "note": "Support asks how soon a human answers a ticket; plausible if relaying for a customer."
+  },
+  {
+   "scenario_id": "final-039",
+   "note": "Refund request repeated four times; heavy but not extreme."
+  },
+  {
+   "scenario_id": "final-112",
+   "note": "Nine sentences repeating the same name-change request."
+  },
+  {
+   "scenario_id": "final-053",
+   "note": "'price' repeated four times."
+  },
+  {
+   "scenario_id": "final-043",
+   "note": "Order number repeated three times; this is a permission-boundary case."
+  },
+  {
+   "scenario_id": "final-032",
+   "note": "Merchant says 'our Portable Jam Trio order'; could be read as buyer or seller."
+  },
+  {
+   "scenario_id": "final-167",
+   "note": "Merchant says 'our Slim Hand Cream order'; could be read as buyer or seller."
+  },
+  {
+   "scenario_id": "final-170",
+   "note": "Merchant says 'the portable level order'; could be read as buyer or seller."
+  },
+  {
+   "scenario_id": "final-013",
+   "note": "Merchant says 'we ordered it by mistake'; reads like a buyer, but you reviewed and accepted it in the 15-scenario review, so it stays."
+  }
+ ]
+}

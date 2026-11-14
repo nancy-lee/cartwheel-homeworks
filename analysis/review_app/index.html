@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Conversation review</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; font: 14px/1.45 -apple-system, system-ui, sans-serif; color: #1c1c1e; background: #f5f5f7; }
+  header { flex: none; display: flex; gap: 10px; align-items: center; padding: 8px 16px; background: #fff; border-bottom: 1px solid #ddd; }
+  header .grow { flex: 1; }
+  header a.back { color: #0a4fb3; text-decoration: none; font-weight: 600; }
+  input, select, textarea, button { font: inherit; padding: 5px 8px; border: 1px solid #c8c8cc; border-radius: 6px; background: #fff; }
+  button { cursor: pointer; background: #f0f0f2; }
+  button.primary { background: #0a66d6; color: #fff; border-color: #0a66d6; }
+  button.danger { color: #a11; }
+  kbd { font: 11px ui-monospace, Menlo, monospace; background: #eceef2; border: 1px solid #d0d2d8; border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; }
+  .muted { color: #777; font-size: 12px; }
+  .pill { font: 600 10px system-ui; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 10px; background: #eceef2; color: #555; white-space: nowrap; }
+  .pill.ok { background: #dff3e6; color: #17703a; } .pill.warn { background: #fff1cf; color: #8a5a00; }
+  .pill.failure { background: #fbdcdc; color: #9a1b1b; } .pill.no_failure { background: #dff3e6; color: #17703a; }
+  main { flex: 1; min-height: 0; display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 12px; padding: 12px; }
+  section { background: #fff; border: 1px solid #ddd; border-radius: 8px; display: flex; flex-direction: column; min-height: 0; }
+  h2 { margin: 0; padding: 9px 14px; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #666; border-bottom: 1px solid #eee; flex: none; }
+  #bar { padding: 8px 10px; display: flex; flex-direction: column; gap: 6px; flex: none; }
+  #bar .row { display: flex; gap: 8px; align-items: center; }
+  #bar input[type=text] { flex: 1; }
+  #list { flex: 1; overflow-y: auto; border-top: 1px solid #eee; }
+  .row-item { padding: 7px 12px; cursor: pointer; border-bottom: 1px solid #f0f0f2; display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+  .row-item:hover { background: #f5f8ff; } .row-item.sel { background: #e3eeff; }
+  .row-item .sub { color: #777; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-item .sub, .row-item .t { min-width: 0; }
+  #topbar { padding: 8px 16px; border-bottom: 1px solid #eee; display: flex; gap: 10px; align-items: center; flex: none; flex-wrap: wrap; }
+  #topbar strong { font-size: 15px; }
+  #sugbar { padding: 8px 16px; background: #eef4ff; border-bottom: 1px solid #cfe0fb; display: flex; gap: 10px; align-items: center; flex: none; flex-wrap: wrap; font-size: 13px; }
+  #sugbar[hidden] { display: none; }
+  #labelBar { padding: 8px 14px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; border-bottom: 1px solid #eee; flex: none; font-size: 13px; }
+  #labelWrap { overflow: auto; flex: 1; min-height: 0; }
+  table.lt { border-collapse: separate; border-spacing: 0; font-size: 13px; min-width: 100%; }
+  table.lt th { position: sticky; top: 0; background: #f6f7f9; z-index: 2; text-align: left; padding: 6px 10px; border-bottom: 1px solid #ddd; vertical-align: bottom; max-width: 190px; }
+  table.lt th span { display: block; font-weight: 400; color: #777; font-size: 11px; }
+  table.lt td { padding: 5px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+  table.lt td.sc { white-space: nowrap; font-weight: 600; cursor: pointer; color: #0a4fb3; }
+  table.lt td.nt { max-width: 340px; color: #555; font-size: 12px; }
+  table.lt td.cell { white-space: nowrap; }
+  table.lt td.cell.cur { outline: 2px solid #0a66d6; outline-offset: -2px; background: #f3f8ff; }
+  .lb { font: 12px system-ui; padding: 2px 8px; margin-right: 3px; border: 1px solid #c9ccd3; border-radius: 4px; background: #fff; color: #444; cursor: pointer; }
+  .lb.prop { border-style: dashed; color: #999; }
+  .lb.on.p { background: #fbdcdc; border-color: #d96a6a; color: #8a1d1d; font-weight: 600; }
+  .lb.on.a { background: #dff3e6; border-color: #6fb98a; color: #17703a; font-weight: 600; }
+  #conv { flex: 1; overflow-y: auto; padding: 14px 16px 80px; outline: none; }
+  #wrap { position: relative; display: flex; gap: 18px; align-items: flex-start; }
+  #main { flex: 1; min-width: 0; max-width: 760px; display: flex; flex-direction: column; gap: 8px; }
+  #margin { flex: none; width: 310px; position: relative; }
+  .block { position: relative; padding: 8px 10px; border-radius: 6px; border: 2px solid transparent; outline: none; white-space: pre-wrap; word-break: break-word; }
+  .block:focus { border-color: #0a66d6; box-shadow: 0 0 0 3px rgba(10,102,214,.15); }
+  .block.annotated { border-color: #f0b429; }
+  .block.active { background-image: linear-gradient(rgba(240,180,41,.18), rgba(240,180,41,.18)); }
+  .block.user { background: #e8f1ff; border-left: 4px solid #0a66d6; }
+  .block.assistant { background: #eef0f3; border-left: 4px solid #6b7280; white-space: normal; }
+  .block.assistant.final { background: #eaf6ee; border-left-color: #1f8a4c; }
+  .block.tool { background: #fff; border: 1px solid #bfe0c9; border-left: 4px solid #1f8a4c; font: 12px/1.4 ui-monospace, Menlo, monospace; }
+  .block.tool:focus { border-color: #0a66d6; }
+  .block.tool.annotated { border-color: #f0b429; }
+  .tag { display: block; font: 600 10px system-ui; text-transform: uppercase; letter-spacing: .06em; opacity: .65; margin-bottom: 3px; }
+  .block pre { margin: 2px 0 0; white-space: pre-wrap; word-break: break-word; font: inherit; }
+  .block .addnote { position: absolute; top: 4px; right: 6px; opacity: 0; padding: 0 7px; font-size: 12px; }
+  .block:hover .addnote, .block:focus .addnote { opacity: 1; }
+  .turn { align-self: center; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin: 8px 0 0; }
+  mark.hl { background: rgba(240,180,41,.45); border-radius: 2px; padding: 0; }
+  mark.hl.active, mark.pending { background: rgba(240,180,41,.85); }
+  mark.pending { outline: 1px dashed #b36b00; }
+  #margin .card { position: absolute; left: 0; right: 0; background: #fffbe8; border: 1px solid #f0e0a0; border-left: 4px solid #f0b429; border-radius: 6px; padding: 6px 8px; font-size: 13px; }
+  #margin .card.active { box-shadow: 0 0 0 2px rgba(240,180,41,.6); }
+  #margin .card.compose { background: #fff; border: 1px solid #0a66d6; border-left: 4px solid #0a66d6; box-shadow: 0 4px 16px rgba(10,102,214,.18); z-index: 5; }
+  #margin .card.compose textarea { width: 100%; min-height: 84px; }
+  #margin .card.compose .bar { display: flex; gap: 8px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+  #margin .card.session { border-left-color: #6b4fbb; background: #f6f3fc; border-color: #dccff5; }
+  .card .who { font: 600 10px system-ui; text-transform: uppercase; letter-spacing: .06em; color: #6b4fbb; margin-bottom: 3px; }
+  .card .q { color: #777; font-size: 11px; font-style: italic; margin-bottom: 3px; border-left: 2px solid #ddd; padding-left: 6px; }
+  .card .acts { display: none; gap: 6px; margin-top: 4px; } .card:hover .acts { display: flex; }
+  .card .acts button { padding: 0 6px; font-size: 11px; }
+  .card textarea { width: 100%; min-height: 54px; }
+  #info { background: #f4f1fb; border: 1px solid #dccff5; border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+  #info table { border-collapse: collapse; } #info td { padding: 1px 10px 1px 0; vertical-align: top; }
+  #info .key { background: #eaf6ee; border: 1px solid #bfe0c9; border-radius: 6px; padding: 6px 8px; margin-top: 6px; }
+  details.sys { background: #fafafa; border: 1px dashed #ccc; border-radius: 6px; padding: 4px 8px; color: #666; font-size: 12px; }
+  details.sys pre { white-space: pre-wrap; margin: 6px 0 2px; font: 11px/1.4 ui-monospace, Menlo, monospace; }
+  #help { position: fixed; inset: 0; background: rgba(0,0,0,.35); display: flex; align-items: center; justify-content: center; z-index: 50; }
+  #help[hidden], #excl[hidden] { display: none; }
+  #views { display: inline-flex; gap: 2px; background: #eceef2; padding: 2px; border-radius: 8px; }
+  #views button { border: 0; background: none; padding: 3px 12px; border-radius: 6px; font-weight: 600; color: #555; }
+  #views button.sel { background: #fff; color: #0a4fb3; box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+  #mapView, #progressView { display: block; overflow: auto; }
+  #mapView[hidden], #progressView[hidden], main[hidden] { display: none; }
+  #mapView section, #progressView section { margin-bottom: 12px; padding-bottom: 10px; }
+  #mapWrap { padding: 8px 14px; } #map { width: 100%; height: 560px; cursor: pointer; }
+  #legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 6px 14px; font-size: 12px; color: #555; }
+  #legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+  table.bt { border-collapse: collapse; margin: 8px 14px; font-size: 13px; } table.bt th, table.bt td { padding: 4px 14px 4px 0; text-align: left; }
+  #treemap { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 14px; }
+  .mode-block { flex: 1 1 260px; background: #f6f7fb; border: 1px solid #dde; border-radius: 8px; padding: 8px 10px; }
+  .mode-block h3 { margin: 0 0 4px; font-size: 14px; text-transform: none; letter-spacing: 0; color: inherit; border: 0; padding: 0; display: flex; gap: 8px; align-items: center; }
+  .mode-block .count { margin-left: auto; font-weight: 600; } .mode-block .def { color: #555; font-size: 12px; margin-bottom: 4px; }
+  .mode-block ul { margin: 0; padding-left: 16px; font-size: 12px; } .mode-block li { cursor: pointer; } .mode-block li:hover { text-decoration: underline; }
+  .sg-row { display: flex; gap: 10px; align-items: baseline; padding: 4px 14px; border-bottom: 1px solid #f0f0f2; font-size: 13px; }
+  .sg-row .quote { color: #444; cursor: pointer; } .sg-tools { display: flex; gap: 8px; align-items: center; padding: 6px 14px; }
+  #banner { padding: 0 2px; } #banner .box { background: #fff8e1; border: 1px solid #f0e0a0; border-radius: 6px; padding: 6px 8px; font-size: 12px; color: #444; }
+  .pill.tag { background: #e8f1ff; color: #0a4fb3; }
+  #excl { position: fixed; inset: 0; background: rgba(0,0,0,.35); display: flex; align-items: center; justify-content: center; z-index: 50; }
+  #excl .card { background: #fff; border-radius: 10px; padding: 16px 20px; }
+  #excl .it { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+  #help .card { background: #fff; border-radius: 10px; padding: 16px 20px; min-width: 380px; }
+  #help table td { padding: 3px 14px 3px 0; }
+  #toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); background: #1c1c1e; color: #fff; padding: 6px 14px; border-radius: 18px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 60; }
+  #toast.on { opacity: .92; }
+  .bad { background: #fdecec; border: 1px solid #f1b5b5; color: #8a1f1f; padding: 8px 10px; border-radius: 6px; }
+  /* markdown */
+  .md p { margin: 0 0 .5em; } .md p:last-child, .md ul:last-child, .md ol:last-child { margin-bottom: 0; }
+  .md ul, .md ol { margin: .2em 0 .5em; padding-left: 1.4em; }
+  .md code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; background: rgba(0,0,0,.07); padding: 1px 4px; border-radius: 4px; }
+  .md pre { background: rgba(0,0,0,.06); padding: 6px 8px; border-radius: 6px; overflow-x: auto; }
+  .md h1, .md h2, .md h3, .md h4 { margin: .6em 0 .3em; font-size: 1.05em; text-transform: none; letter-spacing: 0; color: inherit; padding: 0; border: 0; }
+  .md table { border-collapse: collapse; margin: .4em 0; font-size: 13px; } .md th, .md td { border: 1px solid #ccc; padding: 3px 8px; }
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="/">← Chat</a>
+  <strong>Conversation review</strong>
+  <span id="views"><button class="sel" data-view="trace">Trace <kbd>t</kbd></button><button data-view="map">Map <kbd>m</kbd></button><button data-view="progress">Progress <kbd>p</kbd></button><button data-view="labels">Labels <kbd>l</kbd></button></span>
+  <span id="progress" class="muted"></span>
+  <span class="grow"></span>
+  <span id="source" class="pill"></span>
+  <button id="exclBtn" title="Scenarios left out of this review because they are unrealistic"></button>
+  <button id="infoBtn" title="Show or hide scenario info and the answer key (i)">Scenario info <kbd>i</kbd></button>
+  <button id="helpBtn" title="Keyboard shortcuts (?)">Keys <kbd>?</kbd></button>
+</header>
+<main id="traceView">
+  <section>
+    <h2>Conversations</h2>
+    <div id="bar">
+      <div class="row"><input id="q" type="text" placeholder="Search scenario id or text   ( / )" autocomplete="off"></div>
+      <div class="row"><select id="batchF" style="flex:1"><option value="">All conversations</option></select></div>
+      <div id="banner"></div>
+      <div class="row">
+        <label><input type="checkbox" id="todo"> unreviewed only <kbd>u</kbd></label>
+        <select id="roleF"><option value="">all roles</option><option>shopper</option><option>merchant</option><option>support</option></select>
+      </div>
+    </div>
+    <div id="list"><div class="muted" style="padding:12px">Loading traces from Langfuse (the first load takes a few seconds)…</div></div>
+  </section>
+  <section>
+    <div id="topbar"><span class="muted">Pick a conversation on the left, or press <kbd>j</kbd>.</span></div>
+    <div id="sugbar" hidden></div>
+    <div id="conv" tabindex="-1"><div id="wrap"><div id="main"></div><div id="margin"></div>
+    </div></div>
+  </section>
+</main>
+<main id="mapView" hidden>
+  <section style="height:100%"><h2>Map of all traces, grouped by cluster</h2>
+    <div id="legend"></div><div id="mapWrap"><canvas id="map"></canvas></div></section>
+</main>
+<main id="labelsView" hidden style="grid-template-columns: minmax(0, 1fr)">
+  <section style="min-height:0">
+    <h2>Labels: one present or absent decision per conversation and final mode</h2>
+    <div id="labelBar"></div>
+    <div id="labelWrap"></div>
+  </section>
+</main>
+<main id="progressView" hidden>
+  <section><h2>Batches</h2><div id="batches"></div></section>
+  <section><h2>Failure modes (from your notes)</h2><div id="treemap"></div></section>
+  <section><h2>Suggestions waiting for your decision</h2><div id="queue"></div></section>
+</main>
+<div id="help" hidden><div class="card">
+  <strong>Keyboard</strong>
+  <table>
+    <tr><td><kbd>j</kbd> / <kbd>k</kbd></td><td>next / previous conversation (in the current list)</td></tr>
+    <tr><td><kbd>n</kbd></td><td>next conversation you haven't reviewed</td></tr>
+    <tr><td><kbd>Tab</kbd> / <kbd>Shift Tab</kbd></td><td>move through the messages and tool calls</td></tr>
+    <tr><td><kbd>Enter</kbd></td><td>write a note on the focused message or tool call</td></tr>
+    <tr><td>select text</td><td>write a note on that exact text</td></tr>
+    <tr><td><kbd>a</kbd></td><td>write a note on the whole conversation</td></tr>
+    <tr><td><kbd>o</kbd></td><td>mark "no failure observed" and go to the next</td></tr>
+    <tr><td><kbd>⌘/Ctrl</kbd>+<kbd>Enter</kbd></td><td>save the note you are writing</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>close the note box / this help</td></tr>
+    <tr><td><kbd>i</kbd></td><td>show or hide scenario info and the answer key</td></tr>
+    <tr><td><kbd>u</kbd></td><td>show only unreviewed</td></tr>
+    <tr><td><kbd>t</kbd> <kbd>m</kbd> <kbd>p</kbd></td><td>Trace, Map, Progress views</td></tr>
+    <tr><td><kbd>/</kbd></td><td>search</td></tr>
+    <tr><td><kbd>?</kbd></td><td>this help</td></tr>
+  </table>
+  <p class="muted">Open coding: read until the <em>first</em> failure, write what went wrong in your own words, then stop and move on. If nothing is wrong, press <kbd>o</kbd>.</p>
+</div></div>
+<div id="excl" hidden><div class="card" style="max-width:760px;max-height:80vh;overflow:auto">
+  <strong>Left out of this review (unrealistic scenarios)</strong>
+  <p class="muted" id="exclAbout"></p><div id="exclList"></div>
+  <p><button id="exclClose">Close</button></p></div></div>
+<div id="toast"></div>
+<script>
+const $ = id => document.getElementById(id);
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+// --- minimal, safe markdown (HTML is escaped first) ---
+function inlineMd(t) {
+  const codes = [];
+  t = esc(t).replace(/`([^`]+)`/g, (_, c) => { codes.push(c); return "\u0000" + (codes.length - 1) + "\u0000"; });
+  t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*\w])\*([^*\s][^*]*?)\*(?!\*)/g, "$1<em>$2</em>");
+  return t.replace(/\u0000(\d+)\u0000/g, (_, i) => "<code>" + codes[i] + "</code>");
+}
+function md(src) {
+  const lines = String(src).replace(/\r/g, "").split("\n"), UL = /^\s*[-*+]\s+(.*)/, OL = /^\s*\d+[.)]\s+(.*)/, out = []; let i = 0;
+  while (i < lines.length) {
+    const l = lines[i]; let m;
+    if (!l.trim()) { i++; continue; }
+    if (/^```/.test(l)) { const b = []; i++; while (i < lines.length && !/^```/.test(lines[i])) b.push(lines[i++]); i++; out.push("<pre><code>" + esc(b.join("\n")) + "</code></pre>"); continue; }
+    if ((m = l.match(/^(#{1,6})\s+(.*)/))) { out.push("<h3>" + inlineMd(m[2]) + "</h3>"); i++; continue; }
+    if (UL.test(l) || OL.test(l)) { const re = UL.test(l) ? UL : OL, tag = re === UL ? "ul" : "ol", it = [];
+      while (i < lines.length && (m = lines[i].match(re))) { it.push("<li>" + inlineMd(m[1]) + "</li>"); i++; }
+      out.push("<" + tag + ">" + it.join("") + "</" + tag + ">"); continue; }
+    const b = []; while (i < lines.length && lines[i].trim() && !/^```|^#{1,6}\s/.test(lines[i]) && !UL.test(lines[i]) && !OL.test(lines[i])) b.push(lines[i++]);
+    if (!b.length) b.push(lines[i++]);
+    out.push("<p>" + b.map(inlineMd).join("<br>") + "</p>");
+  }
+  return out.join("");
+}
+const pretty = v => typeof v === "string" ? v : JSON.stringify(v, null, 2);
+async function api(path, opts) {
+  const r = await fetch(path, opts); const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.detail || r.statusText); return j;
+}
+const post = (path, body, method) => api(path, { method: method || "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+function toast(msg) { const t = $("toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("on"), 2200); }
+
+let VIEW = "trace", GRAPH = null, LIST = [], CUR = null, D = null, ANN = [], SHOW_INFO = false, SRC = null, NB = null;
+
+// ---------------- list ----------------
+function visible() {
+  const q = $("q").value.trim().toLowerCase(), todo = $("todo").checked, role = $("roleF").value, batch = $("batchF").value;
+  return LIST.filter(r => (!todo || r.status === "unreviewed") && (!role || r.role === role) && (!batch || r.batch === batch)
+    && (!q || r.scenario_id.toLowerCase().includes(q) || r.preview.toLowerCase().includes(q)));
+}
+function renderProgress() {
+  const done = LIST.filter(r => r.status !== "unreviewed").length, f = LIST.filter(r => r.status === "failure").length;
+  $("progress").textContent = LIST.length ? `${done} of ${LIST.length} reviewed · ${f} with a failure note · ${done - f} no failure observed` : "";
+  const s = $("source"); if (!SRC) return;
+  s.textContent = SRC.source === "langfuse" ? "live Langfuse" : "offline export"; s.className = "pill " + (SRC.source === "langfuse" ? "ok" : "warn");
+  s.title = SRC.reason || "Traces were read from the live Langfuse project.";
+}
+function renderList() {
+  const box = $("list"); box.replaceChildren();
+  const rows = visible();
+  if (!rows.length) box.append(el("div", "muted", "Nothing matches.")), box.firstChild.style.padding = "12px";
+  rows.forEach(r => {
+    const row = el("div", "row-item" + (r.session_id === CUR ? " sel" : "")); row.dataset.sid = r.session_id;
+    const left = el("div", "t"); left.append(el("div", "", r.scenario_id + " · " + r.role), el("div", "sub", r.preview));
+    const right = el("div"); right.style.cssText = "display:flex;gap:4px;align-items:center"; if (r.batch) right.append(el("span", "pill tag", r.why && r.why.includes("representative") ? "cluster" : "uniform"));
+    if (r.status === "failure") right.append(el("span", "pill failure", r.notes + (r.notes === 1 ? " note" : " notes")));
+    else if (r.status === "no_failure") right.append(el("span", "pill no_failure", "no failure"));
+    row.append(left, right); row.onclick = () => openSession(r.session_id); box.append(row);
+  });
+  renderProgress();
+}
+function renderExcl() { const b = $("exclBtn"); b.style.display = SRC && SRC.excluded ? "" : "none"; if (SRC) b.textContent = SRC.excluded + " scenarios left out"; }
+$("exclBtn").onclick = async () => {
+  const j = await api("/api/review/excluded"); $("exclAbout").textContent = j.about || ""; const box = $("exclList"); box.replaceChildren();
+  j.excluded.forEach(e => { const d = el("div", "it"); d.append(el("strong", "", e.scenario_id + "  "), el("span", "muted", e.category.replace(/_/g, " ") + " · "), document.createTextNode(e.reason)); box.append(d); });
+  box.append(el("div", "muted", "Borderline, kept in the review: " + j.borderline_kept.map(x => x.scenario_id.replace("final-", "")).join(", ")));
+  $("excl").hidden = false;
+};
+$("exclClose").onclick = () => { $("excl").hidden = true; }; $("excl").onclick = ev => { if (ev.target === $("excl")) $("excl").hidden = true; };
+async function loadList(refresh) {
+  const j = await api("/api/review/sessions" + (refresh ? "?refresh=1" : "")); LIST = j.sessions; SRC = j;
+  const bf = $("batchF"), keep = bf.value; bf.replaceChildren(new Option("All conversations", ""));
+  j.batches.forEach(b => bf.append(new Option(b.name + " (" + b.count + " conversations)", b.name)));
+  bf.value = j.batches.some(b => b.name === keep) ? keep : (j.batches.length ? j.batches[j.batches.length - 1].name : "");
+  renderBanner(j);
+  renderList(); renderExcl();
+  if (!CUR) { const first = LIST.find(r => r.status === "unreviewed") || LIST[0]; if (first) openSession(first.session_id); }
+}
+function step(d) {
+  const rows = visible(); if (!rows.length) return;
+  let i = rows.findIndex(r => r.session_id === CUR); i = i < 0 ? 0 : Math.min(rows.length - 1, Math.max(0, i + d));
+  openSession(rows[i].session_id);
+}
+function nextUnreviewed() {
+  const rows = visible(); const i = rows.findIndex(r => r.session_id === CUR);
+  const after = rows.slice(i + 1).concat(rows.slice(0, Math.max(i, 0)));
+  const n = after.find(r => r.status === "unreviewed" && r.session_id !== CUR);
+  if (n) openSession(n.session_id); else toast("Nothing left to review in this list.");
+}
+
+// ---------------- conversation ----------------
+async function openSession(id) {
+  closeNote(); CUR = id; renderList();
+  const keep = document.querySelector(".row-item.sel"); if (keep) keep.scrollIntoView({ block: "nearest" });
+  try { D = await api("/api/review/sessions/" + encodeURIComponent(id)); ANN = D.annotations; }
+  catch (e) { $("main").replaceChildren(el("div", "bad", e.message)); return; }
+  renderConv(); $("conv").scrollTop = 0; $("conv").focus(); renderSug(id);
+}
+// A depth search retrieved this trace as a possible example of a mode. Your yes/no is saved; it never writes a note for you.
+async function renderSug(id) {
+  const bar = $("sugbar"); bar.replaceChildren(); bar.hidden = true;
+  let items = []; try { items = await api("/api/suggestions"); } catch (e) { return; }
+  if (CUR !== id) return;
+  const mine = items.filter(s => s.session_id === id && s.source === "depth_search"); if (!mine.length) return;
+  bar.hidden = false;
+  mine.forEach(s => {
+    const row = el("div"); row.style.cssText = "display:flex;gap:10px;align-items:center;flex-wrap:wrap";
+    row.append(el("span", "", "Search suggested "), el("strong", "", s.mode), el("span", "", ". Does this trace show it?"));
+    const yes = el("button", s.status === "accepted" ? "primary" : "", "Yes, it does"), no = el("button", s.status === "rejected" ? "primary" : "", "No, reject");
+    const ans = async a => { try { await post("/api/review/suggestions/" + encodeURIComponent(s.id) + "/answer", { answer: a }); toast(a === "yes" ? "Saved: yes" : "Saved: rejected"); renderSug(id); } catch (e) { toast(e.message); } };
+    yes.onclick = () => ans("yes"); no.onclick = () => ans("no");
+    row.append(yes, no);
+    row.append(el("span", "muted", s.status === "accepted" ? "You answered: yes" : s.status === "rejected" ? "You answered: no (rejected)" : "Not answered yet"));
+    bar.append(row);
+  });
+}
+function statusOf() { const f = ANN.filter(a => a.kind === "failure"); return f.length ? "failure" : (ANN.some(a => a.kind === "no_failure") ? "no_failure" : "unreviewed"); }
+function renderTop() {
+  const t = $("topbar"); t.replaceChildren();
+  t.append(el("strong", "", D.scenario_id), el("span", "pill", D.role || "role unknown"));
+  const st = statusOf();
+  if (st === "failure") t.append(el("span", "pill failure", "first failure recorded"));
+  else if (st === "no_failure") t.append(el("span", "pill no_failure", "no failure observed"));
+  else t.append(el("span", "muted", "Read until the first failure, note it in the right rail, then j."));
+  const sp = el("span"); sp.style.flex = "1"; t.append(sp);
+  const addS = el("button", "", "Note on the whole conversation "); addS.append(el("kbd", "", "a")); addS.onclick = noteSession;
+  const none = el("button", "", "No failure observed "); none.append(el("kbd", "", "o")); none.onclick = noFailure;
+  t.append(addS, none);
+}
+function block(it) {
+  const b = el("div", "block " + it.type + (it.final ? " final" : "")); b.tabIndex = 0; b.dataset.ref = it.ref; b.dataset.kind = it.type === "tool" ? "tool" : "message";
+  const c = el("div", "content");
+  if (it.type === "user") { b.append(el("span", "tag", "User")); c.textContent = it.text; }
+  else if (it.type === "assistant") { b.append(el("span", "tag", it.final ? "Agent reply (what the user sees)" : "Agent narration to itself (not shown to the user)")); c.className = "content md"; c.innerHTML = md(it.text); }
+  else {
+    b.append(el("span", "tag", "Tool call"));
+    c.append(el("div", "", it.name + "  ←  arguments")); c.append(el("pre", "", pretty(it.arguments ?? "(not recorded)")));
+    const res = pretty(it.result ?? "(no result recorded)");
+    c.append(el("div", "", "→ result")); c.append(el("pre", "", res));
+  }
+  b.append(c);
+  const add = el("button", "addnote", "＋ note"); add.title = "Write a note on this (Enter)"; add.tabIndex = -1;
+  add.onclick = ev => { ev.stopPropagation(); openNote({ kind: it.type === "tool" ? "tool" : "message", ref: it.ref }); }; b.append(add);
+  return b;
+}
+async function renderInfo(box) {
+  box.replaceChildren(); box.id = "info";
+  try {
+    const s = await api("/api/review/scenario/" + D.scenario_id), t = s.tuple, x = s.expected;
+    const rows = [["group", s.group], ["intent", t.intent], ["difficulty", t.difficulty], ["record state", t.record_state], ["policy", t.applicable_policy], ["damaged record", s.data_quality_case_id || "none"], ["record", s.record || ""]];
+    const tb = el("table"); rows.forEach(([k, v]) => { const tr = el("tr"); tr.append(el("td", "muted", k), el("td", "", String(v).replace(/_/g, " "))); tb.append(tr); });
+    box.append(el("div", "muted", "Scenario info and answer key. Hidden by default so your first reading comes from the trace; press i to hide."), tb);
+    const key = el("div", "key"); key.append(el("strong", "", x.evaluation === "objective" ? x.outcome : "human judgment"), el("div", "", x.reason || x.criterion || ""), el("div", "muted", "source: " + x.source.type + " · " + x.source.reference)); box.append(key);
+  } catch (e) { box.append(el("div", "bad", e.message)); }
+  layoutRail();
+}
+function renderConv() {
+  const keepScroll = $("conv").scrollTop, main = $("main"); main.replaceChildren(); renderTop();
+  if (SHOW_INFO) { const i = el("div"); main.append(i); renderInfo(i); }
+  if (D.system_prompt) { const d = el("details", "sys"); d.append(el("summary", "", "System prompt (the same instructions the agent always gets)"), el("pre", "", D.system_prompt)); d.ontoggle = layoutRail; main.append(d); }
+  D.turns.forEach((t, n) => { main.append(el("div", "turn", "Turn " + (n + 1))); t.items.forEach(it => main.append(block(it))); });
+  applyHighlights(); layoutRail(); $("conv").scrollTop = keepScroll;
+}
+
+// ---------------- highlights and margin notes ----------------
+function contentOf(ref) { const b = document.querySelector('[data-ref="' + ref + '"]'); return b ? b.querySelector(".content") : null; }
+function wrapRange(root, start, end, cls, id) {
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let pos = 0; const todo = [];
+  while (w.nextNode()) { const n = w.currentNode, len = n.nodeValue.length, s = Math.max(start, pos), e = Math.min(end, pos + len); if (s < e) todo.push([n, s - pos, e - pos]); pos += len; if (pos >= end) break; }
+  todo.reverse().forEach(([n, s, e]) => { const r = document.createRange(); r.setStart(n, s); r.setEnd(n, e); const m = document.createElement("mark"); m.className = cls; if (id) m.dataset.ann = id; r.surroundContents(m); });
+}
+function applyHighlights() {
+  ANN.filter(a => a.kind === "failure").forEach(a => {
+    if (a.anchor.kind === "text") { const c = contentOf(a.anchor.ref); if (c) wrapRange(c, a.anchor.start, a.anchor.end, "hl", a.id); }
+    else if (a.anchor.kind === "message" || a.anchor.kind === "tool") { const b = document.querySelector('[data-ref="' + a.anchor.ref + '"]'); if (b) b.classList.add("annotated"); }
+  });
+}
+function targetOf(a) {
+  if (a.anchor.kind === "text") return document.querySelector('mark[data-ann="' + a.id + '"]');
+  return document.querySelector('[data-ref="' + a.anchor.ref + '"]');
+}
+function setActive(a, on) {
+  document.querySelectorAll('mark[data-ann="' + a.id + '"]').forEach(m => m.classList.toggle("active", on));
+  if (a.anchor.kind !== "text") { const b = document.querySelector('[data-ref="' + a.anchor.ref + '"]'); if (b) b.classList.toggle("active", on); }
+  const c = document.querySelector('.card[data-id="' + a.id + '"]'); if (c) c.classList.toggle("active", on);
+}
+// ---------------- the right rail: notes sit level with their evidence ----------------
+const short = (t, n) => t.length > n ? t.slice(0, n) + "…" : t;
+let EDIT = null;
+const composer = (() => {
+  const c = el("div", "card compose"), lab = el("div", "q"), ta = el("textarea"), bar = el("div", "bar");
+  ta.placeholder = "Describe the first failure in your own words…";
+  const save = el("button", "primary", "Save "), cancel = el("button", "", "Cancel "), msg = el("span", "muted");
+  save.append(el("kbd", "", "⌘/Ctrl ↵")); cancel.append(el("kbd", "", "Esc"));
+  save.onclick = () => saveNote(); cancel.onclick = () => { closeNote(); $("conv").focus(); };
+  ta.addEventListener("keydown", ev => { if (ev.key === "Enter" && (ev.metaKey || ev.ctrlKey)) { ev.preventDefault(); saveNote(); } });
+  bar.append(save, cancel, msg); c.append(lab, ta, bar); return c;
+})();
+const nbLabel = composer.querySelector(".q"), nbText = composer.querySelector("textarea"), nbMsg = composer.querySelector(".bar .muted");
+function noteCard(a, target) {
+  const c = el("div", "card" + (a.anchor.kind === "session" ? " session" : "")); c.dataset.id = a.id;
+  if (a.anchor.kind === "session") c.append(el("div", "who", "whole conversation"));
+  if (a.anchor.kind === "text" && a.anchor.quote) c.append(el("div", "q", "“" + short(a.anchor.quote, 90) + "”"));
+  if (EDIT === a.id) {
+    const ta = el("textarea"); ta.value = a.note; ta.dataset.edit = "1"; c.append(ta);
+    const bar = el("div"); bar.style.cssText = "display:flex;gap:6px;margin-top:4px;align-items:center";
+    const save = el("button", "primary", "save"), cancel = el("button", "", "cancel"), msg = el("span", "muted");
+    save.onclick = async () => { try { const r = await post("/api/review/annotations/" + a.id, { note: ta.value }, "PUT"); a.note = r.annotation.note; EDIT = null; layoutRail(); } catch (e) { msg.textContent = e.message; } };
+    cancel.onclick = () => { EDIT = null; layoutRail(); };
+    ta.addEventListener("keydown", ev => { if (ev.key === "Escape") { ev.stopPropagation(); EDIT = null; layoutRail(); } else if (ev.key === "Enter" && (ev.metaKey || ev.ctrlKey)) save.onclick(); });
+    bar.append(save, cancel, msg); c.append(bar); return c;
+  }
+  c.append(el("div", "", a.note));
+  const acts = el("div", "acts"), ed = el("button", "", "edit"), del = el("button", "danger", "delete");
+  ed.onclick = () => { EDIT = a.id; layoutRail(); }; del.onclick = () => deleteNote(a); acts.append(ed, del); c.append(acts);
+  if (target) { c.onmouseenter = () => setActive(a, true); c.onmouseleave = () => setActive(a, false); target.onmouseenter = () => setActive(a, true); target.onmouseleave = () => setActive(a, false); }
+  return c;
+}
+function anchorTarget() {
+  const a = NB.anchor;
+  return a.kind === "text" ? document.querySelector("mark.pending") : document.querySelector('[data-ref="' + a.ref + '"]');
+}
+function layoutRail() {
+  const m = $("margin"); m.replaceChildren(); m.style.minHeight = "0";
+  if (!D) return;
+  const conv = $("conv"), mr = m.getBoundingClientRect(), railTop = mr.top - conv.getBoundingClientRect().top + conv.scrollTop, entries = [];
+  ANN.filter(a => a.kind === "failure").forEach(a => {
+    if (a.anchor.kind === "session") entries.push({ d: -1, node: noteCard(a, null) });
+    else { const t = targetOf(a); if (t) entries.push({ d: t.getBoundingClientRect().top - mr.top, node: noteCard(a, t) }); }
+  });
+  if (NB) {   // the composer opens level with what you are annotating; a whole-conversation note opens where you are looking
+    let d; if (NB.anchor.kind === "session") d = Math.max(0, conv.scrollTop - railTop + 8);
+    else { const t = anchorTarget(); d = t ? t.getBoundingClientRect().top - mr.top : 0; }
+    entries.push({ d, node: composer, isComposer: true });
+  }
+  entries.sort((x, y) => x.d - y.d || (x.isComposer ? 1 : 0) - (y.isComposer ? 1 : 0));
+  let last = -Infinity;
+  entries.forEach(({ d, node }) => { m.append(node); const top = Math.max(d, 0, last + 8); node.style.top = top + "px"; last = top + node.offsetHeight; });
+  if (last > 0) m.style.minHeight = last + "px";
+  if (NB) nbText.focus({ preventScroll: true });
+  else if (EDIT) { const ta = m.querySelector("textarea[data-edit]"); if (ta) ta.focus({ preventScroll: true }); }
+}
+window.addEventListener("resize", () => { if (D) layoutRail(); });
+
+// ---------------- writing notes ----------------
+function describe(anchor) {
+  if (anchor.kind === "session") return "Note on the whole conversation";
+  if (anchor.kind === "text") return "Note on the selected text: “" + (anchor.quote.length > 120 ? anchor.quote.slice(0, 120) + "…" : anchor.quote) + "”";
+  return anchor.kind === "tool" ? "Note on this tool call" : "Note on this message";
+}
+function openNote(anchor) {
+  if (!D) return;
+  NB = { anchor }; EDIT = null; nbLabel.textContent = describe(anchor); nbText.value = ""; nbMsg.textContent = "";
+  layoutRail(); composer.scrollIntoView({ block: "nearest" });
+}
+function closeNote() {
+  if (!NB) return;
+  const wasText = NB.anchor.kind === "text"; NB = null;
+  if (wasText && D) renderConv(); else layoutRail();   // a text note also removes the temporary selection highlight
+}
+async function saveNote() {
+  if (!NB) return;
+  if (!nbText.value.trim()) { nbMsg.textContent = "Write the note first."; return; }
+  try {
+    const r = await post("/api/review/annotations", { session_id: CUR, kind: "failure", note: nbText.value, anchor: NB.anchor });
+    ANN = ANN.filter(a => a.kind !== "no_failure"); ANN.push(r.annotation);
+    NB = null; setRow(r.status, r.notes); renderConv();
+    toast(r.notes === 1 ? "First failure saved. j for the next conversation." : "Note saved.");
+  } catch (e) { nbMsg.textContent = e.message; }
+}
+function setRow(status, notes) { const r = LIST.find(x => x.session_id === CUR); if (r) { r.status = status; r.notes = notes; } renderList(); }
+function noteSession() { if (!D) return; openNote({ kind: "session" }); }
+async function noFailure() {
+  if (!D) return;
+  try {
+    const r = await post("/api/review/annotations", { session_id: CUR, kind: "no_failure" });
+    ANN = ANN.filter(a => a.kind !== "no_failure"); ANN.push(r.annotation); setRow(r.status, r.notes); toast("No failure observed."); nextUnreviewed();
+  } catch (e) { toast(e.message); }
+}
+async function deleteNote(a) {
+  if (!confirm("Delete this note?")) return;
+  const r = await api("/api/review/annotations/" + a.id, { method: "DELETE" });
+  ANN = ANN.filter(x => x.id !== a.id); setRow(r.status, r.notes); renderConv();
+}
+
+// select text -> note on that exact text
+$("main").addEventListener("mouseup", () => {
+  if (!D || NB) return;
+  const sel = window.getSelection(); if (!sel.rangeCount || sel.isCollapsed) return;
+  const range = sel.getRangeAt(0), host = range.commonAncestorContainer.nodeType === 1 ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
+  const b = host && host.closest(".block"); if (!b) return;
+  const content = b.querySelector(".content"); if (!content.contains(range.startContainer) || !content.contains(range.endContainer)) return;
+  const pre = range.cloneRange(); pre.selectNodeContents(content); pre.setEnd(range.startContainer, range.startOffset);
+  const start = pre.toString().length, quote = range.toString(), end = start + quote.length;
+  if (!quote.trim()) return;
+  sel.removeAllRanges(); wrapRange(content, start, end, "pending");
+  openNote({ kind: "text", ref: b.dataset.ref, quote, start, end });
+});
+
+// ---------------- batches, Map and Progress (the skill's three views) ----------------
+function renderBanner(j) {
+  const b = $("banner"); b.replaceChildren();
+  if (j.batches.length) return;
+  const box = el("div", "box"); box.append(el("div", "", "No sample yet. Part B starts with batch 1: 15 uniformly sampled conversations plus 15 cluster representatives (never the scenarios left out as unrealistic)."));
+  const go = el("button", "primary", "Create batch 1"); go.style.marginTop = "4px";
+  go.onclick = async () => { go.disabled = true; go.textContent = "Selecting…"; try { const r = await post("/api/review/batch", { uniform: 15, clusters: 15 }); toast("Batch 1 ready: " + r.sessions + " conversations"); CUR = null; await loadList(); } catch (e) { toast(e.message); go.disabled = false; go.textContent = "Create batch 1"; } };
+  box.append(go); b.append(box);
+}
+// ---------------- Labels: one present or absent decision per conversation and final mode ----------------
+let LAB = null, LAB_CUR = [0, 0], LAB_TODO = false;
+async function loadLabels() { try { LAB = await api("/api/review/labels"); } catch (e) { $("labelWrap").replaceChildren(el("div", "bad", e.message)); return; } renderLabels(); }
+function labelRows() { return LAB.rows.filter(r => !LAB_TODO || LAB.modes.some(m => r.cells[m.name].label === null)); }
+function recount() { LAB.modes.forEach(m => { const c = { present: 0, absent: 0, undecided: 0 }; LAB.rows.forEach(r => { const v = r.cells[m.name].label; if (v === 1) c.present++; else if (v === 0) c.absent++; else c.undecided++; }); LAB.counts[m.name] = c; }); }
+async function setLabel(row, mode, label) {
+  try { await post("/api/review/labels", { session_id: row.session_id, mode, label }); } catch (e) { toast(e.message); return false; }
+  row.cells[mode].label = label; recount(); renderLabels(); return true;
+}
+function renderLabels() {
+  if (!LAB) return;
+  const wrap = $("labelWrap"), keep = wrap.scrollTop, bar = $("labelBar"); bar.replaceChildren();
+  const decided = LAB.modes.reduce((n, m) => n + LAB.counts[m.name].present + LAB.counts[m.name].absent, 0);
+  bar.append(el("strong", "", decided + " of " + (LAB.total * LAB.modes.length) + " decisions made (" + LAB.total + " conversations)"));
+  const lab = el("label"), cb = el("input"); cb.type = "checkbox"; cb.checked = LAB_TODO; cb.onchange = () => { LAB_TODO = cb.checked; cb.blur(); LAB_CUR = [0, 0]; renderLabels(); }; lab.append(cb, document.createTextNode(" only conversations with an open decision")); bar.append(lab);
+  const acc = el("button", "", "Confirm the proposals shown"); acc.onclick = confirmProposals;
+  const dry = el("button", "", "Check what would go to Langfuse"); dry.onclick = () => syncLabels(true);
+  const go = el("button", "primary", "Write scores to Langfuse"); go.onclick = () => syncLabels(false);
+  bar.append(acc, dry, go, el("span", "muted", "Dashed = proposed from your notes, not a decision yet.  Keys: arrows move, 1 present, 0 absent, Enter confirms the proposal, o opens the trace."));
+  const rows = labelRows(), t = el("table", "lt"), hd = el("tr"); hd.append(el("th", "", "Conversation"), el("th", "", "Your note"));
+  LAB.modes.forEach(m => { const th = el("th", "", m.name), c = LAB.counts[m.name]; th.title = m.definition + "\n\nBoundary: " + m.boundary; th.append(el("span", "", c.present + " present · " + c.absent + " absent · " + c.undecided + " open")); hd.append(th); });
+  t.append(hd);
+  LAB_CUR[0] = Math.max(0, Math.min(LAB_CUR[0], rows.length - 1)); LAB_CUR[1] = Math.max(0, Math.min(LAB_CUR[1], LAB.modes.length - 1));
+  rows.forEach((r, ri) => {
+    const tr = el("tr"), sc = el("td", "sc", r.scenario_id.replace("final-", "")); sc.title = "Open this conversation"; sc.onclick = () => gotoTrace(r.trace_id);
+    const nt = el("td", "nt", r.status === "no_failure" ? "no failure observed" : r.note.slice(0, 160)); tr.append(sc, nt);
+    LAB.modes.forEach((m, ci) => {
+      const cell = r.cells[m.name], td = el("td", "cell" + (ri === LAB_CUR[0] && ci === LAB_CUR[1] ? " cur" : "")), prop = cell.label === null;
+      const p = el("button", "lb p" + (cell.label === 1 ? " on" : "") + (prop && cell.proposed === 1 ? " prop" : ""), "present");
+      const a = el("button", "lb a" + (cell.label === 0 ? " on" : "") + (prop && cell.proposed === 0 ? " prop" : ""), "absent");
+      p.onclick = () => { LAB_CUR = [ri, ci]; setLabel(r, m.name, 1); }; a.onclick = () => { LAB_CUR = [ri, ci]; setLabel(r, m.name, 0); };
+      td.append(p, a); tr.append(td);
+    });
+    t.append(tr);
+  });
+  wrap.replaceChildren(t); wrap.scrollTop = keep;
+  const cur = wrap.querySelector("td.cur"); if (cur) cur.scrollIntoView({ block: "nearest", inline: "nearest" });
+}
+function labelKey(ev) {
+  if (!LAB) return; const rows = labelRows(), k = ev.key; if (!rows.length) return;
+  const row = rows[LAB_CUR[0]], mode = LAB.modes[LAB_CUR[1]].name;
+  if (k === "ArrowDown") LAB_CUR[0]++; else if (k === "ArrowUp") LAB_CUR[0]--; else if (k === "ArrowRight") LAB_CUR[1]++; else if (k === "ArrowLeft") LAB_CUR[1]--;
+  else if (k === "1") return void setLabel(row, mode, 1); else if (k === "0") return void setLabel(row, mode, 0);
+  else if (k === "Enter") { const pr = row.cells[mode].proposed; if (row.cells[mode].label === null && pr !== null) return void setLabel(row, mode, pr); return; }
+  else if (k === "o") return void gotoTrace(row.trace_id);
+  else return;
+  ev.preventDefault(); renderLabels();
+}
+async function confirmProposals() {
+  const todo = []; labelRows().forEach(r => LAB.modes.forEach(m => { const c = r.cells[m.name]; if (c.label === null && c.proposed !== null) todo.push([r, m.name, c.proposed]); }));
+  if (!todo.length) { toast("No proposals waiting."); return; }
+  if (!confirm("Record " + todo.length + " proposed decisions as yours? They come from your notes (a conversation with a failure note in a mode is proposed present; a no-failure conversation is proposed absent). You can change any of them afterwards.")) return;
+  for (const [r, m, v] of todo) { try { await post("/api/review/labels", { session_id: r.session_id, mode: m, label: v }); r.cells[m].label = v; } catch (e) { toast(e.message); break; } }
+  recount(); renderLabels(); toast("Recorded.");
+}
+async function syncLabels(dry) {
+  try {
+    const d = await post("/api/review/labels/sync", { dry_run: true }), parts = Object.entries(d.by_mode).map(([k, v]) => k + " " + v).join(", ");
+    if (dry) { toast(d.to_write + " scores waiting" + (parts ? " (" + parts + ")" : "") + "; Langfuse " + (d.langfuse_configured ? "is" : "is NOT") + " configured."); return; }
+    if (!d.to_write) { toast("Nothing new to write."); return; }
+    if (!confirm("Write " + d.to_write + " scores to your local Langfuse, and create the score configs for these modes if they do not exist?\n" + parts)) return;
+    const r = await post("/api/review/labels/sync", { dry_run: false }); toast("Wrote " + r.written + " scores to Langfuse.");
+  } catch (e) { toast(e.message); }
+}
+function switchView(v) {
+  VIEW = v; document.querySelectorAll("#views button").forEach(x => x.classList.toggle("sel", x.dataset.view === v));
+  $("traceView").hidden = v !== "trace"; $("mapView").hidden = v !== "map"; $("progressView").hidden = v !== "progress"; $("labelsView").hidden = v !== "labels";
+  if (v === "map") loadMap(); if (v === "progress") loadProgress(); if (v === "labels") loadLabels();
+}
+document.querySelectorAll("#views button").forEach(b => b.onclick = () => switchView(b.dataset.view));
+function gotoTrace(tid) {
+  const row = LIST.find(r => r.trace_ids.includes(tid)); if (!row) { toast("That trace is not in the review list."); return; }
+  switchView("trace"); openSession(row.session_id);
+}
+const HUES = ["#94a3b8", "#a78bfa", "#60a5fa", "#34d399", "#fbbf24", "#f472b6", "#22d3ee", "#fb923c"];
+async function loadMap() { GRAPH = await api("/api/graph"); drawMap(); }
+function drawMap() {
+  const cv = $("map"), nodes = (GRAPH && GRAPH.nodes) || [], dpr = window.devicePixelRatio || 1, w = cv.clientWidth, h = 560;
+  cv.width = w * dpr; cv.height = h * dpr; const ctx = cv.getContext("2d"); ctx.scale(dpr, dpr); ctx.clearRect(0, 0, w, h);
+  if (!nodes.length) { ctx.fillStyle = "#9ca3af"; ctx.font = "13px sans-serif"; ctx.fillText("No projection yet.", 20, 30); return; }
+  const byS = Object.fromEntries(LIST.map(r => [r.session_id, r])), xs = nodes.map(n => n.x), ys = nodes.map(n => n.y), pad = 30;
+  const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+  const sx = v => pad + (v - minX) / ((maxX - minX) || 1) * (w - 2 * pad), sy = v => pad + (v - minY) / ((maxY - minY) || 1) * (h - 2 * pad);
+  $("legend").innerHTML = (GRAPH.clusters || []).map(c => `<span><i style="background:${HUES[c % HUES.length]}"></i>cluster ${c}</span>`).join("") + '<span><i style="background:#fff;border:2px solid #1a1a1a"></i>in a batch</span><span><i style="background:#f97316"></i>reviewed</span>';
+  nodes.forEach(n => { const r = byS[n.session_id], inBatch = r && r.batch, done = r && r.status !== "unreviewed";
+    ctx.beginPath(); ctx.arc(sx(n.x), sy(n.y), inBatch ? 6.5 : 3.5, 0, Math.PI * 2); ctx.fillStyle = done ? "#f97316" : HUES[n.cluster % HUES.length]; ctx.fill();
+    if (inBatch) { ctx.lineWidth = 1.6; ctx.strokeStyle = "#1a1a1a"; ctx.stroke(); } });
+  cv._nodes = nodes.map(n => ({ ...n, px: sx(n.x), py: sy(n.y) }));
+}
+$("map").addEventListener("click", ev => {
+  const cv = $("map"), rect = cv.getBoundingClientRect(), mx = ev.clientX - rect.left, my = ev.clientY - rect.top, byS = Object.fromEntries(LIST.map(r => [r.session_id, r]));
+  let best = null, bd = 1e9; (cv._nodes || []).forEach(n => { const r = byS[n.session_id]; if (!r || !r.batch) return; const d = (n.px - mx) ** 2 + (n.py - my) ** 2; if (d < bd) { bd = d; best = n; } });
+  if (best && bd < 220) { switchView("trace"); openSession(best.session_id); } else toast("Click a ringed point: only conversations in a batch can be opened from the map.");
+});
+window.addEventListener("resize", () => { if (VIEW === "map" && GRAPH) drawMap(); });
+async function loadProgress() {
+  const [pat, sug] = await Promise.all([api("/api/patterns"), api("/api/suggestions")]); renderBatches(); renderTreemap(pat); renderQueue(sug);
+}
+function renderBatches() {
+  const box = $("batches"); box.replaceChildren(); const names = [...new Set(LIST.filter(r => r.batch).map(r => r.batch))];
+  if (!names.length) { box.append(el("div", "muted", "No batch yet. Create batch 1 from the Trace view.")); box.firstChild.style.padding = "8px 14px"; return; }
+  const t = el("table", "bt"); t.innerHTML = "<tr><th>batch</th><th>conversations</th><th>reviewed</th><th>with a failure note</th><th>no failure observed</th><th>still to review</th></tr>";
+  names.forEach(n => { const rows = LIST.filter(r => r.batch === n), f = rows.filter(r => r.status === "failure").length, o = rows.filter(r => r.status === "no_failure").length;
+    t.innerHTML += `<tr><td>${esc(n)}</td><td>${rows.length}</td><td>${f + o}</td><td>${f}</td><td>${o}</td><td>${rows.length - f - o}</td></tr>`; });
+  box.append(t); box.append(el("div", "muted", "Review at least 100 distinct traces over the four batches. Batch 1 here; later batches come from the sampling steps."));
+  box.lastChild.style.padding = "0 14px 6px";
+}
+function modesOf(p) { if (!p || typeof p !== "object") return []; if (Array.isArray(p.modes)) return p.modes.filter(m => m && m.name); return Object.entries(p).map(([name, m]) => ({ name, ...(m || {}) })); }
+function renderTreemap(p) {
+  const box = $("treemap"); box.replaceChildren(); const modes = modesOf(p);
+  if (!modes.length) { box.append(el("div", "muted", "No modes yet. After you finish a batch, ask the agent to group your notes. It proposes the groups; you accept, rename, merge, split or reject them.")); return; }
+  modes.sort((a, b) => (b.count || 0) - (a.count || 0)).forEach(m => {
+    const b = el("div", "mode-block"); const h = el("h3"); h.append(el("span", "", m.name), el("span", "pill", m.status || "candidate"), el("span", "count", String(m.count ?? (m.example_trace_ids || []).length)));
+    b.append(h, el("div", "def", m.definition || "")); const ul = el("ul"); const ids = m.example_trace_ids || [], q = m.example_quotes || [];
+    (q.length ? q : ids).slice(0, 6).forEach((v, i) => { const li = el("li", "", v.length > 90 ? v.slice(0, 90) + "…" : v); li.onclick = () => gotoTrace(q.length ? ids[i] : v); ul.append(li); });
+    b.append(ul); box.append(b); });
+}
+function renderQueue(items) {
+  const box = $("queue"); box.replaceChildren(); const pending = (items || []).filter(s => s.source !== "depth_search" && (!s.status || s.status === "pending")), done = (items || []).filter(s => s.status === "accepted" || s.status === "rejected");
+  if (!pending.length) { const d = el("div", "muted", "No suggestions waiting." + (done.length ? "  Decided so far: " + done.filter(s => s.status === "accepted").length + " accepted, " + done.filter(s => s.status === "rejected").length + " rejected." : "")); d.style.padding = "8px 14px"; box.append(d); return; }
+  const tools = el("div", "sg-tools"), all = el("input"); all.type = "checkbox"; all.checked = true; const lab = el("label"); lab.append(all, document.createTextNode(" select all"));
+  const acc = el("button", "primary", "Accept selected"), rej = el("button", "", "Reject selected"); tools.append(lab, acc, rej, el("span", "muted", pending.length + " waiting. Suggestions are not labels until you accept them.")); box.append(tools);
+  pending.forEach(s => { const row = el("div", "sg-row"); const c = el("input"); c.type = "checkbox"; c.checked = true; c.dataset.id = s.id; const q = el("span", "quote", "“" + (s.quote || "").slice(0, 120) + "”"); q.onclick = () => gotoTrace(s.trace_id);
+    row.append(c, el("strong", "", s.mode || ""), q); box.append(row); });
+  all.onchange = () => box.querySelectorAll(".sg-row input").forEach(c => c.checked = all.checked);
+  const decide = async d => { for (const c of box.querySelectorAll(".sg-row input:checked")) await post("/api/review/suggestions/" + c.dataset.id + "/decision", { decision: d }); await loadList(); loadProgress(); };
+  acc.onclick = () => decide("accept"); rej.onclick = () => decide("reject");
+}
+
+// ---------------- scenario info, help, keys ----------------
+function toggleInfo() { SHOW_INFO = !SHOW_INFO; if (D) renderConv(); toast(SHOW_INFO ? "Scenario info shown" : "Scenario info hidden"); }
+$("infoBtn").onclick = toggleInfo; $("helpBtn").onclick = () => { $("help").hidden = !$("help").hidden; };
+$("help").onclick = ev => { if (ev.target === $("help")) $("help").hidden = true; };
+$("batchF").onchange = () => { renderList(); const rows = visible(); if (rows.length && !rows.some(r => r.session_id === CUR)) openSession((rows.find(r => r.status === "unreviewed") || rows[0]).session_id); };
+$("q").oninput = renderList; $("roleF").onchange = renderList; $("todo").onchange = renderList;
+document.addEventListener("keydown", ev => {
+  const t = ev.target, typing = t.matches && t.matches("input, textarea, select, [contenteditable]");
+  if (ev.key === "Escape") {
+    if (!$("help").hidden) { $("help").hidden = true; return; }
+    if (NB) { closeNote(); $("conv").focus(); return; }
+    if (typing) { t.blur(); return; }
+  }
+  if (typing || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+  const k = ev.key;
+  if (k === "t") switchView("trace"); else if (k === "m") switchView("map"); else if (k === "p") switchView("progress"); else if (k === "l") switchView("labels");
+  else if (VIEW === "labels") labelKey(ev);
+  else if (VIEW !== "trace") return;
+  else if (k === "j") step(1); else if (k === "k") step(-1); else if (k === "n") nextUnreviewed();
+  else if (k === "a") { ev.preventDefault(); noteSession(); } else if (k === "o") noFailure();
+  else if (k === "i") toggleInfo(); else if (k === "u") { $("todo").checked = !$("todo").checked; renderList(); }
+  else if (k === "/") { ev.preventDefault(); $("q").focus(); } else if (k === "?") $("help").hidden = !$("help").hidden;
+  else if (k === "Enter" && t.classList && t.classList.contains("block")) {
+    ev.preventDefault(); openNote({ kind: t.dataset.kind, ref: t.dataset.ref });
+  }
+});
+loadList().catch(e => { $("list").replaceChildren(el("div", "bad", "Could not load conversations: " + e.message)); });
+</script>
+</body>
+</html>

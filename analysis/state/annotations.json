@@ -1,1 +1,2172 @@
-{"annotations": []}
+{
+  "annotations": [
+    {
+      "id": "12e69f37f507",
+      "session_id": "67465f24d1b24eb48d81cfd570836b7e",
+      "scenario_id": "final-040",
+      "trace_id": "a94bfd11dff245aa6438fed10e629cfc",
+      "kind": "failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "why is the agent unable to pull up product details for the merchant that requested information? catastrophic failure. missing tool for the item itself?",
+      "created_at": "2026-11-11T18:11:32+00:00"
+    },
+    {
+      "id": "fc3230c24b29",
+      "session_id": "63fc68ca1f494b0797e659623dbe7e4c",
+      "scenario_id": "final-205",
+      "trace_id": "bb10079c6147094b0b5ecf3e49bf147e",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T18:11:58+00:00"
+    },
+    {
+      "id": "042bf5514409",
+      "session_id": "f30e117547da4d04bb9982c1b15ecaa2",
+      "scenario_id": "final-014",
+      "trace_id": "becc436e34c01c6f4938c057e3d260e3",
+      "kind": "failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "unusual user query why would the merchant identify themselves like that. also weird the way they asked about the process. for the agent itself, it doesn't make sense to look up the orders, they should be able to find the product, and not ask the merchant for that ID",
+      "created_at": "2026-11-11T18:19:49+00:00"
+    },
+    {
+      "id": "bfe4aec2047a",
+      "session_id": "cc6937c9f8404b4e8d7fd6b34e528577",
+      "scenario_id": "final-051",
+      "trace_id": "d9b59ad2daf860b6ceda38b871af399d",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "d9b59ad2daf860b6ceda38b871af399d:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent reply that a support agent will review request when they are the support agent",
+      "created_at": "2026-11-11T20:51:44+00:00"
+    },
+    {
+      "id": "e7c6aed9b5af",
+      "session_id": "1e5a68e92fa547c5bc71197334956d78",
+      "scenario_id": "final-174",
+      "trace_id": "1accda77d1d896377ad8b1042cb11688",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T20:52:14+00:00",
+      "superseded_at": "2026-11-14T18:57:59+00:00",
+      "superseded_by": "66f0bb8eb5c9"
+    },
+    {
+      "id": "9fdc0889baf5",
+      "session_id": "fc28bd44d2eb42368060fce28a83f331",
+      "scenario_id": "final-031",
+      "trace_id": "088f5cc5a990d3cde3757587a3b2d48a",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "088f5cc5a990d3cde3757587a3b2d48a:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "bad response, couldn't find the item and offered to refund something else unnecessarily",
+      "created_at": "2026-11-11T20:58:06+00:00"
+    },
+    {
+      "id": "35b3fb1df241",
+      "session_id": "16212726247d430abc94d66642139e88",
+      "scenario_id": "final-156",
+      "trace_id": "065df2141b14af8a59462de602bc8cc5",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T20:58:32+00:00"
+    },
+    {
+      "id": "4e0053dff14d",
+      "session_id": "35dbea4a892d4316b2f30d73cf6a6253",
+      "scenario_id": "final-021",
+      "trace_id": "680606da3c34c0d126bf9f01e4e96d5e",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "680606da3c34c0d126bf9f01e4e96d5e:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "couldn't find the order from query but unnecessary to send the other orders that were placed",
+      "created_at": "2026-11-11T20:59:24+00:00"
+    },
+    {
+      "id": "ae5e57759e29",
+      "session_id": "b0b2f57afebf461a97d8aefd448852c5",
+      "scenario_id": "final-198",
+      "trace_id": "0b73aad7ee2c8d25c869f8810b6baea1",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "0b73aad7ee2c8d25c869f8810b6baea1:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent initiated the refund but the user query asked for the process. overeager",
+      "created_at": "2026-11-11T21:00:16+00:00"
+    },
+    {
+      "id": "003dd6a98a97",
+      "session_id": "e127baca736f40c3a36da6d43858e67c",
+      "scenario_id": "final-222",
+      "trace_id": "31788d35052bb6662a1fd6c39d034a20",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:00:46+00:00",
+      "superseded_at": "2026-11-14T18:58:21+00:00",
+      "superseded_by": "286ca86f9b7f"
+    },
+    {
+      "id": "a9a9d3e67695",
+      "session_id": "3a7b5e0259de4bbe9aa2a3e3fb6cc5d0",
+      "scenario_id": "final-030",
+      "trace_id": "1d24d61f98ad072fd121af27626133c4",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "1d24d61f98ad072fd121af27626133c4:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent should have looked up the order id",
+      "created_at": "2026-11-11T21:01:24+00:00"
+    },
+    {
+      "id": "93a3758c10b7",
+      "session_id": "e583b4fe92f34085be090ec7c7fda32d",
+      "scenario_id": "final-071",
+      "trace_id": "0151b5bf790dc90c65e9f69d336454b7",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:01:59+00:00",
+      "superseded_at": "2026-11-14T18:57:48+00:00",
+      "superseded_by": "ffe371efd3c3"
+    },
+    {
+      "id": "be3ab986c2d3",
+      "session_id": "6f942c2d59e94c40b3e2d2da859e8870",
+      "scenario_id": "final-005",
+      "trace_id": "0587f5cc5721aeeafb67afb420e9635f",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:02:35+00:00"
+    },
+    {
+      "id": "96f8c4ab5b8c",
+      "session_id": "bac37ac30f9542e7bd4562c52c4121b2",
+      "scenario_id": "final-009",
+      "trace_id": "147c038f3d2c351aa551d90b52f8ad49",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "147c038f3d2c351aa551d90b52f8ad49:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent should have confirmed the order if it was applicable for return from the delivery date",
+      "created_at": "2026-11-11T21:03:25+00:00"
+    },
+    {
+      "id": "fcd899790576",
+      "session_id": "5677fe0288644ade915beb8562ddf791",
+      "scenario_id": "final-139",
+      "trace_id": "037dd385f56af33805dec224df51e457",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "037dd385f56af33805dec224df51e457:2",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "highlighted the cartwheel return policy instead of the store-specific information",
+      "created_at": "2026-11-11T21:05:27+00:00"
+    },
+    {
+      "id": "c7e3de569ede",
+      "session_id": "8924cf66812f402488e976ba66f0714f",
+      "scenario_id": "final-016",
+      "trace_id": "3c7e60f33d265d7fb515c49c53fe846a",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "3c7e60f33d265d7fb515c49c53fe846a:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent should have not listed the random items it found... too much information for the user",
+      "created_at": "2026-11-11T21:06:14+00:00"
+    },
+    {
+      "id": "759c94c6ebad",
+      "session_id": "96263e42b5384390b7506313bc5c97c7",
+      "scenario_id": "final-104",
+      "trace_id": "14199400f1350897dfe2afce25f019d9",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "14199400f1350897dfe2afce25f019d9:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent keeps referencing cartwheel shipping policy instead of the store policy",
+      "created_at": "2026-11-11T21:06:45+00:00"
+    },
+    {
+      "id": "d13fbb63747f",
+      "session_id": "555582aa53f14b829511d3dfca8a1b89",
+      "scenario_id": "final-223",
+      "trace_id": "064a3ba1e45bbba15c39691a8f545f69",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:06:57+00:00"
+    },
+    {
+      "id": "929b29ea0985",
+      "session_id": "5028108d6994477a9a60c6879ec76a3f",
+      "scenario_id": "final-002",
+      "trace_id": "83992d3e78b7593521e56d84c4121dce",
+      "kind": "failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "concerning conversation because the agent was eager to process the refund and should have confirmed but didn't and the user actually meant another item.",
+      "created_at": "2026-11-11T21:12:34+00:00"
+    },
+    {
+      "id": "0d57551ee6fe",
+      "session_id": "4ea1832d17e947bdaef623adb58746ff",
+      "scenario_id": "final-026",
+      "trace_id": "aec547ae0f66ead21ae070ac74b2b215",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:12:55+00:00"
+    },
+    {
+      "id": "aa985a6b36d1",
+      "session_id": "f8b646229200484abab319508c36d7dc",
+      "scenario_id": "final-103",
+      "trace_id": "05cf887870c563229ac35975c9812c2e",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "05cf887870c563229ac35975c9812c2e:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "really bad failure. keeps referencing the cartwheel policy instead of the store policy",
+      "created_at": "2026-11-11T21:13:22+00:00"
+    },
+    {
+      "id": "490f8f7e9bdd",
+      "session_id": "e32bcace9d2241d7a0dbded23563d8b4",
+      "scenario_id": "final-126",
+      "trace_id": "9c4e9d70fe5b44043f0354aa93afe6a8",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:13:59+00:00",
+      "superseded_at": "2026-11-14T18:57:07+00:00",
+      "superseded_by": "b4109b71bb6c"
+    },
+    {
+      "id": "43c33445e4d3",
+      "session_id": "11e5ff69c3e74e38881a6140a0944e36",
+      "scenario_id": "final-142",
+      "trace_id": "10295e72ca5b239dfa33d2a1a36ae4e9",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "10295e72ca5b239dfa33d2a1a36ae4e9:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "why didnt the agent look up this for the support person without the order ID?",
+      "created_at": "2026-11-11T21:14:35+00:00"
+    },
+    {
+      "id": "7d139871d153",
+      "session_id": "855373b69305416ab2bb374e2fd04428",
+      "scenario_id": "final-094",
+      "trace_id": "197226813942874b87bf2be5b2943baf",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "197226813942874b87bf2be5b2943baf:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "pretty formal response",
+      "created_at": "2026-11-11T21:17:07+00:00"
+    },
+    {
+      "id": "e277337a221a",
+      "session_id": "502ba68b2d6f4e208f90698638c0355d",
+      "scenario_id": "final-250",
+      "trace_id": "01e1e121909d6992e78d890eb486f3dd",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:17:35+00:00",
+      "superseded_at": "2026-11-14T18:58:51+00:00",
+      "superseded_by": "f5a7c8463fd1"
+    },
+    {
+      "id": "4a7f33625c4c",
+      "session_id": "01ec3d2ac0884de9abc62340faad938a",
+      "scenario_id": "final-168",
+      "trace_id": "97a35631214a87af25b52a3a5b39bb2b",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:17:49+00:00"
+    },
+    {
+      "id": "ed24b655c0db",
+      "session_id": "82c4f4eafcd84d7487b6f975105db86b",
+      "scenario_id": "final-220",
+      "trace_id": "f8b969283cb7c6e4d6df57f30f4b8de1",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "f8b969283cb7c6e4d6df57f30f4b8de1:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent should have asked for clarification if it found multiple orders",
+      "created_at": "2026-11-11T21:19:12+00:00"
+    },
+    {
+      "id": "9a5a64a30b09",
+      "session_id": "9b686a89e03344a0963d3b6eeeac7cc6",
+      "scenario_id": "final-192",
+      "trace_id": "c02e53c7588465878f9a65ab9c3dadac",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "c02e53c7588465878f9a65ab9c3dadac:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent should have given better advice how the merchant can handle the situation",
+      "created_at": "2026-11-11T21:19:51+00:00"
+    },
+    {
+      "id": "79a58800a6ae",
+      "session_id": "be3bdf432c4b4ccb9241857f0d53af30",
+      "scenario_id": "final-028",
+      "trace_id": "7223eb433b22dc2a8654fb8dcee8386a",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "7223eb433b22dc2a8654fb8dcee8386a:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "-$5.00 doesn't seem like an error, it definitely is",
+      "created_at": "2026-11-11T21:20:44+00:00"
+    },
+    {
+      "id": "87fb863f88dd",
+      "session_id": "8f09e728c6fe485ca6e44fd194876e8f",
+      "scenario_id": "final-027",
+      "trace_id": "11d5a4066f0d9113f3ecdaf5e32125ff",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "11d5a4066f0d9113f3ecdaf5e32125ff:2",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent should not have told shopper about a -$5 item",
+      "created_at": "2026-11-11T21:21:05+00:00"
+    },
+    {
+      "id": "58d96c8bc630",
+      "session_id": "5cd29750383c4a46ab236ca6b7da505e",
+      "scenario_id": "final-096",
+      "trace_id": "1ed719aa1aa44b7d3948507c362b8d42",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:21:23+00:00"
+    },
+    {
+      "id": "6fc375890a91",
+      "session_id": "75e28c7f565340d98496837700ac024e",
+      "scenario_id": "final-007",
+      "trace_id": "24883b00add622816d756bddd2be3727",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T21:21:42+00:00"
+    },
+    {
+      "id": "a9684ff23508",
+      "session_id": "2f19d4a6645f41c19eb625b3c643f16c",
+      "scenario_id": "final-210",
+      "trace_id": "ed709a03e7738079a79a7e076106dee7",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "ed709a03e7738079a79a7e076106dee7:4",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "agent should have verified these are the store's policies instead of telling the user to look up the instructions",
+      "created_at": "2026-11-11T21:22:35+00:00"
+    },
+    {
+      "id": "f102c59954fd",
+      "session_id": "acf889b2af33468e916596b20104fbba",
+      "scenario_id": "final-237",
+      "trace_id": "2aa7fa18d3c9ea17cd493828d04c2824",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "2aa7fa18d3c9ea17cd493828d04c2824:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "support role asked the agent to do something and the agent then said it would escalate to another support role? that odesn't make sense",
+      "created_at": "2026-11-11T22:32:29+00:00"
+    },
+    {
+      "id": "be527e3fdd29",
+      "session_id": "5e93f3624b3d46e99cdffe972e17c288",
+      "scenario_id": "final-231",
+      "trace_id": "e672ed9c9469d8ec8f8a578c0ff47b7f",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T22:32:38+00:00"
+    },
+    {
+      "id": "2a2d5f5ef251",
+      "session_id": "10f6ad13013848b78cb627a045941d7f",
+      "scenario_id": "final-059",
+      "trace_id": "f62d87064591fdb9e3c5ebba9846e6c3",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-11T22:32:48+00:00"
+    },
+    {
+      "id": "90bc293e97a2",
+      "session_id": "9ca1890cb45a4082b481f65914bc34ac",
+      "scenario_id": "final-186",
+      "trace_id": "b5cb636269c621483e18bc3488f5b1be",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "b5cb636269c621483e18bc3488f5b1be:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have used find_order first ... does the item actually exist",
+      "created_at": "2026-11-11T22:33:37+00:00"
+    },
+    {
+      "id": "526948216e03",
+      "session_id": "b451f7b02e7d47a99612e23dbfa754eb",
+      "scenario_id": "final-034",
+      "trace_id": "ed101d137cec6f2e40f5c32f5f447f09",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:30:31+00:00",
+      "superseded_at": "2026-11-14T18:57:21+00:00",
+      "superseded_by": "c9cf20632ee1"
+    },
+    {
+      "id": "bdf616329e1b",
+      "session_id": "71949f3d9d8747a2922a37873ae2b30b",
+      "scenario_id": "final-212",
+      "trace_id": "cba13eef9421c6bcae64cce57433d2b5",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "cba13eef9421c6bcae64cce57433d2b5:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "referencing cartwheel instead of the store policy. would be more useful if there were specific dates",
+      "created_at": "2026-11-14T17:31:10+00:00"
+    },
+    {
+      "id": "43b2bc042ec0",
+      "session_id": "1a29fe21b6424609949d34c753e1a805",
+      "scenario_id": "final-196",
+      "trace_id": "c04405a4027a64e879af0d1f6fe7c59d",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "c04405a4027a64e879af0d1f6fe7c59d:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "keeps referencing cartwheel policy instead of store. could be more helpful if there were dates",
+      "created_at": "2026-11-14T17:31:52+00:00"
+    },
+    {
+      "id": "baecb81bcea4",
+      "session_id": "a12637aeec974cc0b43e49e302b67a30",
+      "scenario_id": "final-180",
+      "trace_id": "2d14514a617e418ebed622fd62b44d31",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "2d14514a617e418ebed622fd62b44d31:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "extremely unhelpful, and support role should have more privileges to view account information",
+      "created_at": "2026-11-14T17:32:56+00:00"
+    },
+    {
+      "id": "6ba1a148e80f",
+      "session_id": "0aa09517ce8d4169bf6da964c433f19c",
+      "scenario_id": "final-029",
+      "trace_id": "90870616ba971337b1a51427631dd85e",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:33:05+00:00"
+    },
+    {
+      "id": "4a43d66722a6",
+      "session_id": "3e13bbe09cab45d3ae110527b0e5ce59",
+      "scenario_id": "final-191",
+      "trace_id": "e6791d7f43a12a27be36d5faa430b4b1",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:33:12+00:00",
+      "superseded_at": "2026-11-14T18:58:43+00:00",
+      "superseded_by": "34edb502225b"
+    },
+    {
+      "id": "a4053b025509",
+      "session_id": "8f74d5d4ca234de7803e3993dded1a25",
+      "scenario_id": "final-208",
+      "trace_id": "791b5c945f4277eb905edb5a1d537e7c",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:33:45+00:00",
+      "superseded_at": "2026-11-14T18:58:11+00:00",
+      "superseded_by": "751aff18e19e"
+    },
+    {
+      "id": "5b75c20216d8",
+      "session_id": "7ce55cfdf3cc467c962cb8bbc1b77626",
+      "scenario_id": "final-100",
+      "trace_id": "baf4477a596c4b6f635706bfdb409039",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:34:01+00:00"
+    },
+    {
+      "id": "f031309a4b09",
+      "session_id": "3f35de670b9345efa7ad767a7be28391",
+      "scenario_id": "final-155",
+      "trace_id": "54771743ec9ca777def1d43e0de89495",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:34:09+00:00"
+    },
+    {
+      "id": "97da5e3ca451",
+      "session_id": "9abdf6dab58b4820be8bcbf0ed6cb53f",
+      "scenario_id": "final-012",
+      "trace_id": "ed9a8d84d3e2bd73e43220a076091493",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:34:31+00:00"
+    },
+    {
+      "id": "5cb1aee87c6d",
+      "session_id": "a843ef751f4f4261ab043a9d6462e11d",
+      "scenario_id": "final-214",
+      "trace_id": "3e0463f5aec11362c33fd2a1bf35839f",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:34:53+00:00"
+    },
+    {
+      "id": "5021f71c4802",
+      "session_id": "037209025df84aea884fad3a2089345f",
+      "scenario_id": "final-143",
+      "trace_id": "cd8fdc9bd2535f4abf9a88c7064d743d",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "cd8fdc9bd2535f4abf9a88c7064d743d:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "unusual behavior to respond to support to contact support team",
+      "created_at": "2026-11-14T17:35:26+00:00"
+    },
+    {
+      "id": "c87cfd02cfbb",
+      "session_id": "dca7316ef70a4bfdb7b0ce24d2f69839",
+      "scenario_id": "final-193",
+      "trace_id": "2865c59b36987754a21bbd67d8a6e3eb",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:35:52+00:00"
+    },
+    {
+      "id": "ba2047c7cbe9",
+      "session_id": "96dd2864e4f142898d42ece864114320",
+      "scenario_id": "final-131",
+      "trace_id": "05f19ca397f3b13f0e80d519834dda32",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:36:13+00:00"
+    },
+    {
+      "id": "0f28e675d77e",
+      "session_id": "e7ab40671de94e2f8f60e1f1dd76d8b2",
+      "scenario_id": "final-179",
+      "trace_id": "5084d193206b9de7f4527c38933b8b62",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "5084d193206b9de7f4527c38933b8b62:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "referencing cartwheel instead of the store",
+      "created_at": "2026-11-14T17:36:27+00:00"
+    },
+    {
+      "id": "c77d81cf3c87",
+      "session_id": "9ef282013de241b4b65754df68e15c4d",
+      "scenario_id": "final-105",
+      "trace_id": "d5bb8d9e3025df5af1c4bbf715d8d574",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:36:39+00:00"
+    },
+    {
+      "id": "e27b2e82a7ce",
+      "session_id": "321af6ba41e341c7a4d50d06aa7de1a0",
+      "scenario_id": "final-149",
+      "trace_id": "f231f8e4d8b209d44ec9f7f9954f499d",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "f231f8e4d8b209d44ec9f7f9954f499d:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "unusual for agent to explain the order id that was looked up, should have asked to confirm, then give further instructions",
+      "created_at": "2026-11-14T17:41:21+00:00"
+    },
+    {
+      "id": "eac2e4d36b90",
+      "session_id": "94a29dd2c33649cfa910f390e1781ab8",
+      "scenario_id": "final-245",
+      "trace_id": "f7a7d4fff5dd272e495bb3fcac8c78ac",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "f7a7d4fff5dd272e495bb3fcac8c78ac:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "very annoying agent keeps referencing cartwheel policy instead of the store policy",
+      "created_at": "2026-11-14T17:41:46+00:00"
+    },
+    {
+      "id": "993b07477c58",
+      "session_id": "71de0a4ff9874b2c81e1cb27a545d76f",
+      "scenario_id": "final-217",
+      "trace_id": "710e9503961f8e409bf2315478f8a295",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:41:59+00:00"
+    },
+    {
+      "id": "05f3e2d71e14",
+      "session_id": "d54259e1b4174f2b9f4d73728b35b5be",
+      "scenario_id": "final-037",
+      "trace_id": "3e011c80bc2e7277942a771d2a924232",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:42:16+00:00"
+    },
+    {
+      "id": "a632bd09bd0f",
+      "session_id": "f7cbd65870a04fadafbb8d235c1f2b99",
+      "scenario_id": "final-043",
+      "trace_id": "54b21a7ed450abed1b02229448619084",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:42:32+00:00"
+    },
+    {
+      "id": "71a76acd2006",
+      "session_id": "24ce5eed126e4a179445317997025079",
+      "scenario_id": "final-110",
+      "trace_id": "acb4c71aa737592b6adc42add196aaef",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:42:43+00:00",
+      "superseded_at": "2026-11-14T18:58:33+00:00",
+      "superseded_by": "4da605667b6f"
+    },
+    {
+      "id": "9efcf7da6e75",
+      "session_id": "6f3e062e09b44c7897679b77d9356a77",
+      "scenario_id": "final-065",
+      "trace_id": "0dfff7c6b03bce6acc90521e5cf3f0b0",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "0dfff7c6b03bce6acc90521e5cf3f0b0:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "stop referencing cartwheel policy instead of the store policy",
+      "created_at": "2026-11-14T17:43:01+00:00"
+    },
+    {
+      "id": "01175f668143",
+      "session_id": "d7b375c6426c441ebcfbdf3a6d631ac6",
+      "scenario_id": "final-048",
+      "trace_id": "35df7967065fb753c556b945e9dacc04",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:43:12+00:00",
+      "superseded_at": "2026-11-14T18:57:32+00:00",
+      "superseded_by": "6be8b1fdffb2"
+    },
+    {
+      "id": "279087b8ecd2",
+      "session_id": "fe5ed7b0ecbe46ed8cdd92425298488b",
+      "scenario_id": "final-080",
+      "trace_id": "84f5fa27b4bfadc38c243f76535d1fb0",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "84f5fa27b4bfadc38c243f76535d1fb0:7",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have escalated to human agent to start a dispute instead of automatically refunding",
+      "created_at": "2026-11-14T17:43:47+00:00"
+    },
+    {
+      "id": "7060a9347008",
+      "session_id": "96309f994ff8486895cf73956b1f095f",
+      "scenario_id": "final-067",
+      "trace_id": "8a7749c10e735132d687bf9d7db438a2",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T17:43:57+00:00"
+    },
+    {
+      "id": "51d77f7d6394",
+      "session_id": "06fcc8326c3c49a1b9a780a76a6a7478",
+      "scenario_id": "final-230",
+      "trace_id": "81687d790376714a32266df2e6b4d7c6",
+      "kind": "failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "references cartwheel policy, does not give dates, not helpful",
+      "created_at": "2026-11-14T18:05:45+00:00"
+    },
+    {
+      "id": "8d35d09d6cd4",
+      "session_id": "90c86b59719048049e36bcfd52124140",
+      "scenario_id": "final-181",
+      "trace_id": "b938d527490938168b210489e27895fe",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "b938d527490938168b210489e27895fe:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "not helpful - need different policy for not delivered and unclear why not refund eligible and based on trying to get refund, should have immediately escalated to human agent",
+      "created_at": "2026-11-14T18:08:54+00:00"
+    },
+    {
+      "id": "9ec3912c3097",
+      "session_id": "d000a6970a564776b6a93cea9a2373fe",
+      "scenario_id": "final-087",
+      "trace_id": "8b01146ab324bdcc74426549bb0684bc",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "8b01146ab324bdcc74426549bb0684bc:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "references cartwheel policy and does not offer to start the return process or answer the user question",
+      "created_at": "2026-11-14T18:09:36+00:00"
+    },
+    {
+      "id": "356c850370b9",
+      "session_id": "77baec4c41014bce803195a633203d75",
+      "scenario_id": "final-145",
+      "trace_id": "60d1e18767a70ea16c72bda8e6db9bbe",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "60d1e18767a70ea16c72bda8e6db9bbe:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have asked for the confirmation of the order id if duplicate items found",
+      "created_at": "2026-11-14T18:10:08+00:00"
+    },
+    {
+      "id": "737652af09d1",
+      "session_id": "aa349fee66984e559237cfe0e19cc4db",
+      "scenario_id": "final-228",
+      "trace_id": "72c9c63ac49bc00417f94a1248da65cd",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "72c9c63ac49bc00417f94a1248da65cd:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "keeps referencing cartwheel",
+      "created_at": "2026-11-14T18:10:37+00:00"
+    },
+    {
+      "id": "983950553f0c",
+      "session_id": "2964e6ec9d864cbb9d127d20c796f405",
+      "scenario_id": "final-091",
+      "trace_id": "5beb7015dbaa8e0b475261dbc250de1f",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "5beb7015dbaa8e0b475261dbc250de1f:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "definitely should have asked for refund reason before starting the refund even if the user's tone was urgent",
+      "created_at": "2026-11-14T18:11:04+00:00"
+    },
+    {
+      "id": "a98dc05f3c30",
+      "session_id": "a8160451743f470cb58e4a2325f73ac5",
+      "scenario_id": "final-053",
+      "trace_id": "d7633835f952310e3c672372823fd59d",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "d7633835f952310e3c672372823fd59d:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "presenting an item with negative price is not useful",
+      "created_at": "2026-11-14T18:11:44+00:00"
+    },
+    {
+      "id": "3dbc38defa61",
+      "session_id": "69726a2f593e428ba05aed8101b226d5",
+      "scenario_id": "final-038",
+      "trace_id": "6e943dd821fef5c3f616c20a60768334",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:11:51+00:00"
+    },
+    {
+      "id": "1b966ccf7a5e",
+      "session_id": "8ab6ddccb21c42da8c48c69b2a9997b0",
+      "scenario_id": "final-129",
+      "trace_id": "ebee3e4a4fc399f7d010810d9671fd69",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "ebee3e4a4fc399f7d010810d9671fd69:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have asked for refund reason before jumping into immediately processing even though the user demanded a refund",
+      "created_at": "2026-11-14T18:12:16+00:00"
+    },
+    {
+      "id": "d6e8a20eeb15",
+      "session_id": "d38459ce0dbb49e1b700f88b5a82a384",
+      "scenario_id": "final-189",
+      "trace_id": "3a0c1ba514aa2878ede3a91d386e8c3c",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "3a0c1ba514aa2878ede3a91d386e8c3c:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "referencing cartwheel policy",
+      "created_at": "2026-11-14T18:12:41+00:00"
+    },
+    {
+      "id": "cf3547592630",
+      "session_id": "b98e51c9ad424941a8bc9f84b688e8ee",
+      "scenario_id": "final-229",
+      "trace_id": "b2bf20c99c612fdbb1e5b12222d2f146",
+      "kind": "failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "really should have confirmed the order ID instead of raising how there are two items under different orders",
+      "created_at": "2026-11-14T18:13:23+00:00"
+    },
+    {
+      "id": "5da050e4760a",
+      "session_id": "22c4ed41e9ef4c7ebd410b605715623d",
+      "scenario_id": "final-018",
+      "trace_id": "6667f127785432691089b08736fc822b",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:13:49+00:00"
+    },
+    {
+      "id": "5d183e0728a6",
+      "session_id": "f7e773fe88a04b6b85bac32b5295ceac",
+      "scenario_id": "final-219",
+      "trace_id": "69bbb0a5bf4619de8103098b9e9b9e7b",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:14:07+00:00"
+    },
+    {
+      "id": "1efb30084757",
+      "session_id": "2bac47182d7b4f699d984e5e3351253f",
+      "scenario_id": "final-130",
+      "trace_id": "98cf02cc68411ffd4c41d679515ea567",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "98cf02cc68411ffd4c41d679515ea567:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have confirmed refund reason before writing a refund",
+      "created_at": "2026-11-14T18:14:49+00:00"
+    },
+    {
+      "id": "61f416cc1a8b",
+      "session_id": "82a0e3c4128f441f9095fbb02808bd15",
+      "scenario_id": "final-042",
+      "trace_id": "e62a6a923f82e7d788b920ba0b4cf16b",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "e62a6a923f82e7d788b920ba0b4cf16b:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "behaved correctly but the lookup showed a different cost than what they told the user",
+      "created_at": "2026-11-14T18:15:44+00:00"
+    },
+    {
+      "id": "e207a83d770b",
+      "session_id": "55dc0448b7184fa08dedb75b3743bf1e",
+      "scenario_id": "final-049",
+      "trace_id": "0eee16f4375b9a81c5071ba64531f1d5",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:16:04+00:00"
+    },
+    {
+      "id": "12728e0c6be1",
+      "session_id": "e7d378020d8e4eacb600db8c80abc015",
+      "scenario_id": "final-183",
+      "trace_id": "36d0d0ce4721c64ebf9c500c557a6308",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "36d0d0ce4721c64ebf9c500c557a6308:4",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "failure to create realistic scenario; agent mostly behaved correctly on security, but gave away too much info by referencing cartwheel policy",
+      "created_at": "2026-11-14T18:17:31+00:00"
+    },
+    {
+      "id": "113de8368207",
+      "session_id": "7684c54e8d344477a71c2767be5bd09c",
+      "scenario_id": "final-052",
+      "trace_id": "17c3ad7240c4f6cb02c1040574ecdc2f",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "17c3ad7240c4f6cb02c1040574ecdc2f:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have looked up the order",
+      "created_at": "2026-11-14T18:17:52+00:00"
+    },
+    {
+      "id": "29aeff2342f7",
+      "session_id": "8c0193e6bf2a4299898a33e86b964084",
+      "scenario_id": "final-163",
+      "trace_id": "3a093fe5feadc613298313be2d463fb3",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:18:34+00:00"
+    },
+    {
+      "id": "ae122a2b4b3e",
+      "session_id": "a5182e80a6f9470986b839424238b856",
+      "scenario_id": "final-070",
+      "trace_id": "6f3f5d8ecc85b98a2fe41e8549c241b0",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "6f3f5d8ecc85b98a2fe41e8549c241b0:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "referencing cartwheel policy",
+      "created_at": "2026-11-14T18:18:56+00:00"
+    },
+    {
+      "id": "89c7dcffffc0",
+      "session_id": "b22e7090d6f44805a1779336a6536e84",
+      "scenario_id": "final-184",
+      "trace_id": "2a1f5e2dbe5406d632af99383477c3ac",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "2a1f5e2dbe5406d632af99383477c3ac:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have verified write action",
+      "created_at": "2026-11-14T18:19:16+00:00"
+    },
+    {
+      "id": "185bd9cdd33e",
+      "session_id": "beb3c4397c3a4febae455776e87869b8",
+      "scenario_id": "final-020",
+      "trace_id": "a0a4bc9038264d1648d269e937740aec",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:19:53+00:00"
+    },
+    {
+      "id": "1494c13c3498",
+      "session_id": "c218f148475f488d8361a230f88ea0a4",
+      "scenario_id": "final-227",
+      "trace_id": "5b69cdbc32c2bc0839ac43db3bc6455a",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "5b69cdbc32c2bc0839ac43db3bc6455a:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "cartwheel policy",
+      "created_at": "2026-11-14T18:20:14+00:00"
+    },
+    {
+      "id": "6d3098ee3f96",
+      "session_id": "664b8df80ac24897b2abd5593dfcb5e5",
+      "scenario_id": "final-017",
+      "trace_id": "c68a188d214b8a6a368a78960f756c3c",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "c68a188d214b8a6a368a78960f756c3c:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have confirmed write action",
+      "created_at": "2026-11-14T18:20:32+00:00"
+    },
+    {
+      "id": "174403c27167",
+      "session_id": "f12eec0cfab84da1ab51d9b9c96fc82b",
+      "scenario_id": "final-015",
+      "trace_id": "600b10cf7fee953c7e658573224634b8",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "600b10cf7fee953c7e658573224634b8:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have looked up order",
+      "created_at": "2026-11-14T18:21:58+00:00"
+    },
+    {
+      "id": "ab24802b8bdf",
+      "session_id": "446fcae7444f4b1e9b9c269f4fe3b591",
+      "scenario_id": "final-013",
+      "trace_id": "17c41f2bfefa5a550e357dec676e0861",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:54:02+00:00",
+      "superseded_at": "2026-11-14T18:56:54+00:00",
+      "superseded_by": "045c10f1f76b"
+    },
+    {
+      "id": "045c10f1f76b",
+      "session_id": "446fcae7444f4b1e9b9c269f4fe3b591",
+      "scenario_id": "final-013",
+      "trace_id": "17c41f2bfefa5a550e357dec676e0861",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:56:54+00:00"
+    },
+    {
+      "id": "b4109b71bb6c",
+      "session_id": "e32bcace9d2241d7a0dbded23563d8b4",
+      "scenario_id": "final-126",
+      "trace_id": "9c4e9d70fe5b44043f0354aa93afe6a8",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:57:07+00:00"
+    },
+    {
+      "id": "c9cf20632ee1",
+      "session_id": "b451f7b02e7d47a99612e23dbfa754eb",
+      "scenario_id": "final-034",
+      "trace_id": "ed101d137cec6f2e40f5c32f5f447f09",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:57:21+00:00"
+    },
+    {
+      "id": "6be8b1fdffb2",
+      "session_id": "d7b375c6426c441ebcfbdf3a6d631ac6",
+      "scenario_id": "final-048",
+      "trace_id": "35df7967065fb753c556b945e9dacc04",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:57:32+00:00"
+    },
+    {
+      "id": "ffe371efd3c3",
+      "session_id": "e583b4fe92f34085be090ec7c7fda32d",
+      "scenario_id": "final-071",
+      "trace_id": "0151b5bf790dc90c65e9f69d336454b7",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:57:48+00:00"
+    },
+    {
+      "id": "66f0bb8eb5c9",
+      "session_id": "1e5a68e92fa547c5bc71197334956d78",
+      "scenario_id": "final-174",
+      "trace_id": "1accda77d1d896377ad8b1042cb11688",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:57:59+00:00"
+    },
+    {
+      "id": "751aff18e19e",
+      "session_id": "8f74d5d4ca234de7803e3993dded1a25",
+      "scenario_id": "final-208",
+      "trace_id": "791b5c945f4277eb905edb5a1d537e7c",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:58:11+00:00"
+    },
+    {
+      "id": "286ca86f9b7f",
+      "session_id": "e127baca736f40c3a36da6d43858e67c",
+      "scenario_id": "final-222",
+      "trace_id": "31788d35052bb6662a1fd6c39d034a20",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:58:21+00:00"
+    },
+    {
+      "id": "4da605667b6f",
+      "session_id": "24ce5eed126e4a179445317997025079",
+      "scenario_id": "final-110",
+      "trace_id": "acb4c71aa737592b6adc42add196aaef",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:58:33+00:00"
+    },
+    {
+      "id": "34edb502225b",
+      "session_id": "3e13bbe09cab45d3ae110527b0e5ce59",
+      "scenario_id": "final-191",
+      "trace_id": "e6791d7f43a12a27be36d5faa430b4b1",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:58:43+00:00"
+    },
+    {
+      "id": "f5a7c8463fd1",
+      "session_id": "502ba68b2d6f4e208f90698638c0355d",
+      "scenario_id": "final-250",
+      "trace_id": "01e1e121909d6992e78d890eb486f3dd",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T18:58:51+00:00"
+    },
+    {
+      "id": "a72bb117c67c",
+      "session_id": "23af09be32c5411eb678cfa91b2fb74c",
+      "scenario_id": "final-004",
+      "trace_id": "306b82fbbae7a8476a929a97ffe800d7",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:17:47+00:00"
+    },
+    {
+      "id": "5c4656dfbf0c",
+      "session_id": "ba6555e52719480f843e0004357cc2fa",
+      "scenario_id": "final-176",
+      "trace_id": "fcc05d857eba2fd5e2dd9ba0fd2f75fe",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "fcc05d857eba2fd5e2dd9ba0fd2f75fe:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should not have referenced cartwheel return policy",
+      "created_at": "2026-11-14T19:18:16+00:00"
+    },
+    {
+      "id": "4dd958e7cac1",
+      "session_id": "94452ebd593d4c3183449bf2c7d75190",
+      "scenario_id": "final-218",
+      "trace_id": "17eb1155e704c7bced57ceddae038575",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:18:29+00:00"
+    },
+    {
+      "id": "a0aeb4a8e680",
+      "session_id": "c10a5d7fc21f4b858bb1985e2248e10f",
+      "scenario_id": "final-154",
+      "trace_id": "d93317b8f29091f7ddf0748f9729ea32",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:29:27+00:00"
+    },
+    {
+      "id": "8822d041afa7",
+      "session_id": "1483445b12d7421a89ddb19ad050b0e8",
+      "scenario_id": "final-032",
+      "trace_id": "c1d8f6237a771afaf904ecb770e025ef",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:29:37+00:00"
+    },
+    {
+      "id": "e16e392af275",
+      "session_id": "daff77c53099407cbda6cff690499188",
+      "scenario_id": "final-062",
+      "trace_id": "6646a0214ed9d79cddb798195c147b37",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:32:32+00:00"
+    },
+    {
+      "id": "9d6edf2c4f09",
+      "session_id": "485858ef2af54f5da249ac39a7261e3a",
+      "scenario_id": "final-203",
+      "trace_id": "4e373af6aaabd987e2b5e7f7d34f768b",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:32:46+00:00"
+    },
+    {
+      "id": "3d9c94be371c",
+      "session_id": "9a3a5e8d76e1467cb1c98d2b5dfc1a10",
+      "scenario_id": "final-211",
+      "trace_id": "3eede8f5e929cc52e7a88ed118bc36e5",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "3eede8f5e929cc52e7a88ed118bc36e5:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "account changes could escalate to support agent - but this response includes cartwheel website instead of the store",
+      "created_at": "2026-11-14T19:33:45+00:00"
+    },
+    {
+      "id": "3baa3378613e",
+      "session_id": "f354342535594558b73a15d2130a53e7",
+      "scenario_id": "final-194",
+      "trace_id": "3bd3b7092d83afa466aece87081a2da7",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "3bd3b7092d83afa466aece87081a2da7:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "why does the agent ask about another account to a shopper?",
+      "created_at": "2026-11-14T19:34:15+00:00"
+    },
+    {
+      "id": "a4a02f737899",
+      "session_id": "59ab9cd9b0ca4c128b3fe52dd0f9192e",
+      "scenario_id": "final-171",
+      "trace_id": "7157b95f12d201c91d73c23a92fb7f2c",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "7157b95f12d201c91d73c23a92fb7f2c:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "bad follow-up response about checking order confirmation email if there wasn't an order for the item that the user asked about",
+      "created_at": "2026-11-14T19:34:53+00:00"
+    },
+    {
+      "id": "b8251947fc44",
+      "session_id": "613584d6bd2a4ecdb742d16e8a3ad2ae",
+      "scenario_id": "final-251",
+      "trace_id": "97dac3e98b8a3c097a6cead09835fddc",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:35:00+00:00"
+    },
+    {
+      "id": "16fae2e5dca7",
+      "session_id": "4efe684f7ba943f69e13cd2076bfd4af",
+      "scenario_id": "final-111",
+      "trace_id": "b64feaf4751b9133a772b32d1f98125a",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "b64feaf4751b9133a772b32d1f98125a:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "listed other random orders instead of the one for the cookbook, not helpful",
+      "created_at": "2026-11-14T19:35:22+00:00"
+    },
+    {
+      "id": "1431b1b7b345",
+      "session_id": "6326fd44fa024c2783bde4f31bc2cb45",
+      "scenario_id": "final-086",
+      "trace_id": "92ab1c1e5d39a69cb15b2dc7c402baa7",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:35:35+00:00"
+    },
+    {
+      "id": "8c1a31a924c2",
+      "session_id": "918aa7d290f54b389903fae383fba2a2",
+      "scenario_id": "final-064",
+      "trace_id": "4572900b6a135322f5e8089ae03e9779",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:35:39+00:00"
+    },
+    {
+      "id": "d29766bfe043",
+      "session_id": "4ee93c226ecc42bca2fb5a75a11a1d29",
+      "scenario_id": "final-050",
+      "trace_id": "502fba36576bab7032265ad2a0773199",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "502fba36576bab7032265ad2a0773199:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "references cartwheel instead of store policy",
+      "created_at": "2026-11-14T19:35:53+00:00"
+    },
+    {
+      "id": "8d701508539c",
+      "session_id": "32c2d987bdbd40989143fd56ea3d73e7",
+      "scenario_id": "final-055",
+      "trace_id": "3385518113ce79370bb1a0d0260ab087",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "3385518113ce79370bb1a0d0260ab087:4",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "references cartwheel policy instead of store policy",
+      "created_at": "2026-11-14T19:36:22+00:00"
+    },
+    {
+      "id": "0b7e9cad9802",
+      "session_id": "6811405eac82473e88151247beb6618c",
+      "scenario_id": "final-039",
+      "trace_id": "0f2c7d93f3de6e1971638c525a718a7e",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T19:36:38+00:00"
+    },
+    {
+      "id": "a51213bcea2d",
+      "session_id": "971b5e0b2f544c4099f44a7b75a29f87",
+      "scenario_id": "final-044",
+      "trace_id": "deda2978bc128222ac6078f39b9796c3",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "deda2978bc128222ac6078f39b9796c3:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have given reason why the refund is not eligible",
+      "created_at": "2026-11-14T19:37:00+00:00"
+    },
+    {
+      "id": "4e5a507b4ac7",
+      "session_id": "b9060f14f70a4b87b892b1b517e37239",
+      "scenario_id": "final-148",
+      "trace_id": "7d8f57782aa0bf691655ed698bf010db",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T20:34:48+00:00",
+      "superseded_at": "2026-11-14T20:37:09+00:00",
+      "superseded_by": "8b094e57576b"
+    },
+    {
+      "id": "42cb4aa1d1d2",
+      "session_id": "84e4890435944bbfbc143d18ae548100",
+      "scenario_id": "final-046",
+      "trace_id": "bff5b93bd80a3642c13cf07e1cbf448c",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "bff5b93bd80a3642c13cf07e1cbf448c:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should not have said \"your own orders\"",
+      "created_at": "2026-11-14T20:36:12+00:00"
+    },
+    {
+      "id": "8b094e57576b",
+      "session_id": "b9060f14f70a4b87b892b1b517e37239",
+      "scenario_id": "final-148",
+      "trace_id": "7d8f57782aa0bf691655ed698bf010db",
+      "kind": "failure",
+      "anchor": {
+        "kind": "tool",
+        "ref": "7d8f57782aa0bf691655ed698bf010db:2",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "bad tool cool should have used multiple tools to get the info",
+      "created_at": "2026-11-14T20:37:09+00:00"
+    },
+    {
+      "id": "e3b744258d5d",
+      "session_id": "c173bfe7c7894adcad227e769200fa84",
+      "scenario_id": "final-172",
+      "trace_id": "1d2b0ad811eadcaf5cfa7ff4343e8ae6",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "1d2b0ad811eadcaf5cfa7ff4343e8ae6:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "bad reference to cartwheel policy",
+      "created_at": "2026-11-14T20:38:26+00:00"
+    },
+    {
+      "id": "b0265990c489",
+      "session_id": "1bfe7de7babd4562931f6d122ab710e8",
+      "scenario_id": "final-095",
+      "trace_id": "453e13aec29d33d65ed995cca6ebd078",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "453e13aec29d33d65ed995cca6ebd078:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "failed on tool lookup",
+      "created_at": "2026-11-14T20:38:38+00:00"
+    },
+    {
+      "id": "cb0705b56d3a",
+      "session_id": "86ad776817ec4f338b4f5963a4ff2be6",
+      "scenario_id": "final-102",
+      "trace_id": "26184ab549fc25f41dbb4764e886afd0",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "26184ab549fc25f41dbb4764e886afd0:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "failed on confirming order cancellation",
+      "created_at": "2026-11-14T20:39:34+00:00"
+    },
+    {
+      "id": "38212c7b578c",
+      "session_id": "ad1328df831d45a0b9aee5ff8b343473",
+      "scenario_id": "final-158",
+      "trace_id": "323cedaf357e68ca1a05e909a48bf742",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T20:39:49+00:00"
+    },
+    {
+      "id": "647e597aa151",
+      "session_id": "cd7776e4bb704a6f8a9dd84174e4a9e0",
+      "scenario_id": "final-023",
+      "trace_id": "889015f9217b943ae5b50102b2d802e1",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "889015f9217b943ae5b50102b2d802e1:1",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "failed on tool lookup for this order",
+      "created_at": "2026-11-14T20:40:05+00:00"
+    },
+    {
+      "id": "b8783ddcb92b",
+      "session_id": "b4d080001ecd4c7da53819d0a0fb661c",
+      "scenario_id": "final-010",
+      "trace_id": "bdf4269a19850223970f32afba6c5c44",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T20:40:17+00:00"
+    },
+    {
+      "id": "5ea696855e7b",
+      "session_id": "2f90d96243f0412db657dc5ad5d0b224",
+      "scenario_id": "final-081",
+      "trace_id": "51dc7af2945228d29acc9cfe3d3960fb",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "51dc7af2945228d29acc9cfe3d3960fb:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "could have confirmed write action",
+      "created_at": "2026-11-14T20:40:36+00:00"
+    },
+    {
+      "id": "c861a6810553",
+      "session_id": "ad6603f351dd49829639308dafcd16ad",
+      "scenario_id": "final-236",
+      "trace_id": "0bfc7cc88789273f244fb6fe8c8e0c5b",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "0bfc7cc88789273f244fb6fe8c8e0c5b:5",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should have asked for reason for refund",
+      "created_at": "2026-11-14T20:40:57+00:00"
+    },
+    {
+      "id": "6fb80c9757c7",
+      "session_id": "012b7fa74a734ef290265270b7b5dc7c",
+      "scenario_id": "final-119",
+      "trace_id": "630e2b1b37158558640192cf1f9ae23b",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T20:41:05+00:00"
+    },
+    {
+      "id": "d07c7e38c0fa",
+      "session_id": "3a6a3505025743c8828ab45d11a3f992",
+      "scenario_id": "final-068",
+      "trace_id": "1977928a31635f04c91aea6d838cf499",
+      "kind": "no_failure",
+      "anchor": {
+        "kind": "session",
+        "ref": null,
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "",
+      "created_at": "2026-11-14T20:41:15+00:00"
+    },
+    {
+      "id": "d58867e7f372",
+      "session_id": "4be93e3a99894885ac31700828651032",
+      "scenario_id": "final-115",
+      "trace_id": "fbd73953b70ded8cde4bff09d85f4a94",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "fbd73953b70ded8cde4bff09d85f4a94:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "why say both that the orders shipped and were delivered?",
+      "created_at": "2026-11-14T20:41:44+00:00"
+    },
+    {
+      "id": "47d2480ec397",
+      "session_id": "7ed13870c0a1492f8c38b9ad0360a260",
+      "scenario_id": "final-141",
+      "trace_id": "f36e655b6d1ea3c7c1a1d65c2f8d3df4",
+      "kind": "failure",
+      "anchor": {
+        "kind": "message",
+        "ref": "f36e655b6d1ea3c7c1a1d65c2f8d3df4:3",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "should not reference cartwheel policy",
+      "created_at": "2026-11-14T20:42:04+00:00"
+    },
+    {
+      "id": "0930fbd7dcd1",
+      "session_id": "dcfb215c752a44ffa498bbea7834361a",
+      "scenario_id": "final-022",
+      "trace_id": "cb0f7cc30cab52b64a64270262a5b016",
+      "kind": "failure",
+      "anchor": {
+        "kind": "tool",
+        "ref": "cb0f7cc30cab52b64a64270262a5b016:2",
+        "quote": null,
+        "start": null,
+        "end": null
+      },
+      "note": "wrong tool call",
+      "created_at": "2026-11-14T20:42:33+00:00"
+    }
+  ]
+}
