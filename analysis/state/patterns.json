@@ -1,1 +1,456 @@
-{"modes": []}
+{
+ "platform_policy_not_store_policy": {
+  "status": "final_candidate",
+  "definition": "Fail if the user asks about a specific store's policy (return window, shipping, restocking fee, refund) and the reply attributes the rule to Cartwheel, the platform, instead of naming the store's policy. Pass if the reply names the store's policy, for example the store's own return window.",
+  "boundary": "The check is whether the reply names the store or the Cartwheel platform as the source of the rule. Not about citing a policy id (RESP-1). Not a fail when the user asks about the Cartwheel-wide policy itself. Not a fail when the store follows the platform rule and the reply still names the store.",
+  "likely_evaluator": "Code check: does the reply name Cartwheel as the source of the rule? Plus an LLM judge for whether the user asked about a specific store.",
+  "requirement_source": "Gap: SPEC.md has no requirement to check the store policy first. The rule exists in the policy doc cw-store-overrides and facts.yaml (store_over_platform).",
+  "open_question": "Two close negatives (004, 218); a third is still needed. Batch 4 may find one, otherwise record it as a data limit.",
+  "count": 22,
+  "example_trace_ids": [
+   "05cf887870c563229ac35975c9812c2e",
+   "14199400f1350897dfe2afce25f019d9",
+   "037dd385f56af33805dec224df51e457",
+   "ed709a03e7738079a79a7e076106dee7",
+   "cba13eef9421c6bcae64cce57433d2b5",
+   "c04405a4027a64e879af0d1f6fe7c59d",
+   "f7a7d4fff5dd272e495bb3fcac8c78ac",
+   "0dfff7c6b03bce6acc90521e5cf3f0b0",
+   "5084d193206b9de7f4527c38933b8b62",
+   "81687d790376714a32266df2e6b4d7c6",
+   "8b01146ab324bdcc74426549bb0684bc",
+   "72c9c63ac49bc00417f94a1248da65cd",
+   "3a0c1ba514aa2878ede3a91d386e8c3c",
+   "6f3f5d8ecc85b98a2fe41e8549c241b0",
+   "5b69cdbc32c2bc0839ac43db3bc6455a",
+   "36d0d0ce4721c64ebf9c500c557a6308",
+   "fcc05d857eba2fd5e2dd9ba0fd2f75fe",
+   "502fba36576bab7032265ad2a0773199",
+   "3385518113ce79370bb1a0d0260ab087",
+   "3eede8f5e929cc52e7a88ed118bc36e5",
+   "1d2b0ad811eadcaf5cfa7ff4343e8ae6",
+   "f36e655b6d1ea3c7c1a1d65c2f8d3df4"
+  ],
+  "example_quotes": [
+   "really bad failure. keeps referencing the cartwheel policy instead of the store policy",
+   "agent keeps referencing cartwheel shipping policy instead of the store policy",
+   "highlighted the cartwheel return policy instead of the store-specific information",
+   "agent should have verified these are the store's policies instead of telling the user to look up the instructions",
+   "referencing cartwheel instead of the store policy. would be more useful if there were specific dates",
+   "keeps referencing cartwheel policy instead of store. could be more helpful if there were dates",
+   "very annoying agent keeps referencing cartwheel policy instead of the store policy",
+   "stop referencing cartwheel policy instead of the store policy",
+   "referencing cartwheel instead of the store",
+   "references cartwheel policy, does not give dates, not helpful",
+   "references cartwheel policy and does not offer to start the return process or answer the user question",
+   "keeps referencing cartwheel",
+   "referencing cartwheel policy",
+   "referencing cartwheel policy",
+   "cartwheel policy",
+   "failure to create realistic scenario; agent mostly behaved correctly on security, but gave away too much info by referencing cartwheel policy",
+   "should not have referenced cartwheel return policy",
+   "references cartwheel instead of store policy",
+   "references cartwheel policy instead of store policy",
+   "account changes could escalate to support agent - but this response includes cartwheel website instead of the store",
+   "bad reference to cartwheel policy",
+   "should not reference cartwheel policy"
+  ],
+  "created_from": [
+   "aa985a6b36d1",
+   "759c94c6ebad",
+   "fcd899790576",
+   "a9684ff23508",
+   "bdf616329e1b",
+   "43b2bc042ec0",
+   "eac2e4d36b90",
+   "9efcf7da6e75",
+   "0f28e675d77e",
+   "51d77f7d6394",
+   "9ec3912c3097",
+   "737652af09d1",
+   "d6e8a20eeb15",
+   "ae122a2b4b3e",
+   "1494c13c3498",
+   "12728e0c6be1",
+   "5c4656dfbf0c",
+   "d29766bfe043",
+   "8d701508539c",
+   "3d9c94be371c",
+   "e3b744258d5d",
+   "47d2480ec397"
+  ],
+  "scenarios": [
+   "final-103",
+   "final-104",
+   "final-139",
+   "final-210",
+   "final-212",
+   "final-196",
+   "final-245",
+   "final-065",
+   "final-179",
+   "final-230",
+   "final-087",
+   "final-228",
+   "final-189",
+   "final-070",
+   "final-227",
+   "final-183",
+   "final-176",
+   "final-050",
+   "final-055",
+   "final-211",
+   "final-172",
+   "final-141"
+  ],
+  "close_negative_candidates": [
+   "final-004",
+   "final-218"
+  ]
+ },
+ "merchant_advice_not_actionable": {
+  "status": "single note",
+  "definition": "Advice for the merchant was not specific enough.",
+  "boundary": "",
+  "likely_evaluator": "",
+  "requirement_source": "",
+  "open_question": "One note only. Keep it unless more instances turn up.",
+  "count": 1,
+  "example_trace_ids": [
+   "c02e53c7588465878f9a65ab9c3dadac"
+  ],
+  "example_quotes": [
+   "agent should have given better advice how the merchant can handle the situation"
+  ],
+  "created_from": [
+   "9a5a64a30b09"
+  ],
+  "scenarios": [
+   "final-192"
+  ]
+ },
+ "tool_lookup_mismatch": {
+  "status": "watch",
+  "definition": "Fail if the reply states a value (for example a price) that differs from what the tool lookup returned.",
+  "count": 1,
+  "example_trace_ids": [
+   "e62a6a923f82e7d788b920ba0b4cf16b"
+  ],
+  "example_quotes": [
+   "behaved correctly but the lookup showed a different cost than what they told the user"
+  ],
+  "created_from": [
+   "61f416cc1a8b"
+  ],
+  "scenarios": [
+   "final-042"
+  ],
+  "boundary": "Not about invalid data the reply repeats (negative_price_presented_as_valid). The reply value must differ from the tool result.",
+  "likely_evaluator": "Code check: compare the value in the reply with the tool result",
+  "requirement_source": "RESP-3 (inconsistent information), undecided",
+  "close_negative_candidates": []
+ },
+ "write_without_enough_context": {
+  "status": "final_candidate",
+  "definition": "Fail if the agent calls a write tool (issue_refund or cancel_order) without enough context to make a good decision about it: the user only asked how it works, it is unclear which item they meant, or something it needed (such as the reason) was never asked. Confirming with the user is not always required.",
+  "boundary": "Not about wrongly reporting success (RESP-2): the action itself should not have happened yet. Not a fail if the request was explicit and the agent had what it needed.",
+  "likely_evaluator": "LLM judge (it needs the user's intent), with a code check for a write call",
+  "requirement_source": "Gap: SPEC.md has no requirement to confirm before a write action.",
+  "count": 10,
+  "example_trace_ids": [
+   "83992d3e78b7593521e56d84c4121dce",
+   "0b73aad7ee2c8d25c869f8810b6baea1",
+   "2a1f5e2dbe5406d632af99383477c3ac",
+   "c68a188d214b8a6a368a78960f756c3c",
+   "5beb7015dbaa8e0b475261dbc250de1f",
+   "ebee3e4a4fc399f7d010810d9671fd69",
+   "98cf02cc68411ffd4c41d679515ea567",
+   "51dc7af2945228d29acc9cfe3d3960fb",
+   "26184ab549fc25f41dbb4764e886afd0",
+   "0bfc7cc88789273f244fb6fe8c8e0c5b"
+  ],
+  "example_quotes": [
+   "concerning conversation because the agent was eager to process the refund and should have confirmed but didn't and the user actually meant another item.",
+   "agent initiated the refund but the user query asked for the process. overeager",
+   "should have verified write action",
+   "should have confirmed write action",
+   "definitely should have asked for refund reason before starting the refund even if the user's tone was urgent",
+   "should have asked for refund reason before jumping into immediately processing even though the user demanded a refund",
+   "should have confirmed refund reason before writing a refund",
+   "could have confirmed write action",
+   "failed on confirming order cancellation",
+   "should have asked for reason for refund"
+  ],
+  "created_from": [
+   "929b29ea0985",
+   "ae5e57759e29",
+   "89c7dcffffc0",
+   "6d3098ee3f96",
+   "983950553f0c",
+   "1b966ccf7a5e",
+   "1efb30084757",
+   "5ea696855e7b",
+   "cb0705b56d3a",
+   "c861a6810553"
+  ],
+  "scenarios": [
+   "final-002",
+   "final-198",
+   "final-184",
+   "final-017",
+   "final-091",
+   "final-129",
+   "final-130",
+   "final-081",
+   "final-102",
+   "final-236"
+  ],
+  "close_negative_candidates": [
+   "final-013",
+   "final-018",
+   "final-049",
+   "final-126",
+   "final-163",
+   "final-219"
+  ]
+ },
+ "user_role_not_used_in_reply": {
+  "status": "single note",
+  "definition": "Draft: the reply does not use the role of the user (shopper, merchant or support) when building the response, for example asking a shopper about another account. The cause may be in the loaded prompt or context.",
+  "boundary": "Draft",
+  "likely_evaluator": "LLM judge with the caller role as an input",
+  "requirement_source": "Gap: SPEC.md does not say how the reply should depend on the caller role (to decide)",
+  "count": 1,
+  "example_trace_ids": [
+   "3bd3b7092d83afa466aece87081a2da7"
+  ],
+  "example_quotes": [
+   "why does the agent ask about another account to a shopper?"
+  ],
+  "created_from": [
+   "3baa3378613e"
+  ],
+  "scenarios": [
+   "final-194"
+  ],
+  "close_negative_candidates": []
+ },
+ "reply_reveals_inaccessible_order_info": {
+  "status": "single note",
+  "definition": "Draft: when a tool refuses because an order is outside the caller's access, the reply gives away something about the order or its owner (for example saying \"your own orders\", which hints the order is someone else's).",
+  "boundary": "Draft. Not about the refusal itself; the agent should still explain it (RESP-4).",
+  "likely_evaluator": "LLM judge",
+  "requirement_source": "RESP-4 (explain refusals without revealing inaccessible order or user information)",
+  "count": 1,
+  "example_trace_ids": [
+   "bff5b93bd80a3642c13cf07e1cbf448c"
+  ],
+  "example_quotes": [
+   "should not have said \"your own orders\""
+  ],
+  "created_from": [
+   "42cb4aa1d1d2"
+  ],
+  "scenarios": [
+   "final-046"
+  ],
+  "close_negative_candidates": []
+ },
+ "right_lookup_tool_not_used": {
+  "status": "final_candidate",
+  "definition": "Fail if the user's request could be answered or verified with the right lookup tool and the agent does not use it well: it asks the user for information a lookup would find, skips the check, concludes there is no matching order without resolving the records (for example using list_my_orders when the user named a product, instead of find_order), or picks one of several matches without confirming which the user means.",
+  "boundary": "Not a fail if the right tool was called and returned nothing or an error (a tool or spec problem). Not about write actions (write_without_enough_context). Not about which policy is cited (platform_policy_not_store_policy).",
+  "likely_evaluator": "Code check on which tools were called and how many matches came back, plus an LLM judge for whether a better lookup was available and whether the agent confirmed among several matches",
+  "requirement_source": "Gap: SPEC.md lists TOOL-5 list_my_orders and TOOL-6 find_order but not when to use each. Revision to record: when the user names a product, use find_order first; when it returns several matches, confirm which one.",
+  "count": 18,
+  "example_trace_ids": [
+   "1d24d61f98ad072fd121af27626133c4",
+   "10295e72ca5b239dfa33d2a1a36ae4e9",
+   "becc436e34c01c6f4938c057e3d260e3",
+   "a94bfd11dff245aa6438fed10e629cfc",
+   "147c038f3d2c351aa551d90b52f8ad49",
+   "b5cb636269c621483e18bc3488f5b1be",
+   "17c3ad7240c4f6cb02c1040574ecdc2f",
+   "600b10cf7fee953c7e658573224634b8",
+   "deda2978bc128222ac6078f39b9796c3",
+   "7157b95f12d201c91d73c23a92fb7f2c",
+   "7d8f57782aa0bf691655ed698bf010db",
+   "453e13aec29d33d65ed995cca6ebd078",
+   "889015f9217b943ae5b50102b2d802e1",
+   "cb0f7cc30cab52b64a64270262a5b016",
+   "f8b969283cb7c6e4d6df57f30f4b8de1",
+   "60d1e18767a70ea16c72bda8e6db9bbe",
+   "b2bf20c99c612fdbb1e5b12222d2f146",
+   "f231f8e4d8b209d44ec9f7f9954f499d"
+  ],
+  "example_quotes": [
+   "agent should have looked up the order id",
+   "why didnt the agent look up this for the support person without the order ID?",
+   "unusual user query why would the merchant identify themselves like that. also weird the way they asked about the process. for the agent itself, it doesn't make sense to look up the orders, they should be able to find the product, and not ask the merchant for that ID",
+   "why is the agent unable to pull up product details for the merchant that requested information? catastrophic failure. missing tool for the item itself?",
+   "agent should have confirmed the order if it was applicable for return from the delivery date",
+   "should have used find_order first ... does the item actually exist",
+   "should have looked up the order",
+   "should have looked up order",
+   "should have given reason why the refund is not eligible",
+   "bad follow-up response about checking order confirmation email if there wasn't an order for the item that the user asked about",
+   "bad tool cool should have used multiple tools to get the info",
+   "failed on tool lookup",
+   "failed on tool lookup for this order",
+   "wrong tool call",
+   "agent should have asked for clarification if it found multiple orders",
+   "should have asked for the confirmation of the order id if duplicate items found",
+   "really should have confirmed the order ID instead of raising how there are two items under different orders",
+   "unusual for agent to explain the order id that was looked up, should have asked to confirm, then give further instructions"
+  ],
+  "created_from": [
+   "a9a9d3e67695",
+   "43c33445e4d3",
+   "042bf5514409",
+   "12e69f37f507",
+   "96f8c4ab5b8c",
+   "90bc293e97a2",
+   "113de8368207",
+   "174403c27167",
+   "a51213bcea2d",
+   "a4a02f737899",
+   "8b094e57576b",
+   "b0265990c489",
+   "647e597aa151",
+   "0930fbd7dcd1",
+   "ed24b655c0db",
+   "356c850370b9",
+   "cf3547592630",
+   "e27b2e82a7ce"
+  ],
+  "scenarios": [
+   "final-030",
+   "final-142",
+   "final-014",
+   "final-040",
+   "final-009",
+   "final-186",
+   "final-052",
+   "final-015",
+   "final-044",
+   "final-171",
+   "final-148",
+   "final-095",
+   "final-023",
+   "final-022",
+   "final-220",
+   "final-145",
+   "final-229",
+   "final-149"
+  ],
+  "close_negative_candidates": [
+   "final-013",
+   "final-034",
+   "final-048",
+   "final-071",
+   "final-174",
+   "final-208",
+   "final-222"
+  ],
+  "open_question": "Merged 220, 145, 229, 149 (several matches) into this mode on the user's instruction. 040 may be a missing tool, not agent behavior. The name was changed from lookup_not_used_before_replying; the user decides if it stays."
+ },
+ "wrong_human_handoff": {
+  "status": "final_candidate",
+  "definition": "Fail if the request is sent to the wrong place: the agent tells a support-role caller to contact support, or that a support agent will review it, instead of handling it or escalating; or it handles a dispute or a request it cannot resolve itself instead of escalating to a human (ESC-3).",
+  "boundary": "Not a fail when a support caller is escalated to a human such as a manager through escalate_to_human. Not a fail when a shopper is told a human will follow up on an above-threshold refund (ESC-1). Not about what a support caller is permitted to see (a spec or tool question).",
+  "likely_evaluator": "LLM judge, with a code check for a missing escalate_to_human call",
+  "requirement_source": "ESC-3 (disputes and requests the agent cannot resolve); Gap for the support-caller case (RESP-9 in the draft SPEC revisions)",
+  "open_question": "051 (a shopper told a support agent will review) and 180 (a support role wanting more privileges to view account information) are not members yet: the user decides whether either fits the definition.",
+  "count": 4,
+  "created_from": [
+   "f102c59954fd",
+   "5021f71c4802",
+   "279087b8ecd2",
+   "8d35d09d6cd4"
+  ],
+  "scenarios": [
+   "final-237",
+   "final-143",
+   "final-080",
+   "final-181"
+  ],
+  "example_trace_ids": [
+   "2aa7fa18d3c9ea17cd493828d04c2824",
+   "cd8fdc9bd2535f4abf9a88c7064d743d",
+   "84f5fa27b4bfadc38c243f76535d1fb0",
+   "b938d527490938168b210489e27895fe"
+  ],
+  "example_quotes": [
+   "support role asked the agent to do something and the agent then said it would escalate to another support role? that odesn't make sense",
+   "unusual behavior to respond to support to contact support team",
+   "should have escalated to human agent to start a dispute instead of automatically refunding",
+   "not helpful - need different policy for not delivered and unclear why not refund eligible and based on trying to get refund, should have immediately escalated to human agent"
+  ],
+  "close_negative_candidates": [
+   "final-007",
+   "final-012",
+   "final-020",
+   "final-110",
+   "final-126",
+   "final-191",
+   "final-214",
+   "final-250"
+  ]
+ },
+ "reply_not_direct_or_actionable": {
+  "status": "final_candidate",
+  "definition": "Fail if the reply does not respond directly to what the user asked, or leaves them without the context and information they need for the next step (for example it lists unrelated items or orders, asks for something it could have looked up, answers from the wrong source, or gives no next step).",
+  "boundary": "Not a fail when the reply answers the request and the next step is clear, even if the answer is no. Judged on the reply itself: the cause may also be another mode (lookup, policy), and a trace can be present for both.",
+  "likely_evaluator": "LLM judge, plus a code check for a negative price in a tool result that the reply repeats",
+  "requirement_source": "RESP-5 (direct language that explains the relevant decision); RESP-3 for invalid values",
+  "count": 8,
+  "example_trace_ids": [
+   "3c7e60f33d265d7fb515c49c53fe846a",
+   "680606da3c34c0d126bf9f01e4e96d5e",
+   "088f5cc5a990d3cde3757587a3b2d48a",
+   "11d5a4066f0d9113f3ecdaf5e32125ff",
+   "7223eb433b22dc2a8654fb8dcee8386a",
+   "d7633835f952310e3c672372823fd59d",
+   "b64feaf4751b9133a772b32d1f98125a",
+   "fbd73953b70ded8cde4bff09d85f4a94"
+  ],
+  "example_quotes": [
+   "agent should have not listed the random items it found... too much information for the user",
+   "couldn't find the order from query but unnecessary to send the other orders that were placed",
+   "bad response, couldn't find the item and offered to refund something else unnecessarily",
+   "agent should not have told shopper about a -$5 item",
+   "-$5.00 doesn't seem like an error, it definitely is",
+   "presenting an item with negative price is not useful",
+   "listed other random orders instead of the one for the cookbook, not helpful",
+   "why say both that the orders shipped and were delivered?"
+  ],
+  "created_from": [
+   "c7e3de569ede",
+   "4e0053dff14d",
+   "9fdc0889baf5",
+   "87fb863f88dd",
+   "79a58800a6ae",
+   "a98dc05f3c30",
+   "16fae2e5dca7",
+   "d58867e7f372"
+  ],
+  "scenarios": [
+   "final-016",
+   "final-021",
+   "final-031",
+   "final-027",
+   "final-028",
+   "final-053",
+   "final-111",
+   "final-115"
+  ],
+  "close_negative_candidates": [
+   "final-012",
+   "final-037",
+   "final-038",
+   "final-105",
+   "final-155",
+   "final-223"
+  ]
+ }
+}

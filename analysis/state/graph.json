@@ -1,0 +1,1846 @@
+{
+  "nodes": [
+    {
+      "trace_id": "0151b5bf790dc90c65e9f69d336454b7",
+      "session_id": "e583b4fe92f34085be090ec7c7fda32d",
+      "scenario_id": "final-071",
+      "x": -0.993075924377696,
+      "y": 0.21551331526417986,
+      "cluster": 6
+    },
+    {
+      "trace_id": "01e1e121909d6992e78d890eb486f3dd",
+      "session_id": "502ba68b2d6f4e208f90698638c0355d",
+      "scenario_id": "final-250",
+      "x": 2.72961871380493,
+      "y": -0.17222724867652753,
+      "cluster": 2
+    },
+    {
+      "trace_id": "037dd385f56af33805dec224df51e457",
+      "session_id": "5677fe0288644ade915beb8562ddf791",
+      "scenario_id": "final-139",
+      "x": 0.7086510535658285,
+      "y": -0.07900621087362383,
+      "cluster": 0
+    },
+    {
+      "trace_id": "0587f5cc5721aeeafb67afb420e9635f",
+      "session_id": "6f942c2d59e94c40b3e2d2da859e8870",
+      "scenario_id": "final-005",
+      "x": 2.718988522200882,
+      "y": -0.20310628361845307,
+      "cluster": 3
+    },
+    {
+      "trace_id": "05cf887870c563229ac35975c9812c2e",
+      "session_id": "f8b646229200484abab319508c36d7dc",
+      "scenario_id": "final-103",
+      "x": -0.25267086277792766,
+      "y": 0.10823305509064038,
+      "cluster": 0
+    },
+    {
+      "trace_id": "05f19ca397f3b13f0e80d519834dda32",
+      "session_id": "96dd2864e4f142898d42ece864114320",
+      "scenario_id": "final-131",
+      "x": -0.1925653951685608,
+      "y": 0.13894071656395346,
+      "cluster": 0
+    },
+    {
+      "trace_id": "0604c3088f4005555882bd8b075f1621",
+      "session_id": "a9dbfcb2de5045a295229335f47f4382",
+      "scenario_id": "final-166",
+      "x": -0.23114091067893955,
+      "y": 0.06063829635515901,
+      "cluster": 0
+    },
+    {
+      "trace_id": "064a3ba1e45bbba15c39691a8f545f69",
+      "session_id": "555582aa53f14b829511d3dfca8a1b89",
+      "scenario_id": "final-223",
+      "x": 0.19763127226410748,
+      "y": 0.16240240163377961,
+      "cluster": 7
+    },
+    {
+      "trace_id": "065df2141b14af8a59462de602bc8cc5",
+      "session_id": "16212726247d430abc94d66642139e88",
+      "scenario_id": "final-156",
+      "x": 0.04686304689955123,
+      "y": -0.03245646994393073,
+      "cluster": 7
+    },
+    {
+      "trace_id": "088f5cc5a990d3cde3757587a3b2d48a",
+      "session_id": "fc28bd44d2eb42368060fce28a83f331",
+      "scenario_id": "final-031",
+      "x": -0.7613115835911104,
+      "y": 0.2089266188489412,
+      "cluster": 6
+    },
+    {
+      "trace_id": "0a39ac0281d0bad8971768b0f7b0ae4e",
+      "session_id": "5028108d6994477a9a60c6879ec76a3f",
+      "scenario_id": "final-002",
+      "x": -2.372988974932917,
+      "y": 0.18103608310420816,
+      "cluster": 4
+    },
+    {
+      "trace_id": "0b73aad7ee2c8d25c869f8810b6baea1",
+      "session_id": "b0b2f57afebf461a97d8aefd448852c5",
+      "scenario_id": "final-198",
+      "x": -2.688478591724822,
+      "y": 0.33279415298805926,
+      "cluster": 4
+    },
+    {
+      "trace_id": "0b9488c8543a46d22aedebaf986a30f8",
+      "session_id": "dea178cbc1ca41608513892982056789",
+      "scenario_id": "final-215",
+      "x": -2.3257910369744317,
+      "y": 0.34882640226903017,
+      "cluster": 4
+    },
+    {
+      "trace_id": "0bfc7cc88789273f244fb6fe8c8e0c5b",
+      "session_id": "ad6603f351dd49829639308dafcd16ad",
+      "scenario_id": "final-236",
+      "x": -2.5635215410840586,
+      "y": 0.19676390794173645,
+      "cluster": 4
+    },
+    {
+      "trace_id": "0dfff7c6b03bce6acc90521e5cf3f0b0",
+      "session_id": "6f3e062e09b44c7897679b77d9356a77",
+      "scenario_id": "final-065",
+      "x": -0.20978805712172643,
+      "y": 0.026979023930519014,
+      "cluster": 0
+    },
+    {
+      "trace_id": "0ea361d74c358a91a42228bf9c695668",
+      "session_id": "b8e6c09b867c454c8f91afda6fcdcb85",
+      "scenario_id": "final-159",
+      "x": -4.376685795755307,
+      "y": 0.1837329263827753,
+      "cluster": 4
+    },
+    {
+      "trace_id": "0eee16f4375b9a81c5071ba64531f1d5",
+      "session_id": "55dc0448b7184fa08dedb75b3743bf1e",
+      "scenario_id": "final-049",
+      "x": -2.6094460255736798,
+      "y": 0.37481632815053095,
+      "cluster": 4
+    },
+    {
+      "trace_id": "0f2c7d93f3de6e1971638c525a718a7e",
+      "session_id": "6811405eac82473e88151247beb6618c",
+      "scenario_id": "final-039",
+      "x": -0.13090913604349577,
+      "y": -0.006220575222551358,
+      "cluster": 0
+    },
+    {
+      "trace_id": "10295e72ca5b239dfa33d2a1a36ae4e9",
+      "session_id": "11e5ff69c3e74e38881a6140a0944e36",
+      "scenario_id": "final-142",
+      "x": 2.60688955322164,
+      "y": 0.03299855679913592,
+      "cluster": 2
+    },
+    {
+      "trace_id": "10d90e764f75207d1b12e44ab347f40d",
+      "session_id": "3c4a21a8f7b14442bc1cb70b9d86d3ad",
+      "scenario_id": "final-167",
+      "x": 0.023376044159799915,
+      "y": 0.18091853383787343,
+      "cluster": 7
+    },
+    {
+      "trace_id": "11d5a4066f0d9113f3ecdaf5e32125ff",
+      "session_id": "8f09e728c6fe485ca6e44fd194876e8f",
+      "scenario_id": "final-027",
+      "x": 1.0084948674412837,
+      "y": -0.2753852533791577,
+      "cluster": 7
+    },
+    {
+      "trace_id": "12c4ca1e90a76687f9dcb551d629dfb6",
+      "session_id": "96fcfdc68e2247b9846f0f707d03dc29",
+      "scenario_id": "final-249",
+      "x": 0.05072501313904242,
+      "y": 0.18081369342028444,
+      "cluster": 7
+    },
+    {
+      "trace_id": "13f373fe0c4b7fe1e7c3ae4028d3faae",
+      "session_id": "1510fd14c14d408f85d230b4dc3041e3",
+      "scenario_id": "final-058",
+      "x": -0.2874508148769158,
+      "y": 0.20732781382612175,
+      "cluster": 0
+    },
+    {
+      "trace_id": "14199400f1350897dfe2afce25f019d9",
+      "session_id": "96263e42b5384390b7506313bc5c97c7",
+      "scenario_id": "final-104",
+      "x": -1.7341301275095369,
+      "y": -10.734225639199645,
+      "cluster": 1
+    },
+    {
+      "trace_id": "147c038f3d2c351aa551d90b52f8ad49",
+      "session_id": "bac37ac30f9542e7bd4562c52c4121b2",
+      "scenario_id": "final-009",
+      "x": -2.455541338523757,
+      "y": 0.41475136289978354,
+      "cluster": 6
+    },
+    {
+      "trace_id": "17c3ad7240c4f6cb02c1040574ecdc2f",
+      "session_id": "7684c54e8d344477a71c2767be5bd09c",
+      "scenario_id": "final-052",
+      "x": 2.6139377306851843,
+      "y": 0.020262669641364875,
+      "cluster": 2
+    },
+    {
+      "trace_id": "17c41f2bfefa5a550e357dec676e0861",
+      "session_id": "446fcae7444f4b1e9b9c269f4fe3b591",
+      "scenario_id": "final-013",
+      "x": -8.187796506169057,
+      "y": 0.37801494486590775,
+      "cluster": 4
+    },
+    {
+      "trace_id": "17e30ac51766bbe7abc69ba22456c474",
+      "session_id": "444fd997ecd14516ae14d9a8bfcdf4e5",
+      "scenario_id": "final-088",
+      "x": -2.2948053777610173,
+      "y": 0.15266309868426883,
+      "cluster": 4
+    },
+    {
+      "trace_id": "17eb1155e704c7bced57ceddae038575",
+      "session_id": "94452ebd593d4c3183449bf2c7d75190",
+      "scenario_id": "final-218",
+      "x": -2.7937182085167267,
+      "y": 0.22055222287191031,
+      "cluster": 4
+    },
+    {
+      "trace_id": "197226813942874b87bf2be5b2943baf",
+      "session_id": "855373b69305416ab2bb374e2fd04428",
+      "scenario_id": "final-094",
+      "x": 2.4235965308618828,
+      "y": 0.04100864604485184,
+      "cluster": 5
+    },
+    {
+      "trace_id": "1977928a31635f04c91aea6d838cf499",
+      "session_id": "3a6a3505025743c8828ab45d11a3f992",
+      "scenario_id": "final-068",
+      "x": 0.15242683567549808,
+      "y": 0.056799580578055495,
+      "cluster": 7
+    },
+    {
+      "trace_id": "1accda77d1d896377ad8b1042cb11688",
+      "session_id": "1e5a68e92fa547c5bc71197334956d78",
+      "scenario_id": "final-174",
+      "x": -0.809868873736933,
+      "y": 0.30323307021785706,
+      "cluster": 6
+    },
+    {
+      "trace_id": "1cbc55ce1f0b37a0af995b722736ff48",
+      "session_id": "102209c4753f45c99dd8f424b9ea27b8",
+      "scenario_id": "final-178",
+      "x": 0.26326019334233813,
+      "y": 0.14895280248070925,
+      "cluster": 7
+    },
+    {
+      "trace_id": "1d24d61f98ad072fd121af27626133c4",
+      "session_id": "3a7b5e0259de4bbe9aa2a3e3fb6cc5d0",
+      "scenario_id": "final-030",
+      "x": 2.550221567362143,
+      "y": -0.07313652110116751,
+      "cluster": 5
+    },
+    {
+      "trace_id": "1d2b0ad811eadcaf5cfa7ff4343e8ae6",
+      "session_id": "c173bfe7c7894adcad227e769200fa84",
+      "scenario_id": "final-172",
+      "x": -0.051014603652862645,
+      "y": 0.06307176330413554,
+      "cluster": 0
+    },
+    {
+      "trace_id": "1ed5040cae2b61a0641eab64ca04930c",
+      "session_id": "0a98342b90ef40f79f07476c87507b9e",
+      "scenario_id": "final-116",
+      "x": -0.3284859950802115,
+      "y": 0.07668870476569697,
+      "cluster": 0
+    },
+    {
+      "trace_id": "1ed719aa1aa44b7d3948507c362b8d42",
+      "session_id": "5cd29750383c4a46ab236ca6b7da505e",
+      "scenario_id": "final-096",
+      "x": 0.2160466440714506,
+      "y": -0.018079454363870054,
+      "cluster": 7
+    },
+    {
+      "trace_id": "22a0db18abb8dd758b3247b6b6ab046b",
+      "session_id": "f308826c5a0848f6a6d102913c99ae4a",
+      "scenario_id": "final-019",
+      "x": 2.670001519461131,
+      "y": -0.14648127983664888,
+      "cluster": 2
+    },
+    {
+      "trace_id": "24883b00add622816d756bddd2be3727",
+      "session_id": "75e28c7f565340d98496837700ac024e",
+      "scenario_id": "final-007",
+      "x": -0.2889872656060283,
+      "y": 0.05636007067070106,
+      "cluster": 0
+    },
+    {
+      "trace_id": "250cafedce4180de57e850c2fe2c0036",
+      "session_id": "f13b2ca88fe848d4bea48ebe01b23844",
+      "scenario_id": "final-201",
+      "x": 2.556610871648468,
+      "y": 0.05017194962961321,
+      "cluster": 5
+    },
+    {
+      "trace_id": "2544d2fc1ac1f5a93c134a1b2a77e2f5",
+      "session_id": "53d2a2b78d9c4026ac6bb05cd4a34f88",
+      "scenario_id": "final-157",
+      "x": 0.12556748348816063,
+      "y": 0.04289635111179338,
+      "cluster": 7
+    },
+    {
+      "trace_id": "25602dc80c06ceed041177d591d531d2",
+      "session_id": "6d7d2d9684b24a6fb9a502123ce195c6",
+      "scenario_id": "final-066",
+      "x": 0.08323024124334999,
+      "y": 0.14804756121619062,
+      "cluster": 7
+    },
+    {
+      "trace_id": "25a78e8eb94f8e0b84de78b193147f59",
+      "session_id": "549765a1374f4ef3a831bd5c9518d283",
+      "scenario_id": "final-078",
+      "x": 0.2128747736339831,
+      "y": 0.004089899742877531,
+      "cluster": 7
+    },
+    {
+      "trace_id": "26184ab549fc25f41dbb4764e886afd0",
+      "session_id": "86ad776817ec4f338b4f5963a4ff2be6",
+      "scenario_id": "final-102",
+      "x": -2.4009746341463307,
+      "y": 0.3276993866889695,
+      "cluster": 4
+    },
+    {
+      "trace_id": "26a9e34de57d08c4007de61b232e060f",
+      "session_id": "517d1145a7374e50b18ffa3017dcf2be",
+      "scenario_id": "final-162",
+      "x": 0.10808309480056312,
+      "y": 0.20688828879155063,
+      "cluster": 7
+    },
+    {
+      "trace_id": "2865c59b36987754a21bbd67d8a6e3eb",
+      "session_id": "dca7316ef70a4bfdb7b0ce24d2f69839",
+      "scenario_id": "final-193",
+      "x": 2.701284085612273,
+      "y": -0.15845910467417718,
+      "cluster": 2
+    },
+    {
+      "trace_id": "2a0c3c713c029b8ef19d56b0fa216d5b",
+      "session_id": "1d1a20b49b1846e8b6d435c438b0bfb3",
+      "scenario_id": "final-153",
+      "x": -0.9889704567683293,
+      "y": 0.15722097673749297,
+      "cluster": 6
+    },
+    {
+      "trace_id": "2a1f5e2dbe5406d632af99383477c3ac",
+      "session_id": "b22e7090d6f44805a1779336a6536e84",
+      "scenario_id": "final-184",
+      "x": -3.223332861808892,
+      "y": 0.2747054599017808,
+      "cluster": 4
+    },
+    {
+      "trace_id": "2aa7fa18d3c9ea17cd493828d04c2824",
+      "session_id": "acf889b2af33468e916596b20104fbba",
+      "scenario_id": "final-237",
+      "x": -0.00507316432450193,
+      "y": 0.20804958057805548,
+      "cluster": 7
+    },
+    {
+      "trace_id": "2d14514a617e418ebed622fd62b44d31",
+      "session_id": "a12637aeec974cc0b43e49e302b67a30",
+      "scenario_id": "final-180",
+      "x": 2.6824897927266993,
+      "y": -0.015527649523457157,
+      "cluster": 5
+    },
+    {
+      "trace_id": "2fac81a0fc56bb2478f43cd828000780",
+      "session_id": "c926c177f3f14137834f2c3d313d7139",
+      "scenario_id": "final-173",
+      "x": 0.18769117646208378,
+      "y": 0.16471288416281682,
+      "cluster": 7
+    },
+    {
+      "trace_id": "306b82fbbae7a8476a929a97ffe800d7",
+      "session_id": "23af09be32c5411eb678cfa91b2fb74c",
+      "scenario_id": "final-004",
+      "x": 0.5768919408835503,
+      "y": -0.224685646662479,
+      "cluster": 0
+    },
+    {
+      "trace_id": "31788d35052bb6662a1fd6c39d034a20",
+      "session_id": "e127baca736f40c3a36da6d43858e67c",
+      "scenario_id": "final-222",
+      "x": -0.5896344850493354,
+      "y": 0.1194911325380998,
+      "cluster": 6
+    },
+    {
+      "trace_id": "31df1d4e41480b2862ce5bc4783b8952",
+      "session_id": "8c2a2d53ac6044febe558e7fb38a7fa8",
+      "scenario_id": "final-152",
+      "x": -0.23698076697590395,
+      "y": 0.09042257256160316,
+      "cluster": 0
+    },
+    {
+      "trace_id": "323cedaf357e68ca1a05e909a48bf742",
+      "session_id": "ad1328df831d45a0b9aee5ff8b343473",
+      "scenario_id": "final-158",
+      "x": 0.16422112856107188,
+      "y": 0.016368125427335456,
+      "cluster": 7
+    },
+    {
+      "trace_id": "32827a4b6494adf82bb7957ae3a0b566",
+      "session_id": "fd74f5e93e87474f8cc433a55e5aec14",
+      "scenario_id": "final-134",
+      "x": 2.7321395532216397,
+      "y": -0.0550014432008641,
+      "cluster": 2
+    },
+    {
+      "trace_id": "3385518113ce79370bb1a0d0260ab087",
+      "session_id": "32c2d987bdbd40989143fd56ea3d73e7",
+      "scenario_id": "final-055",
+      "x": -1.1646034983620188,
+      "y": 0.015187494000644786,
+      "cluster": 6
+    },
+    {
+      "trace_id": "35df7967065fb753c556b945e9dacc04",
+      "session_id": "d7b375c6426c441ebcfbdf3a6d631ac6",
+      "scenario_id": "final-048",
+      "x": -0.7847972428045248,
+      "y": 0.19783992243370258,
+      "cluster": 6
+    },
+    {
+      "trace_id": "364f27dd49e12f0c4419993d6fd2c241",
+      "session_id": "733baaa15dd04c84a6342c943326a2ab",
+      "scenario_id": "final-024",
+      "x": 0.09868206377980564,
+      "y": -0.018216551626038344,
+      "cluster": 7
+    },
+    {
+      "trace_id": "37568ee701e08f01f87d21c7338b7e2b",
+      "session_id": "860e995a9eaf482cbe1592eb07e45f11",
+      "scenario_id": "final-252",
+      "x": 2.6374950208310066,
+      "y": 0.029456218272449028,
+      "cluster": 2
+    },
+    {
+      "trace_id": "375b8a3f6f40f7706026a036ae14a4fb",
+      "session_id": "51b997795c0b42509ccdfe092f09d708",
+      "scenario_id": "final-206",
+      "x": -0.36519304572097466,
+      "y": 0.09521894981201978,
+      "cluster": 6
+    },
+    {
+      "trace_id": "37d25870d4525f2c73f6efe58b84eb7d",
+      "session_id": "94e2edf46e224d1d98027fd21b28fa2a",
+      "scenario_id": "final-003",
+      "x": 0.004842207482841199,
+      "y": 0.10106772458040583,
+      "cluster": 7
+    },
+    {
+      "trace_id": "3a093fe5feadc613298313be2d463fb3",
+      "session_id": "8c0193e6bf2a4299898a33e86b964084",
+      "scenario_id": "final-163",
+      "x": -2.629354898750899,
+      "y": 0.16636068603908266,
+      "cluster": 4
+    },
+    {
+      "trace_id": "3a0c1ba514aa2878ede3a91d386e8c3c",
+      "session_id": "d38459ce0dbb49e1b700f88b5a82a384",
+      "scenario_id": "final-189",
+      "x": -0.36598599508021146,
+      "y": 0.14368870476569698,
+      "cluster": 0
+    },
+    {
+      "trace_id": "3a73b509c5f4230bfd7f9e6d3ccc70bf",
+      "session_id": "744d2a8e7ac949fa98c93826a1e14c4b",
+      "scenario_id": "final-140",
+      "x": 0.0981403849463856,
+      "y": 0.003831837422634793,
+      "cluster": 7
+    },
+    {
+      "trace_id": "3acfc23938317ee3cedaddb49b5816a8",
+      "session_id": "dab6d59abd474c3ca8275c5b201fc732",
+      "scenario_id": "final-089",
+      "x": 2.737199457419616,
+      "y": -0.13644096067182687,
+      "cluster": 3
+    },
+    {
+      "trace_id": "3bd3b7092d83afa466aece87081a2da7",
+      "session_id": "f354342535594558b73a15d2130a53e7",
+      "scenario_id": "final-194",
+      "x": -0.791627986419211,
+      "y": 0.1723036344290019,
+      "cluster": 6
+    },
+    {
+      "trace_id": "3c7e60f33d265d7fb515c49c53fe846a",
+      "session_id": "8924cf66812f402488e976ba66f0714f",
+      "scenario_id": "final-016",
+      "x": 0.1882185145089181,
+      "y": 0.16150119152938236,
+      "cluster": 7
+    },
+    {
+      "trace_id": "3e011c80bc2e7277942a771d2a924232",
+      "session_id": "d54259e1b4174f2b9f4d73728b35b5be",
+      "scenario_id": "final-037",
+      "x": 0.23076019334233813,
+      "y": 0.10570280248070923,
+      "cluster": 7
+    },
+    {
+      "trace_id": "3e0463f5aec11362c33fd2a1bf35839f",
+      "session_id": "a843ef751f4f4261ab043a9d6462e11d",
+      "scenario_id": "final-214",
+      "x": -0.09556016706425326,
+      "y": 0.21442458435985967,
+      "cluster": 0
+    },
+    {
+      "trace_id": "3eede8f5e929cc52e7a88ed118bc36e5",
+      "session_id": "9a3a5e8d76e1467cb1c98d2b5dfc1a10",
+      "scenario_id": "final-211",
+      "x": 2.758130440539362,
+      "y": -0.01193087898971927,
+      "cluster": 2
+    },
+    {
+      "trace_id": "453e13aec29d33d65ed995cca6ebd078",
+      "session_id": "1bfe7de7babd4562931f6d122ab710e8",
+      "scenario_id": "final-095",
+      "x": 2.71572679546645,
+      "y": 0.04109734669473866,
+      "cluster": 3
+    },
+    {
+      "trace_id": "456c416fc47ef0f7897deb6a8de8ff20",
+      "session_id": "4ee93c226ecc42bca2fb5a75a11a1d29",
+      "scenario_id": "final-050",
+      "x": 2.6795939898102494,
+      "y": -0.16114862214513997,
+      "cluster": 3
+    },
+    {
+      "trace_id": "4572900b6a135322f5e8089ae03e9779",
+      "session_id": "918aa7d290f54b389903fae383fba2a2",
+      "scenario_id": "final-064",
+      "x": 0.3623682750038588,
+      "y": 0.14252739785197543,
+      "cluster": 7
+    },
+    {
+      "trace_id": "46534505db9685d3500a527df0e359b0",
+      "session_id": "ed4e3e623e3c4b2c93b0c9623ac988bc",
+      "scenario_id": "final-202",
+      "x": -0.750607147002501,
+      "y": 0.24102943990466535,
+      "cluster": 6
+    },
+    {
+      "trace_id": "4a430960198b9a650d0713c48ec253fa",
+      "session_id": "d528319a3d334a9aa0a7fa3da4453b2b",
+      "scenario_id": "final-151",
+      "x": -0.16574115018399885,
+      "y": 0.014664502677752073,
+      "cluster": 0
+    },
+    {
+      "trace_id": "4d01838545e43fd92933e70ce3588c9c",
+      "session_id": "c9b6bf946df040d2b8617ab5ed65523f",
+      "scenario_id": "final-117",
+      "x": 0.17742295109752754,
+      "y": 0.1793540125851065,
+      "cluster": 7
+    },
+    {
+      "trace_id": "4e373af6aaabd987e2b5e7f7d34f768b",
+      "session_id": "485858ef2af54f5da249ac39a7261e3a",
+      "scenario_id": "final-203",
+      "x": -0.5369938372366728,
+      "y": 0.05983790307183773,
+      "cluster": 6
+    },
+    {
+      "trace_id": "502fba36576bab7032265ad2a0773199",
+      "session_id": "4ee93c226ecc42bca2fb5a75a11a1d29",
+      "scenario_id": "final-050",
+      "x": -0.2824260908822352,
+      "y": 0.0532491872947342,
+      "cluster": 0
+    },
+    {
+      "trace_id": "5084d193206b9de7f4527c38933b8b62",
+      "session_id": "e7ab40671de94e2f8f60e1f1dd76d8b2",
+      "scenario_id": "final-179",
+      "x": 2.7814650687320186,
+      "y": -0.01069902299206961,
+      "cluster": 2
+    },
+    {
+      "trace_id": "51dc7af2945228d29acc9cfe3d3960fb",
+      "session_id": "2f90d96243f0412db657dc5ad5d0b224",
+      "scenario_id": "final-081",
+      "x": -2.2513118763911413,
+      "y": 0.25260059679336677,
+      "cluster": 4
+    },
+    {
+      "trace_id": "522b3ab79a9710478937649e4321ac76",
+      "session_id": "c390b4f401bc491d9d0bcea1d655fc65",
+      "scenario_id": "final-226",
+      "x": 2.788554925028983,
+      "y": -0.16673329919851376,
+      "cluster": 3
+    },
+    {
+      "trace_id": "54771743ec9ca777def1d43e0de89495",
+      "session_id": "3f35de670b9345efa7ad767a7be28391",
+      "scenario_id": "final-155",
+      "x": -0.0829976488141232,
+      "y": -0.011147999213150017,
+      "cluster": 7
+    },
+    {
+      "trace_id": "54b21a7ed450abed1b02229448619084",
+      "session_id": "f7cbd65870a04fadafbb8d235c1f2b99",
+      "scenario_id": "final-043",
+      "x": 0.15268206377980564,
+      "y": 0.13853344837396164,
+      "cluster": 7
+    },
+    {
+      "trace_id": "561c7e7fb4bf5c735051d2035a9096e2",
+      "session_id": "0e1c253f94504a10825c962f07712b54",
+      "scenario_id": "final-200",
+      "x": 0.7483138113210178,
+      "y": -0.10385500076922657,
+      "cluster": 0
+    },
+    {
+      "trace_id": "5733c42770cb734ab738c3b515eb4e7a",
+      "session_id": "3e24fa8ea10740f4b131f780fa5a69ec",
+      "scenario_id": "final-107",
+      "x": 0.061360432847397436,
+      "y": -0.029073403841883824,
+      "cluster": 7
+    },
+    {
+      "trace_id": "57a4082d76b3e705a13e287d80d836d9",
+      "session_id": "27f05cbabbec4583a283f5e1ba2740bc",
+      "scenario_id": "final-124",
+      "x": 2.642804925028983,
+      "y": -0.058733299198513764,
+      "cluster": 3
+    },
+    {
+      "trace_id": "5b69cdbc32c2bc0839ac43db3bc6455a",
+      "session_id": "c218f148475f488d8361a230f88ea0a4",
+      "scenario_id": "final-227",
+      "x": -0.45707323732502214,
+      "y": 0.20233991487009423,
+      "cluster": 0
+    },
+    {
+      "trace_id": "5b761bf45ed37f5947ad9a3cc76ef4bf",
+      "session_id": "6f8c2a0094e549bb8a11801aa4fb174d",
+      "scenario_id": "final-041",
+      "x": 0.006252351185876786,
+      "y": 0.15660200078685,
+      "cluster": 7
+    },
+    {
+      "trace_id": "5b953f38223e471730a0dd663d9a2854",
+      "session_id": "e40e563e8b16433e82d6226492d5c3f8",
+      "scenario_id": "final-076",
+      "x": -0.46571776971565526,
+      "y": 0.11204757634340734,
+      "cluster": 0
+    },
+    {
+      "trace_id": "5b991855f5e1a85731636bd2ff2d08ed",
+      "session_id": "49f0bcf4ebb2452c9e4d6ee596753a18",
+      "scenario_id": "final-033",
+      "x": -0.664450887877436,
+      "y": 0.2801181481181605,
+      "cluster": 6
+    },
+    {
+      "trace_id": "5bac22c6c06b764a83477c797751b6e5",
+      "session_id": "add5e52eeca049e69c0e7953bc218ae5",
+      "scenario_id": "final-056",
+      "x": -0.7839144371483234,
+      "y": 0.09033589127358121,
+      "cluster": 6
+    },
+    {
+      "trace_id": "5bcf2c56a84142f2f4b1a5519b2325f3",
+      "session_id": "47cdbc67db8d4cae9bb663904533f743",
+      "scenario_id": "final-133",
+      "x": -0.02268774461614695,
+      "y": 0.10116248331588722,
+      "cluster": 7
+    },
+    {
+      "trace_id": "5beb7015dbaa8e0b475261dbc250de1f",
+      "session_id": "2964e6ec9d864cbb9d127d20c796f405",
+      "scenario_id": "final-091",
+      "x": -2.619858783328869,
+      "y": 0.19616511804613368,
+      "cluster": 4
+    },
+    {
+      "trace_id": "5d4f4911ffb6d057aa70f990bed1554d",
+      "session_id": "04229bb4e0d348da8b6ed9d63c776ce4",
+      "scenario_id": "final-075",
+      "x": 0.22641122436309563,
+      "y": 0.07755764289829824,
+      "cluster": 7
+    },
+    {
+      "trace_id": "5ea154c642fa50554c3b204a446555ca",
+      "session_id": "6f942c2d59e94c40b3e2d2da859e8870",
+      "scenario_id": "final-005",
+      "x": -2.273037152396461,
+      "y": 0.1990219702619792,
+      "cluster": 4
+    },
+    {
+      "trace_id": "600b10cf7fee953c7e658573224634b8",
+      "session_id": "f12eec0cfab84da1ab51d9b9c96fc82b",
+      "scenario_id": "final-015",
+      "x": 2.653416891268474,
+      "y": -0.023713135834298557,
+      "cluster": 2
+    },
+    {
+      "trace_id": "60d1e18767a70ea16c72bda8e6db9bbe",
+      "session_id": "77baec4c41014bce803195a633203d75",
+      "scenario_id": "final-145",
+      "x": -0.14680628248628266,
+      "y": 0.24562015235280865,
+      "cluster": 0
+    },
+    {
+      "trace_id": "61de6854d6b74fb4d25c1c03fe9ae460",
+      "session_id": "c2824f7d40934daa94f206ae4b57608f",
+      "scenario_id": "final-244",
+      "x": -0.3366825895123595,
+      "y": 0.11168668540383213,
+      "cluster": 0
+    },
+    {
+      "trace_id": "630e2b1b37158558640192cf1f9ae23b",
+      "session_id": "012b7fa74a734ef290265270b7b5dc7c",
+      "scenario_id": "final-119",
+      "x": 2.7388713278570838,
+      "y": -0.016610314778574456,
+      "cluster": 3
+    },
+    {
+      "trace_id": "642aba4028dc864b03415486d11d9b87",
+      "session_id": "db59282a50814ffd8e31f93e8127bdec",
+      "scenario_id": "final-072",
+      "x": 0.037286187862835496,
+      "y": 0.06520281004431759,
+      "cluster": 0
+    },
+    {
+      "trace_id": "644b0935964c6b293d490ab10e695f2f",
+      "session_id": "6ddd52d9775448c1abf2d01239d46240",
+      "scenario_id": "final-035",
+      "x": 2.730178618002906,
+      "y": -0.0989167661474903,
+      "cluster": 3
+    },
+    {
+      "trace_id": "650900e08656ab38110ecb500bb0327d",
+      "session_id": "7aba67c094ca4a698041cc4d647d47c0",
+      "scenario_id": "final-209",
+      "x": -2.681893963532165,
+      "y": 0.3045260089857089,
+      "cluster": 4
+    },
+    {
+      "trace_id": "65b19f1f0a08ae68cd5ee9f9ccaa632a",
+      "session_id": "34860b6a5af44939ac7576562fc324cf",
+      "scenario_id": "final-123",
+      "x": -2.4744434115215257,
+      "y": 0.316433262048484,
+      "cluster": 4
+    },
+    {
+      "trace_id": "6646a0214ed9d79cddb798195c147b37",
+      "session_id": "daff77c53099407cbda6cff690499188",
+      "scenario_id": "final-062",
+      "x": -0.1400575530120995,
+      "y": 0.08654151825781276,
+      "cluster": 7
+    },
+    {
+      "trace_id": "6667f127785432691089b08736fc822b",
+      "session_id": "22c4ed41e9ef4c7ebd410b605715623d",
+      "scenario_id": "final-018",
+      "x": -2.465189526943555,
+      "y": 0.367628830041433,
+      "cluster": 4
+    },
+    {
+      "trace_id": "680606da3c34c0d126bf9f01e4e96d5e",
+      "session_id": "35dbea4a892d4316b2f30d73cf6a6253",
+      "scenario_id": "final-021",
+      "x": -3.1931440365326846,
+      "y": 0.43131634327774765,
+      "cluster": 4
+    },
+    {
+      "trace_id": "69bbb0a5bf4619de8103098b9e9b9e7b",
+      "session_id": "f7e773fe88a04b6b85bac32b5295ceac",
+      "scenario_id": "final-219",
+      "x": -2.6151478481101353,
+      "y": 0.18008044099275988,
+      "cluster": 4
+    },
+    {
+      "trace_id": "6d1b6753c206d9d722d9c8d8927b2414",
+      "session_id": "e9bcb65deb1b41b0bf34339a4c0d9adf",
+      "scenario_id": "final-247",
+      "x": 2.7739468433674626,
+      "y": -0.11605789456977995,
+      "cluster": 2
+    },
+    {
+      "trace_id": "6dd4244a1673315aeeacfaa8e91b04f1",
+      "session_id": "b2e09b61054e43dea6081bffa0b5a27e",
+      "scenario_id": "final-232",
+      "x": -0.31817347683008146,
+      "y": 0.1793661211926873,
+      "cluster": 0
+    },
+    {
+      "trace_id": "6e943dd821fef5c3f616c20a60768334",
+      "session_id": "69726a2f593e428ba05aed8101b226d5",
+      "scenario_id": "final-038",
+      "x": 0.1684138384152494,
+      "y": 0.17667457679625131,
+      "cluster": 7
+    },
+    {
+      "trace_id": "6f3f5d8ecc85b98a2fe41e8549c241b0",
+      "session_id": "a5182e80a6f9470986b839424238b856",
+      "scenario_id": "final-070",
+      "x": -0.2593062824862827,
+      "y": 0.04962015235280867,
+      "cluster": 0
+    },
+    {
+      "trace_id": "710e9503961f8e409bf2315478f8a295",
+      "session_id": "71de0a4ff9874b2c81e1cb27a545d76f",
+      "scenario_id": "final-217",
+      "x": 0.2341091623215807,
+      "y": 0.14009796206312025,
+      "cluster": 7
+    },
+    {
+      "trace_id": "7157b95f12d201c91d73c23a92fb7f2c",
+      "session_id": "59ab9cd9b0ca4c128b3fe52dd0f9192e",
+      "scenario_id": "final-171",
+      "x": -0.8657634061275661,
+      "y": 0.1746907316911702,
+      "cluster": 6
+    },
+    {
+      "trace_id": "7223eb433b22dc2a8654fb8dcee8386a",
+      "session_id": "be3bdf432c4b4ccb9241857f0d53af30",
+      "scenario_id": "final-028",
+      "x": -1.403733902376894,
+      "y": 0.3638642429467902,
+      "cluster": 4
+    },
+    {
+      "trace_id": "72446bf4106a6715d33fd9d9545ec7a2",
+      "session_id": "f740ed4a77a64f3cbb78adaf536b546b",
+      "scenario_id": "final-073",
+      "x": 0.15649323850359867,
+      "y": 0.0976725649979948,
+      "cluster": 7
+    },
+    {
+      "trace_id": "725e229372ad5577a65c0a7c44e8b2dd",
+      "session_id": "189d56872ed840a082aae8f1fad252ae",
+      "scenario_id": "final-085",
+      "x": 2.7103804405393617,
+      "y": -0.07968087898971928,
+      "cluster": 2
+    },
+    {
+      "trace_id": "72c9c63ac49bc00417f94a1248da65cd",
+      "session_id": "aa349fee66984e559237cfe0e19cc4db",
+      "scenario_id": "final-228",
+      "x": -0.2090406711738802,
+      "y": 0.21011209003256595,
+      "cluster": 0
+    },
+    {
+      "trace_id": "7541951e52602a64478ae3eaed6ae729",
+      "session_id": "138f106f69294c98a6ed6458f189c0af",
+      "scenario_id": "final-047",
+      "x": -0.7446188737369329,
+      "y": 0.1862330702178571,
+      "cluster": 6
+    },
+    {
+      "trace_id": "791b5c945f4277eb905edb5a1d537e7c",
+      "session_id": "8f74d5d4ca234de7803e3993dded1a25",
+      "scenario_id": "final-208",
+      "x": -0.8083753723670571,
+      "y": 0.22842056832695498,
+      "cluster": 6
+    },
+    {
+      "trace_id": "7d01fc54988e6627e4a7971b90bcdaa9",
+      "session_id": "213e1d05744748f586e9834e7f5162b8",
+      "scenario_id": "final-188",
+      "x": -3.323347202595478,
+      "y": 0.38254215631701943,
+      "cluster": 4
+    },
+    {
+      "trace_id": "7d8f57782aa0bf691655ed698bf010db",
+      "session_id": "b9060f14f70a4b87b892b1b517e37239",
+      "scenario_id": "final-148",
+      "x": -0.6488219667992053,
+      "y": 0.21591854896509013,
+      "cluster": 6
+    },
+    {
+      "trace_id": "7e0104894bc1bbd95a16dfcdd4462db7",
+      "session_id": "df2b1ab54d9f4d1aa11e712be43f50f4",
+      "scenario_id": "final-118",
+      "x": -0.08318386003817635,
+      "y": 0.2286080513088362,
+      "cluster": 0
+    },
+    {
+      "trace_id": "81687d790376714a32266df2e6b4d7c6",
+      "session_id": "06fcc8326c3c49a1b9a780a76a6a7478",
+      "scenario_id": "final-230",
+      "x": -0.21202894443944834,
+      "y": 0.2524084597193742,
+      "cluster": 0
+    },
+    {
+      "trace_id": "83992d3e78b7593521e56d84c4121dce",
+      "session_id": "5028108d6994477a9a60c6879ec76a3f",
+      "scenario_id": "final-002",
+      "x": -2.544856169276715,
+      "y": 0.12403205194408679,
+      "cluster": 4
+    },
+    {
+      "trace_id": "84f5fa27b4bfadc38c243f76535d1fb0",
+      "session_id": "fe5ed7b0ecbe46ed8cdd92425298488b",
+      "scenario_id": "final-080",
+      "x": -5.23331761629704,
+      "y": 0.4611617098180022,
+      "cluster": 4
+    },
+    {
+      "trace_id": "854348fad364f49d0bba2c834685e44d",
+      "session_id": "72337cf923a64fd2bb2941818825ae5f",
+      "scenario_id": "final-216",
+      "x": 0.2101403849463856,
+      "y": 0.1300818374226348,
+      "cluster": 7
+    },
+    {
+      "trace_id": "8605459cdacb737ff4cceead8b2ea12a",
+      "session_id": "eeafebedbdbb45608a0dd2e17f5e6827",
+      "scenario_id": "final-109",
+      "x": 1.0249505745557097,
+      "y": -0.1987037982284377,
+      "cluster": 7
+    },
+    {
+      "trace_id": "889015f9217b943ae5b50102b2d802e1",
+      "session_id": "cd7776e4bb704a6f8a9dd84174e4a9e0",
+      "scenario_id": "final-023",
+      "x": 2.736419505320628,
+      "y": 0.039653798063654516,
+      "cluster": 3
+    },
+    {
+      "trace_id": "8994ea12f4e69cc1a2a81c4cdd7861cb",
+      "session_id": "519b648929954b35a1230236ea6ee435",
+      "scenario_id": "final-112",
+      "x": 0.16208959343068743,
+      "y": -0.004299209317547278,
+      "cluster": 7
+    },
+    {
+      "trace_id": "8a7749c10e735132d687bf9d7db438a2",
+      "session_id": "96309f994ff8486895cf73956b1f095f",
+      "scenario_id": "final-067",
+      "x": 2.761765860247717,
+      "y": -0.14731797625188756,
+      "cluster": 3
+    },
+    {
+      "trace_id": "8b01146ab324bdcc74426549bb0684bc",
+      "session_id": "d000a6970a564776b6a93cea9a2373fe",
+      "scenario_id": "final-087",
+      "x": -0.1990497838561583,
+      "y": 0.10268265424371076,
+      "cluster": 0
+    },
+    {
+      "trace_id": "8b3307c851cdcfdeeb3e773b8cf4629a",
+      "session_id": "50ea8af061954e25a6a325b27ad15a04",
+      "scenario_id": "final-248",
+      "x": 0.1921964045663913,
+      "y": 0.19569675195872302,
+      "cluster": 7
+    },
+    {
+      "trace_id": "8c3562fe607ad87079c468d1b24e1034",
+      "session_id": "2ad604316c0a4ce0bdfac6dc64c7f044",
+      "scenario_id": "final-006",
+      "x": -2.310546265078739,
+      "y": 0.18759253447312402,
+      "cluster": 4
+    },
+    {
+      "trace_id": "8e5a8fa2c8bceae4e233dc59b7d5488b",
+      "session_id": "09e9b05d3abb448cb99ffad2802a293a",
+      "scenario_id": "final-246",
+      "x": -0.8029535019295897,
+      "y": 0.1620012142202074,
+      "cluster": 6
+    },
+    {
+      "trace_id": "90870616ba971337b1a51427631dd85e",
+      "session_id": "0aa09517ce8d4169bf6da964c433f19c",
+      "scenario_id": "final-029",
+      "x": 2.870699457419616,
+      "y": -0.19794096067182687,
+      "cluster": 3
+    },
+    {
+      "trace_id": "92309fe597b520d47735148e6ea7dd19",
+      "session_id": "73734e482b834cf19a973fa0c533f5cb",
+      "scenario_id": "final-213",
+      "x": -0.7691006483723767,
+      "y": 0.12759194179556743,
+      "cluster": 6
+    },
+    {
+      "trace_id": "92ab1c1e5d39a69cb15b2dc7c402baa7",
+      "session_id": "6326fd44fa024c2783bde4f31bc2cb45",
+      "scenario_id": "final-086",
+      "x": 0.07706225538385306,
+      "y": 0.057412483315887206,
+      "cluster": 7
+    },
+    {
+      "trace_id": "92af85f62ad0961735ad306208413dab",
+      "session_id": "f10564344aeb45eab62eb781d7d64ee4",
+      "scenario_id": "final-063",
+      "x": 0.2661247736339831,
+      "y": 0.15108989974287754,
+      "cluster": 7
+    },
+    {
+      "trace_id": "96f3315b47732240392e5ca8c6effebc",
+      "session_id": "3a9cad3a96cf4a22be446d1f91fbbb2a",
+      "scenario_id": "final-197",
+      "x": 0.7404700704460827,
+      "y": -0.14376629255573142,
+      "cluster": 0
+    },
+    {
+      "trace_id": "974ba593e6d855288d9acc2b150f8715",
+      "session_id": "15e8d663d2b246c8a61738b19c085d20",
+      "scenario_id": "final-190",
+      "x": 2.802524972929995,
+      "y": -0.08513854046303236,
+      "cluster": 3
+    },
+    {
+      "trace_id": "976925c09c664f6005fb6f9f04568c36",
+      "session_id": "bb54a9db34ba42b49e1979001ee34987",
+      "scenario_id": "final-239",
+      "x": 2.641468953309989,
+      "y": -0.1620034549991206,
+      "cluster": 5
+    },
+    {
+      "trace_id": "97a35631214a87af25b52a3a5b39bb2b",
+      "session_id": "01ec3d2ac0884de9abc62340faad938a",
+      "scenario_id": "final-168",
+      "x": 0.19922762719119624,
+      "y": 0.057430627318237545,
+      "cluster": 7
+    },
+    {
+      "trace_id": "97d3fd3becbbe02316495e63effc1c35",
+      "session_id": "79f7ed0e53bb41ddb86938ea1ba2604b",
+      "scenario_id": "final-098",
+      "x": -0.07708100648096328,
+      "y": 0.07694877888419623,
+      "cluster": 0
+    },
+    {
+      "trace_id": "97dac3e98b8a3c097a6cead09835fddc",
+      "session_id": "613584d6bd2a4ecdb742d16e8a3ad2ae",
+      "scenario_id": "final-251",
+      "x": 2.722157778586196,
+      "y": -0.08189257162315373,
+      "cluster": 2
+    },
+    {
+      "trace_id": "988acc1ae9e01595dd3e22bdc16c3d8a",
+      "session_id": "928fd50239244731ab4de0749ec1d09e",
+      "scenario_id": "final-146",
+      "x": -0.7793350370599742,
+      "y": 0.10433387947532471,
+      "cluster": 6
+    },
+    {
+      "trace_id": "98b6c2536ad8157fbe12e2e54118bae7",
+      "session_id": "2ad604316c0a4ce0bdfac6dc64c7f044",
+      "scenario_id": "final-006",
+      "x": -2.4402298622506384,
+      "y": 0.3262155188930633,
+      "cluster": 4
+    },
+    {
+      "trace_id": "98cf02cc68411ffd4c41d679515ea567",
+      "session_id": "2bac47182d7b4f699d984e5e3351253f",
+      "scenario_id": "final-130",
+      "x": -3.14927945624104,
+      "y": 0.3479534405399159,
+      "cluster": 4
+    },
+    {
+      "trace_id": "9955d3fee65ca3cd1917245c557018e3",
+      "session_id": "169942bf956d42afaef9cc8eb25b13f4",
+      "scenario_id": "final-120",
+      "x": 0.1331286582119537,
+      "y": 0.02728546773582652,
+      "cluster": 7
+    },
+    {
+      "trace_id": "99697a834382aa1945743764dc177207",
+      "session_id": "73bf34c52fc242bcae6dbcf7db721ab4",
+      "scenario_id": "final-001",
+      "x": -0.7138935977316135,
+      "y": 0.26531169674924465,
+      "cluster": 6
+    },
+    {
+      "trace_id": "9c4e9d70fe5b44043f0354aa93afe6a8",
+      "session_id": "e32bcace9d2241d7a0dbded23563d8b4",
+      "scenario_id": "final-126",
+      "x": -2.48696686499039,
+      "y": 0.3200905226748675,
+      "cluster": 4
+    },
+    {
+      "trace_id": "9c92568430b7ba3b832aa0d260047c62",
+      "session_id": "9bfccf83a0c44f9891f05bab13200a2b",
+      "scenario_id": "final-093",
+      "x": 0.03934870611296555,
+      "y": 0.15563022647130792,
+      "cluster": 7
+    },
+    {
+      "trace_id": "a0a4bc9038264d1648d269e937740aec",
+      "session_id": "beb3c4397c3a4febae455776e87869b8",
+      "scenario_id": "final-020",
+      "x": -0.0662828290174189,
+      "y": 0.1297128917264252,
+      "cluster": 0
+    },
+    {
+      "trace_id": "a19b6f19315ba45ab2012feafc3a34f4",
+      "session_id": "c4cf30b9183f4e218e07a848ceda1910",
+      "scenario_id": "final-079",
+      "x": 2.543721567362143,
+      "y": -0.11138652110116752,
+      "cluster": 5
+    },
+    {
+      "trace_id": "a2f901c5f24fd0755ba1dfbff15768fd",
+      "session_id": "8aa5c263c8784e22b556a6a745243375",
+      "scenario_id": "final-164",
+      "x": 2.7241512799560716,
+      "y": -0.06670507351405582,
+      "cluster": 3
+    },
+    {
+      "trace_id": "a455a12b3fc17a259ce606fd0c108109",
+      "session_id": "f86bfe95e2a04d17a74dc6d23787de78",
+      "scenario_id": "final-074",
+      "x": 0.09417033704537375,
+      "y": 0.14398707868715338,
+      "cluster": 7
+    },
+    {
+      "trace_id": "a6967cbce4e481ffbf9b7eae1646bd89",
+      "session_id": "90f5a96f037d41549f2893e05bd33b54",
+      "scenario_id": "final-108",
+      "x": 0.061372159581829344,
+      "y": 0.07097296584492443,
+      "cluster": 7
+    },
+    {
+      "trace_id": "a94bfd11dff245aa6438fed10e629cfc",
+      "session_id": "67465f24d1b24eb48d81cfd570836b7e",
+      "scenario_id": "final-040",
+      "x": 2.8335067475654387,
+      "y": -0.06749741204074271,
+      "cluster": 3
+    },
+    {
+      "trace_id": "a9ec3ba7b3a6f57c71d3cd5b298a2c5b",
+      "session_id": "d3402e9459214974919e09cd532c5b7b",
+      "scenario_id": "final-106",
+      "x": -0.5995381301222465,
+      "y": 0.13451935822255773,
+      "cluster": 6
+    },
+    {
+      "trace_id": "aa5b59c39d0aaa20d21301945c01050d",
+      "session_id": "cf80fb673a324daf95a4611469dbc196",
+      "scenario_id": "final-061",
+      "x": 0.7042474084929172,
+      "y": -0.1619779851891659,
+      "cluster": 0
+    },
+    {
+      "trace_id": "acb4c71aa737592b6adc42add196aaef",
+      "session_id": "24ce5eed126e4a179445317997025079",
+      "scenario_id": "final-110",
+      "x": 2.739015860247717,
+      "y": -0.09381797625188755,
+      "cluster": 3
+    },
+    {
+      "trace_id": "acfda79f8d059e3f88df2b2a7c9b939c",
+      "session_id": "39520481f0c3450893a4081c4f920de1",
+      "scenario_id": "final-161",
+      "x": 0.10629403001929685,
+      "y": -0.012196388261823135,
+      "cluster": 7
+    },
+    {
+      "trace_id": "aec547ae0f66ead21ae070ac74b2b215",
+      "session_id": "4ea1832d17e947bdaef623adb58746ff",
+      "scenario_id": "final-026",
+      "x": 0.23466122436309564,
+      "y": 0.12005764289829823,
+      "cluster": 7
+    },
+    {
+      "trace_id": "b0d1a964bad1109b7fbe9cb940fcaa75",
+      "session_id": "c4479ed09f824d95a7113f691dc9be64",
+      "scenario_id": "final-084",
+      "x": 2.837064037711261,
+      "y": -0.15180386340965857,
+      "cluster": 3
+    },
+    {
+      "trace_id": "b1b0554d9e55c4f076c9c82674302dfd",
+      "session_id": "62c766f6047146dc90750bab5166777c",
+      "scenario_id": "final-008",
+      "x": 2.8241304405393617,
+      "y": 0.045569121010280725,
+      "cluster": 2
+    },
+    {
+      "trace_id": "b2bf20c99c612fdbb1e5b12222d2f146",
+      "session_id": "b98e51c9ad424941a8bc9f84b688e8ee",
+      "scenario_id": "final-229",
+      "x": -0.3576370261009689,
+      "y": 0.24758386434810797,
+      "cluster": 0
+    },
+    {
+      "trace_id": "b2f4f5f9a82787b8b90db0870513c2bf",
+      "session_id": "5b6253b5a71149c283ab67a80fa97397",
+      "scenario_id": "final-137",
+      "x": 2.5942749729299948,
+      "y": -0.18313854046303235,
+      "cluster": 3
+    },
+    {
+      "trace_id": "b2f68dd5d3acab0221084d0b0895bf3d",
+      "session_id": "f7c07f2738484073ba0dafc12ee68d49",
+      "scenario_id": "final-182",
+      "x": -0.22113702610096891,
+      "y": 0.10083386434810798,
+      "cluster": 0
+    },
+    {
+      "trace_id": "b3e755b4d1a06968c550bb1b2999314a",
+      "session_id": "3022814ac04e4bc2bdc069a09ec93388",
+      "scenario_id": "final-132",
+      "x": -2.3954043467402597,
+      "y": 0.2790179391018578,
+      "cluster": 4
+    },
+    {
+      "trace_id": "b41255e38c2cefbb8fb593fd0ef54179",
+      "session_id": "6b30e8c1270248dcbfaab56561d169fc",
+      "scenario_id": "final-097",
+      "x": 0.9251432844098874,
+      "y": -0.2731473468595218,
+      "cluster": 7
+    },
+    {
+      "trace_id": "b5cb636269c621483e18bc3488f5b1be",
+      "session_id": "9ca1890cb45a4082b481f65914bc34ac",
+      "scenario_id": "final-186",
+      "x": -0.6046474823095841,
+      "y": 0.23436612875629564,
+      "cluster": 6
+    },
+    {
+      "trace_id": "b6205153a0fed9c98a2a7f83bb90d9d8",
+      "session_id": "98a201b38aae409c98bc51a3b7970b5e",
+      "scenario_id": "final-099",
+      "x": -0.7556917751951578,
+      "y": 0.27954758390701573,
+      "cluster": 6
+    },
+    {
+      "trace_id": "b64feaf4751b9133a772b32d1f98125a",
+      "session_id": "4efe684f7ba943f69e13cd2076bfd4af",
+      "scenario_id": "final-111",
+      "x": -0.7024079385181992,
+      "y": 0.30339839316448325,
+      "cluster": 6
+    },
+    {
+      "trace_id": "b88ddc288d5cad6737272bc4e40aa8b2",
+      "session_id": "d18aea756a85469ca8c035f2f43aceea",
+      "scenario_id": "final-150",
+      "x": -1.297537095533918,
+      "y": 0.0335604784205841,
+      "cluster": 6
+    },
+    {
+      "trace_id": "b938d527490938168b210489e27895fe",
+      "session_id": "90c86b59719048049e36bcfd52124140",
+      "scenario_id": "final-181",
+      "x": -0.13033100648096327,
+      "y": 0.16544877888419623,
+      "cluster": 0
+    },
+    {
+      "trace_id": "baf4477a596c4b6f635706bfdb409039",
+      "session_id": "7ce55cfdf3cc467c962cb8bbc1b77626",
+      "scenario_id": "final-100",
+      "x": -0.06816302062146634,
+      "y": 0.21983385678449963,
+      "cluster": 7
+    },
+    {
+      "trace_id": "bdf4269a19850223970f32afba6c5c44",
+      "session_id": "b4d080001ecd4c7da53819d0a0fb661c",
+      "scenario_id": "final-010",
+      "x": 0.2031247736339831,
+      "y": -0.018160100257122475,
+      "cluster": 7
+    },
+    {
+      "trace_id": "becc436e34c01c6f4938c057e3d260e3",
+      "session_id": "f30e117547da4d04bb9982c1b15ecaa2",
+      "scenario_id": "final-014",
+      "x": -0.7175134061275661,
+      "y": 0.1371907316911702,
+      "cluster": 6
+    },
+    {
+      "trace_id": "bff5b93bd80a3642c13cf07e1cbf448c",
+      "session_id": "84e4890435944bbfbc143d18ae548100",
+      "scenario_id": "final-046",
+      "x": 0.3713109848580363,
+      "y": 0.1050838492208913,
+      "cluster": 7
+    },
+    {
+      "trace_id": "c02e53c7588465878f9a65ab9c3dadac",
+      "session_id": "9b686a89e03344a0963d3b6eeeac7cc6",
+      "scenario_id": "final-192",
+      "x": 2.3551681617942912,
+      "y": 0.002115498260697332,
+      "cluster": 5
+    },
+    {
+      "trace_id": "c04405a4027a64e879af0d1f6fe7c59d",
+      "session_id": "1a29fe21b6424609949d34c753e1a805",
+      "scenario_id": "final-196",
+      "x": -0.21835184589767329,
+      "y": 0.01847297340853278,
+      "cluster": 0
+    },
+    {
+      "trace_id": "c12c88e2a813a52009f012c022cd5e04",
+      "session_id": "bd1d4a74909146cea6d09dd484ecab21",
+      "scenario_id": "final-090",
+      "x": 0.16252841870689438,
+      "y": 0.15731167405841961,
+      "cluster": 7
+    },
+    {
+      "trace_id": "c16391706a12c6a76908c7ac9bec3fe3",
+      "session_id": "28763e671abe4578a5b024ad344db388",
+      "scenario_id": "final-204",
+      "x": 2.594772358877841,
+      "y": -0.009255474360985463,
+      "cluster": 2
+    },
+    {
+      "trace_id": "c1d8f6237a771afaf904ecb770e025ef",
+      "session_id": "1483445b12d7421a89ddb19ad050b0e8",
+      "scenario_id": "final-032",
+      "x": -0.6314600005597142,
+      "y": 0.2866887123293053,
+      "cluster": 6
+    },
+    {
+      "trace_id": "c3a7209274c88db321d28dd9aa1cd909",
+      "session_id": "97efacf5fd74484b8993a90af64b39ba",
+      "scenario_id": "final-243",
+      "x": 0.2502120158787937,
+      "y": 0.016188689638480275,
+      "cluster": 7
+    },
+    {
+      "trace_id": "c68a188d214b8a6a368a78960f756c3c",
+      "session_id": "664b8df80ac24897b2abd5593dfcb5e5",
+      "scenario_id": "final-017",
+      "x": -2.4560762171777273,
+      "y": 0.3534372932086054,
+      "cluster": 4
+    },
+    {
+      "trace_id": "c7495a31f9d5aa3ffb16d15cbaec614d",
+      "session_id": "d588eea25bce491fa5f93878640e5151",
+      "scenario_id": "final-165",
+      "x": 0.0673304807484093,
+      "y": 0.09827135489359756,
+      "cluster": 7
+    },
+    {
+      "trace_id": "c8ac3c1e5475a7ebb20184f1f634a4d7",
+      "session_id": "9e069430b96b476798015cb75fa2a9b0",
+      "scenario_id": "final-121",
+      "x": -0.5928011273824954,
+      "y": 0.26739435444075355,
+      "cluster": 6
+    },
+    {
+      "trace_id": "c93b064e834c94905ccd0dfd430d6f3d",
+      "session_id": "17eb91f85e044dacbfe41d66d871995c",
+      "scenario_id": "final-234",
+      "x": -0.020629183944507634,
+      "y": -0.00031533395803273745,
+      "cluster": 0
+    },
+    {
+      "trace_id": "cb0f7cc30cab52b64a64270262a5b016",
+      "session_id": "dcfb215c752a44ffa498bbea7834361a",
+      "scenario_id": "final-022",
+      "x": -1.0796957327736485,
+      "y": 0.09214235020610541,
+      "cluster": 6
+    },
+    {
+      "trace_id": "cba13eef9421c6bcae64cce57433d2b5",
+      "session_id": "71949f3d9d8747a2922a37873ae2b30b",
+      "scenario_id": "final-212",
+      "x": -0.2757099275591939,
+      "y": 0.0906483780372666,
+      "cluster": 0
+    },
+    {
+      "trace_id": "ccd6e6db685be11cb13ec309542f35d6",
+      "session_id": "25b8751603554567ba816c6669d14d08",
+      "scenario_id": "final-199",
+      "x": -3.2427638449286373,
+      "y": 0.3186953782196732,
+      "cluster": 4
+    },
+    {
+      "trace_id": "ccdb1f2c71834a7dbabc119b31eb62d4",
+      "session_id": "cb5b5c1ce9464ba6851f2c2732240217",
+      "scenario_id": "final-125",
+      "x": 2.718084877127971,
+      "y": -0.054828057933995145,
+      "cluster": 3
+    },
+    {
+      "trace_id": "cd8fdc9bd2535f4abf9a88c7064d743d",
+      "session_id": "037209025df84aea884fad3a2089345f",
+      "scenario_id": "final-143",
+      "x": 2.658474181414297,
+      "y": 0.055980412796785575,
+      "cluster": 2
+    },
+    {
+      "trace_id": "ce0d39348a29dc2de031411c6ece532b",
+      "session_id": "2472b7a64b064d80a5a818bfa8b14b1d",
+      "scenario_id": "final-128",
+      "x": 0.13620028914436183,
+      "y": 0.196892319951672,
+      "cluster": 7
+    },
+    {
+      "trace_id": "cee3ae9b770e80324dbb06b46efe2ab0",
+      "session_id": "444e06f83cbe4a57af050893b2f2d4c3",
+      "scenario_id": "final-241",
+      "x": 2.645949457419616,
+      "y": 0.03730903932817313,
+      "cluster": 3
+    },
+    {
+      "trace_id": "d2388ae239df8ecbc3abf8e62ed705e8",
+      "session_id": "1dca80ef421f451397e9c53963630bf9",
+      "scenario_id": "final-011",
+      "x": 0.3680609848580363,
+      "y": 0.1028338492208913,
+      "cluster": 7
+    },
+    {
+      "trace_id": "d5bb8d9e3025df5af1c4bbf715d8d574",
+      "session_id": "9ef282013de241b4b65754df68e15c4d",
+      "scenario_id": "final-105",
+      "x": 0.15459482153499501,
+      "y": 0.0634346584783589,
+      "cluster": 7
+    },
+    {
+      "trace_id": "d64a7d1e5d26dec9040de5f2a3c71bf9",
+      "session_id": "3672a010d1b84964a6502ce0cbc01206",
+      "scenario_id": "final-187",
+      "x": 2.684015860247717,
+      "y": -0.018817976251887553,
+      "cluster": 3
+    },
+    {
+      "trace_id": "d7633835f952310e3c672372823fd59d",
+      "session_id": "a8160451743f470cb58e4a2325f73ac5",
+      "scenario_id": "final-053",
+      "x": 0.034062255383853046,
+      "y": 0.1689124833158872,
+      "cluster": 7
+    },
+    {
+      "trace_id": "d93317b8f29091f7ddf0748f9729ea32",
+      "session_id": "c10a5d7fc21f4b858bb1985e2248e10f",
+      "scenario_id": "final-154",
+      "x": 2.8146512799560717,
+      "y": -0.004455073514055816,
+      "cluster": 3
+    },
+    {
+      "trace_id": "d9b59ad2daf860b6ceda38b871af399d",
+      "session_id": "cc6937c9f8404b4e8d7fd6b34e528577",
+      "scenario_id": "final-051",
+      "x": -2.467771541084059,
+      "y": 0.21201390794173647,
+      "cluster": 4
+    },
+    {
+      "trace_id": "de8275d9a225edb84234c3b13beb94b8",
+      "session_id": "d7553576cc39426a8565d7a06a40dd87",
+      "scenario_id": "final-240",
+      "x": 2.74891039263835,
+      "y": 0.03322436227479936,
+      "cluster": 3
+    },
+    {
+      "trace_id": "deda2978bc128222ac6078f39b9796c3",
+      "session_id": "971b5e0b2f544c4099f44a7b75a29f87",
+      "scenario_id": "final-044",
+      "x": 0.10307398211828499,
+      "y": 0.05645885300269547,
+      "cluster": 7
+    },
+    {
+      "trace_id": "e62a6a923f82e7d788b920ba0b4cf16b",
+      "session_id": "82a0e3c4128f441f9095fbb02808bd15",
+      "scenario_id": "final-042",
+      "x": 0.32077192007677,
+      "y": 0.05124917216751751,
+      "cluster": 7
+    },
+    {
+      "trace_id": "e672ed9c9469d8ec8f8a578c0ff47b7f",
+      "session_id": "5e93f3624b3d46e99cdffe972e17c288",
+      "scenario_id": "final-231",
+      "x": 0.0818903849463856,
+      "y": 0.008581837422634797,
+      "cluster": 7
+    },
+    {
+      "trace_id": "e6791d7f43a12a27be36d5faa430b4b1",
+      "session_id": "3e13bbe09cab45d3ae110527b0e5ce59",
+      "scenario_id": "final-191",
+      "x": 2.6838322630758173,
+      "y": -0.06719499183194823,
+      "cluster": 2
+    },
+    {
+      "trace_id": "ea132ba978f73d96cc0cccebc25c37cf",
+      "session_id": "e74e37c580d44770bcf8be2c5e4bc564",
+      "scenario_id": "final-101",
+      "x": 2.595398665903918,
+      "y": -0.1263220074120089,
+      "cluster": 2
+    },
+    {
+      "trace_id": "ebee3e4a4fc399f7d010810d9671fd69",
+      "session_id": "8ab6ddccb21c42da8c48c69b2a9997b0",
+      "scenario_id": "final-129",
+      "x": -3.284955284256998,
+      "y": 0.24246756094575322,
+      "cluster": 4
+    },
+    {
+      "trace_id": "ebf8bef5e789d0c9dd962858d2d25420",
+      "session_id": "9554512b47314510b332ffe8f35f35a4",
+      "scenario_id": "final-136",
+      "x": 0.009150768154480488,
+      "y": 0.21083990730648589,
+      "cluster": 0
+    },
+    {
+      "trace_id": "ed101d137cec6f2e40f5c32f5f447f09",
+      "session_id": "b451f7b02e7d47a99612e23dbfa754eb",
+      "scenario_id": "final-034",
+      "x": -0.5639847245543947,
+      "y": 0.2355173388606929,
+      "cluster": 6
+    },
+    {
+      "trace_id": "ed6f29d74d1644b59e04dee0263a2f51",
+      "session_id": "71894bf3cdf0434b93d71d59edb0f2b8",
+      "scenario_id": "final-036",
+      "x": -0.9060915356900985,
+      "y": 0.3070213775844226,
+      "cluster": 6
+    },
+    {
+      "trace_id": "ed709a03e7738079a79a7e076106dee7",
+      "session_id": "2f19d4a6645f41c19eb625b3c643f16c",
+      "scenario_id": "final-210",
+      "x": -2.7635171761555766,
+      "y": -10.626530723560323,
+      "cluster": 1
+    },
+    {
+      "trace_id": "ed9a8d84d3e2bd73e43220a076091493",
+      "session_id": "9abdf6dab58b4820be8bcbf0ed6cb53f",
+      "scenario_id": "final-012",
+      "x": 0.21504403001929684,
+      "y": 0.08880361173817686,
+      "cluster": 7
+    },
+    {
+      "trace_id": "f182cec995aab05a4c7bc2b08010e489",
+      "session_id": "5991f2b0eea74e99a0e3b914eec2058b",
+      "scenario_id": "final-144",
+      "x": -3.1111414224805314,
+      "y": 0.2956832771757007,
+      "cluster": 4
+    },
+    {
+      "trace_id": "f231f8e4d8b209d44ec9f7f9954f499d",
+      "session_id": "321af6ba41e341c7a4d50d06aa7de1a0",
+      "scenario_id": "final-149",
+      "x": -0.7651332145235186,
+      "y": 0.10256976663309575,
+      "cluster": 6
+    },
+    {
+      "trace_id": "f339ee6c0ded3d03bbf6b8c44e685709",
+      "session_id": "acbd84ae691f41c6b1ec999439b5c3f9",
+      "scenario_id": "final-170",
+      "x": -0.790889713153643,
+      "y": 0.09600726474219365,
+      "cluster": 6
+    },
+    {
+      "trace_id": "f36e655b6d1ea3c7c1a1d65c2f8d3df4",
+      "session_id": "7ed13870c0a1492f8c38b9ad0360a260",
+      "scenario_id": "final-141",
+      "x": -0.19582189379868514,
+      "y": -0.005121785326948597,
+      "cluster": 0
+    },
+    {
+      "trace_id": "f371f8c5a41767554698854a80738c3f",
+      "session_id": "9833ae383d694fc28ab8fe96ac975807",
+      "scenario_id": "final-092",
+      "x": -2.374124394641272,
+      "y": 0.2841731803663764,
+      "cluster": 4
+    },
+    {
+      "trace_id": "f467e94d76da41c147b6928977bc0921",
+      "session_id": "e5cfb358e9aa45a090cbc4003ad9d81e",
+      "scenario_id": "final-083",
+      "x": 0.044152111680817493,
+      "y": 0.12312820710944306,
+      "cluster": 7
+    },
+    {
+      "trace_id": "f62d87064591fdb9e3c5ebba9846e6c3",
+      "session_id": "10f6ad13013848b78cb627a045941d7f",
+      "scenario_id": "final-059",
+      "x": 0.07246851450891811,
+      "y": 0.09450119152938237,
+      "cluster": 7
+    },
+    {
+      "trace_id": "f7843ea21a98a5d25175f663c24930e8",
+      "session_id": "aa6648735aee410fa3453ed24f4ea233",
+      "scenario_id": "final-122",
+      "x": 0.08165599625878806,
+      "y": 0.00957377510239206,
+      "cluster": 7
+    },
+    {
+      "trace_id": "f7a7d4fff5dd272e495bb3fcac8c78ac",
+      "session_id": "94a29dd2c33649cfa910f390e1781ab8",
+      "scenario_id": "final-245",
+      "x": -0.26437529936653703,
+      "y": 0.052130234034916276,
+      "cluster": 0
+    },
+    {
+      "trace_id": "f80ed53f8f9d241c36fce7cc8001f08c",
+      "session_id": "9c863f0beedf47e8925b43dadf9d738a",
+      "scenario_id": "final-147",
+      "x": 1.13226309280584,
+      "y": -0.09552638180144737,
+      "cluster": 7
+    },
+    {
+      "trace_id": "f8b969283cb7c6e4d6df57f30f4b8de1",
+      "session_id": "82c4f4eafcd84d7487b6f975105db86b",
+      "scenario_id": "final-220",
+      "x": -0.2941226853143833,
+      "y": 0.019497167932869347,
+      "cluster": 0
+    },
+    {
+      "trace_id": "f92219e73ea601cccb86a847abbbeffe",
+      "session_id": "9e35ed9f9a4a4e3ab00afd3d12d0e837",
+      "scenario_id": "final-235",
+      "x": 2.8421031024925276,
+      "y": -0.07196918635628478,
+      "cluster": 3
+    },
+    {
+      "trace_id": "fbd73953b70ded8cde4bff09d85f4a94",
+      "session_id": "4be93e3a99894885ac31700828651032",
+      "scenario_id": "final-115",
+      "x": -0.08406927974653138,
+      "y": 0.1194951485710045,
+      "cluster": 0
+    },
+    {
+      "trace_id": "fc6625780e822a43823da38745f0cf3a",
+      "session_id": "62c766f6047146dc90750bab5166777c",
+      "scenario_id": "final-008",
+      "x": -2.5247507016673487,
+      "y": 0.3704897134173999,
+      "cluster": 4
+    },
+    {
+      "trace_id": "fcc05d857eba2fd5e2dd9ba0fd2f75fe",
+      "session_id": "ba6555e52719480f843e0004357cc2fa",
+      "scenario_id": "final-176",
+      "x": -0.35889352473109337,
+      "y": 0.06002136245720591,
+      "cluster": 0
+    }
+  ],
+  "clusters": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

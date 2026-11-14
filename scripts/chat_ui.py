@@ -19,6 +19,7 @@ It binds to localhost only and never sends or displays API keys.
 
 from __future__ import annotations
 
+import ast
 import json
 import subprocess
 import sys
@@ -38,7 +39,6 @@ from agent.agent import prompt_version  # noqa: E402
 from agent.cli import SESSIONS_DB  # noqa: E402
 from agent.config import db_path  # noqa: E402
 from observability.instrument import load_env  # noqa: E402
-from scripts import record_session as rs  # noqa: E402
 
 HOST, PORT = "127.0.0.1", 8765
 SERVER_URL = "http://127.0.0.1:8010"  # the HW2 traced endpoint
@@ -49,7 +49,31 @@ PAGE = Path(__file__).with_name("chat_ui.html")
 # kept out of git through .git/info/exclude.
 HISTORY_FILE = REPO_ROOT / ".chat_ui_history.jsonl"
 
+def _parse_value(raw: object) -> object:
+    """Tool outputs are stored as Python-repr or JSON strings; parse either."""
+    if not isinstance(raw, str):
+        return raw
+    for parser in (json.loads, ast.literal_eval):
+        try:
+            return parser(raw)
+        except (ValueError, SyntaxError):
+            continue
+    return raw
+
+
+def _message_text(item: dict) -> str:
+    content = item.get("content")
+    if isinstance(content, str):
+        return content
+    return "".join(part.get("text", "") for part in content or [] if isinstance(part, dict))
+
+
 app = FastAPI(title="Cartwheel chat")
+
+# HW4 conversation review (open coding). The code lives in analysis/review_app/ and is served at /review.
+from analysis.review_app.api import router as review_router  # noqa: E402
+
+app.include_router(review_router)
 STATE: dict = {}  # one active chat at a time: session_id, token, role, user_id, model
 
 
@@ -139,7 +163,7 @@ def _items_after(item_id: int) -> list[dict]:
 def to_events(items: list[dict]) -> list[dict]:
     """Stored items -> display events, in the order the agent produced them."""
     outputs = {
-        i["call_id"]: rs.parse_value(i.get("output"))
+        i["call_id"]: _parse_value(i.get("output"))
         for i in items
         if i.get("type") == "function_call_output"
     }
@@ -155,12 +179,12 @@ def to_events(items: list[dict]) -> list[dict]:
                 {
                     "kind": "tool",
                     "name": item["name"],
-                    "arguments": rs.parse_value(item.get("arguments")),
+                    "arguments": _parse_value(item.get("arguments")),
                     "result": outputs.get(item["call_id"]),
                 }
             )
         elif kind == "message" and item.get("role") == "assistant":
-            events.append({"kind": "assistant", "text": rs.message_text(item)})
+            events.append({"kind": "assistant", "text": _message_text(item)})
     # Text the agent wrote before a tool call is narration; the last assistant
     # message of the turn is the final reply.
     last_assistant = max(

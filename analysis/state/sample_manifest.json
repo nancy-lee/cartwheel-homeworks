@@ -1,0 +1,1451 @@
+{
+  "source": "langfuse (live)",
+  "strategy": "batch1: 15 uniform + 15 cluster representatives; batch2: 30 across intent; batch3: 25 across intent; batch4: 15 across intent; batch5: 15 across intent",
+  "seed": 7,
+  "selected_at": "2026-11-14T20:33:14+00:00",
+  "batches": [
+    {
+      "name": "batch1",
+      "created_at": "2026-11-11T20:49:55+00:00",
+      "picks": [
+        {
+          "trace_id": "01e1e121909d6992e78d890eb486f3dd",
+          "session_id": "502ba68b2d6f4e208f90698638c0355d",
+          "scenario_id": "final-250",
+          "reason": "cluster 0 representative"
+        },
+        {
+          "trace_id": "14199400f1350897dfe2afce25f019d9",
+          "session_id": "96263e42b5384390b7506313bc5c97c7",
+          "scenario_id": "final-104",
+          "reason": "cluster 1 representative"
+        },
+        {
+          "trace_id": "064a3ba1e45bbba15c39691a8f545f69",
+          "session_id": "555582aa53f14b829511d3dfca8a1b89",
+          "scenario_id": "final-223",
+          "reason": "cluster 2 representative"
+        },
+        {
+          "trace_id": "0151b5bf790dc90c65e9f69d336454b7",
+          "session_id": "e583b4fe92f34085be090ec7c7fda32d",
+          "scenario_id": "final-071",
+          "reason": "cluster 3 representative"
+        },
+        {
+          "trace_id": "0a39ac0281d0bad8971768b0f7b0ae4e",
+          "session_id": "5028108d6994477a9a60c6879ec76a3f",
+          "scenario_id": "final-002",
+          "reason": "cluster 4 representative"
+        },
+        {
+          "trace_id": "197226813942874b87bf2be5b2943baf",
+          "session_id": "855373b69305416ab2bb374e2fd04428",
+          "scenario_id": "final-094",
+          "reason": "cluster 5 representative"
+        },
+        {
+          "trace_id": "037dd385f56af33805dec224df51e457",
+          "session_id": "5677fe0288644ade915beb8562ddf791",
+          "scenario_id": "final-139",
+          "reason": "cluster 6 representative"
+        },
+        {
+          "trace_id": "0587f5cc5721aeeafb67afb420e9635f",
+          "session_id": "6f942c2d59e94c40b3e2d2da859e8870",
+          "scenario_id": "final-005",
+          "reason": "cluster 0 representative"
+        },
+        {
+          "trace_id": "ed709a03e7738079a79a7e076106dee7",
+          "session_id": "2f19d4a6645f41c19eb625b3c643f16c",
+          "scenario_id": "final-210",
+          "reason": "cluster 1 representative"
+        },
+        {
+          "trace_id": "065df2141b14af8a59462de602bc8cc5",
+          "session_id": "16212726247d430abc94d66642139e88",
+          "scenario_id": "final-156",
+          "reason": "cluster 2 representative"
+        },
+        {
+          "trace_id": "088f5cc5a990d3cde3757587a3b2d48a",
+          "session_id": "fc28bd44d2eb42368060fce28a83f331",
+          "scenario_id": "final-031",
+          "reason": "cluster 3 representative"
+        },
+        {
+          "trace_id": "0b73aad7ee2c8d25c869f8810b6baea1",
+          "session_id": "b0b2f57afebf461a97d8aefd448852c5",
+          "scenario_id": "final-198",
+          "reason": "cluster 4 representative"
+        },
+        {
+          "trace_id": "1d24d61f98ad072fd121af27626133c4",
+          "session_id": "3a7b5e0259de4bbe9aa2a3e3fb6cc5d0",
+          "scenario_id": "final-030",
+          "reason": "cluster 5 representative"
+        },
+        {
+          "trace_id": "05cf887870c563229ac35975c9812c2e",
+          "session_id": "f8b646229200484abab319508c36d7dc",
+          "scenario_id": "final-103",
+          "reason": "cluster 6 representative"
+        },
+        {
+          "trace_id": "10295e72ca5b239dfa33d2a1a36ae4e9",
+          "session_id": "11e5ff69c3e74e38881a6140a0944e36",
+          "scenario_id": "final-142",
+          "reason": "cluster 0 representative"
+        },
+        {
+          "trace_id": "31788d35052bb6662a1fd6c39d034a20",
+          "session_id": "e127baca736f40c3a36da6d43858e67c",
+          "scenario_id": "final-222",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "7223eb433b22dc2a8654fb8dcee8386a",
+          "session_id": "be3bdf432c4b4ccb9241857f0d53af30",
+          "scenario_id": "final-028",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "c02e53c7588465878f9a65ab9c3dadac",
+          "session_id": "9b686a89e03344a0963d3b6eeeac7cc6",
+          "scenario_id": "final-192",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "147c038f3d2c351aa551d90b52f8ad49",
+          "session_id": "bac37ac30f9542e7bd4562c52c4121b2",
+          "scenario_id": "final-009",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "1accda77d1d896377ad8b1042cb11688",
+          "session_id": "1e5a68e92fa547c5bc71197334956d78",
+          "scenario_id": "final-174",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "f8b969283cb7c6e4d6df57f30f4b8de1",
+          "session_id": "82c4f4eafcd84d7487b6f975105db86b",
+          "scenario_id": "final-220",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "9c4e9d70fe5b44043f0354aa93afe6a8",
+          "session_id": "e32bcace9d2241d7a0dbded23563d8b4",
+          "scenario_id": "final-126",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "24883b00add622816d756bddd2be3727",
+          "session_id": "75e28c7f565340d98496837700ac024e",
+          "scenario_id": "final-007",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "680606da3c34c0d126bf9f01e4e96d5e",
+          "session_id": "35dbea4a892d4316b2f30d73cf6a6253",
+          "scenario_id": "final-021",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "aec547ae0f66ead21ae070ac74b2b215",
+          "session_id": "4ea1832d17e947bdaef623adb58746ff",
+          "scenario_id": "final-026",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "17c41f2bfefa5a550e357dec676e0861",
+          "session_id": "446fcae7444f4b1e9b9c269f4fe3b591",
+          "scenario_id": "final-013",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "97a35631214a87af25b52a3a5b39bb2b",
+          "session_id": "01ec3d2ac0884de9abc62340faad938a",
+          "scenario_id": "final-168",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "3c7e60f33d265d7fb515c49c53fe846a",
+          "session_id": "8924cf66812f402488e976ba66f0714f",
+          "scenario_id": "final-016",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "11d5a4066f0d9113f3ecdaf5e32125ff",
+          "session_id": "8f09e728c6fe485ca6e44fd194876e8f",
+          "scenario_id": "final-027",
+          "reason": "uniform random pick"
+        },
+        {
+          "trace_id": "1ed719aa1aa44b7d3948507c362b8d42",
+          "session_id": "5cd29750383c4a46ab236ca6b7da505e",
+          "scenario_id": "final-096",
+          "reason": "uniform random pick"
+        }
+      ]
+    },
+    {
+      "name": "batch2",
+      "created_at": "2026-11-11T22:30:33+00:00",
+      "dimension": "intent",
+      "picks": [
+        {
+          "trace_id": "2aa7fa18d3c9ea17cd493828d04c2824",
+          "session_id": "acf889b2af33468e916596b20104fbba",
+          "scenario_id": "final-237",
+          "reason": "intent = account_change"
+        },
+        {
+          "trace_id": "acb4c71aa737592b6adc42add196aaef",
+          "session_id": "24ce5eed126e4a179445317997025079",
+          "scenario_id": "final-110",
+          "reason": "intent = account_change"
+        },
+        {
+          "trace_id": "e6791d7f43a12a27be36d5faa430b4b1",
+          "session_id": "3e13bbe09cab45d3ae110527b0e5ce59",
+          "scenario_id": "final-191",
+          "reason": "intent = account_change"
+        },
+        {
+          "trace_id": "791b5c945f4277eb905edb5a1d537e7c",
+          "session_id": "8f74d5d4ca234de7803e3993dded1a25",
+          "scenario_id": "final-208",
+          "reason": "intent = cancellation"
+        },
+        {
+          "trace_id": "ed101d137cec6f2e40f5c32f5f447f09",
+          "session_id": "b451f7b02e7d47a99612e23dbfa754eb",
+          "scenario_id": "final-034",
+          "reason": "intent = cancellation"
+        },
+        {
+          "trace_id": "f62d87064591fdb9e3c5ebba9846e6c3",
+          "session_id": "10f6ad13013848b78cb627a045941d7f",
+          "scenario_id": "final-059",
+          "reason": "intent = cancellation"
+        },
+        {
+          "trace_id": "3e0463f5aec11362c33fd2a1bf35839f",
+          "session_id": "a843ef751f4f4261ab043a9d6462e11d",
+          "scenario_id": "final-214",
+          "reason": "intent = dispute"
+        },
+        {
+          "trace_id": "84f5fa27b4bfadc38c243f76535d1fb0",
+          "session_id": "fe5ed7b0ecbe46ed8cdd92425298488b",
+          "scenario_id": "final-080",
+          "reason": "intent = dispute"
+        },
+        {
+          "trace_id": "2d14514a617e418ebed622fd62b44d31",
+          "session_id": "a12637aeec974cc0b43e49e302b67a30",
+          "scenario_id": "final-180",
+          "reason": "intent = dispute"
+        },
+        {
+          "trace_id": "710e9503961f8e409bf2315478f8a295",
+          "session_id": "71de0a4ff9874b2c81e1cb27a545d76f",
+          "scenario_id": "final-217",
+          "reason": "intent = order_status"
+        },
+        {
+          "trace_id": "35df7967065fb753c556b945e9dacc04",
+          "session_id": "d7b375c6426c441ebcfbdf3a6d631ac6",
+          "scenario_id": "final-048",
+          "reason": "intent = order_status"
+        },
+        {
+          "trace_id": "b5cb636269c621483e18bc3488f5b1be",
+          "session_id": "9ca1890cb45a4082b481f65914bc34ac",
+          "scenario_id": "final-186",
+          "reason": "intent = order_status"
+        },
+        {
+          "trace_id": "baf4477a596c4b6f635706bfdb409039",
+          "session_id": "7ce55cfdf3cc467c962cb8bbc1b77626",
+          "scenario_id": "final-100",
+          "reason": "intent = order_status"
+        },
+        {
+          "trace_id": "90870616ba971337b1a51427631dd85e",
+          "session_id": "0aa09517ce8d4169bf6da964c433f19c",
+          "scenario_id": "final-029",
+          "reason": "intent = out_of_scope"
+        },
+        {
+          "trace_id": "8a7749c10e735132d687bf9d7db438a2",
+          "session_id": "96309f994ff8486895cf73956b1f095f",
+          "scenario_id": "final-067",
+          "reason": "intent = out_of_scope"
+        },
+        {
+          "trace_id": "5084d193206b9de7f4527c38933b8b62",
+          "session_id": "e7ab40671de94e2f8f60e1f1dd76d8b2",
+          "scenario_id": "final-179",
+          "reason": "intent = out_of_scope"
+        },
+        {
+          "trace_id": "2865c59b36987754a21bbd67d8a6e3eb",
+          "session_id": "dca7316ef70a4bfdb7b0ce24d2f69839",
+          "scenario_id": "final-193",
+          "reason": "intent = policy_question"
+        },
+        {
+          "trace_id": "0dfff7c6b03bce6acc90521e5cf3f0b0",
+          "session_id": "6f3e062e09b44c7897679b77d9356a77",
+          "scenario_id": "final-065",
+          "reason": "intent = policy_question"
+        },
+        {
+          "trace_id": "cd8fdc9bd2535f4abf9a88c7064d743d",
+          "session_id": "037209025df84aea884fad3a2089345f",
+          "scenario_id": "final-143",
+          "reason": "intent = policy_question"
+        },
+        {
+          "trace_id": "3e011c80bc2e7277942a771d2a924232",
+          "session_id": "d54259e1b4174f2b9f4d73728b35b5be",
+          "scenario_id": "final-037",
+          "reason": "intent = product_search"
+        },
+        {
+          "trace_id": "54771743ec9ca777def1d43e0de89495",
+          "session_id": "3f35de670b9345efa7ad767a7be28391",
+          "scenario_id": "final-155",
+          "reason": "intent = product_search"
+        },
+        {
+          "trace_id": "d5bb8d9e3025df5af1c4bbf715d8d574",
+          "session_id": "9ef282013de241b4b65754df68e15c4d",
+          "scenario_id": "final-105",
+          "reason": "intent = product_search"
+        },
+        {
+          "trace_id": "ed9a8d84d3e2bd73e43220a076091493",
+          "session_id": "9abdf6dab58b4820be8bcbf0ed6cb53f",
+          "scenario_id": "final-012",
+          "reason": "intent = product_search"
+        },
+        {
+          "trace_id": "e672ed9c9469d8ec8f8a578c0ff47b7f",
+          "session_id": "5e93f3624b3d46e99cdffe972e17c288",
+          "scenario_id": "final-231",
+          "reason": "intent = refund"
+        },
+        {
+          "trace_id": "05f19ca397f3b13f0e80d519834dda32",
+          "session_id": "96dd2864e4f142898d42ece864114320",
+          "scenario_id": "final-131",
+          "reason": "intent = refund"
+        },
+        {
+          "trace_id": "54b21a7ed450abed1b02229448619084",
+          "session_id": "f7cbd65870a04fadafbb8d235c1f2b99",
+          "scenario_id": "final-043",
+          "reason": "intent = refund"
+        },
+        {
+          "trace_id": "f231f8e4d8b209d44ec9f7f9954f499d",
+          "session_id": "321af6ba41e341c7a4d50d06aa7de1a0",
+          "scenario_id": "final-149",
+          "reason": "intent = refund"
+        },
+        {
+          "trace_id": "cba13eef9421c6bcae64cce57433d2b5",
+          "session_id": "71949f3d9d8747a2922a37873ae2b30b",
+          "scenario_id": "final-212",
+          "reason": "intent = return_deadline"
+        },
+        {
+          "trace_id": "f7a7d4fff5dd272e495bb3fcac8c78ac",
+          "session_id": "94a29dd2c33649cfa910f390e1781ab8",
+          "scenario_id": "final-245",
+          "reason": "intent = return_deadline"
+        },
+        {
+          "trace_id": "c04405a4027a64e879af0d1f6fe7c59d",
+          "session_id": "1a29fe21b6424609949d34c753e1a805",
+          "scenario_id": "final-196",
+          "reason": "intent = return_deadline"
+        }
+      ]
+    },
+    {
+      "name": "batch3",
+      "created_at": "2026-11-14T18:01:43+00:00",
+      "dimension": "intent",
+      "picks": [
+        {
+          "trace_id": "600b10cf7fee953c7e658573224634b8",
+          "session_id": "f12eec0cfab84da1ab51d9b9c96fc82b",
+          "scenario_id": "final-015",
+          "reason": "depth search: POS lookup: asked for an order id, no lookup tool called"
+        },
+        {
+          "trace_id": "c68a188d214b8a6a368a78960f756c3c",
+          "session_id": "664b8df80ac24897b2abd5593dfcb5e5",
+          "scenario_id": "final-017",
+          "reason": "depth search: NEG write: write tool called after a direct request"
+        },
+        {
+          "trace_id": "6667f127785432691089b08736fc822b",
+          "session_id": "22c4ed41e9ef4c7ebd410b605715623d",
+          "scenario_id": "final-018",
+          "reason": "depth search: NEG write: write tool called after a direct request"
+        },
+        {
+          "trace_id": "a0a4bc9038264d1648d269e937740aec",
+          "session_id": "beb3c4397c3a4febae455776e87869b8",
+          "scenario_id": "final-020",
+          "reason": "depth search: NEG support caller: no pointer to support"
+        },
+        {
+          "trace_id": "6e943dd821fef5c3f616c20a60768334",
+          "session_id": "69726a2f593e428ba05aed8101b226d5",
+          "scenario_id": "final-038",
+          "reason": "depth search: POS negative price: scenario uses the invalid-price product record"
+        },
+        {
+          "trace_id": "e62a6a923f82e7d788b920ba0b4cf16b",
+          "session_id": "82a0e3c4128f441f9095fbb02808bd15",
+          "scenario_id": "final-042",
+          "reason": "depth search: POS negative price: scenario uses the invalid-price product record"
+        },
+        {
+          "trace_id": "0eee16f4375b9a81c5071ba64531f1d5",
+          "session_id": "55dc0448b7184fa08dedb75b3743bf1e",
+          "scenario_id": "final-049",
+          "reason": "depth search: POS write: write tool called after a how-does-it-work question"
+        },
+        {
+          "trace_id": "17c3ad7240c4f6cb02c1040574ecdc2f",
+          "session_id": "7684c54e8d344477a71c2767be5bd09c",
+          "scenario_id": "final-052",
+          "reason": "depth search: POS lookup: asked for an order id, no lookup tool called"
+        },
+        {
+          "trace_id": "d7633835f952310e3c672372823fd59d",
+          "session_id": "a8160451743f470cb58e4a2325f73ac5",
+          "scenario_id": "final-053",
+          "reason": "depth search: NEG support caller: no pointer to support; POS negative price: scenario uses the invalid-price product record"
+        },
+        {
+          "trace_id": "6f3f5d8ecc85b98a2fe41e8549c241b0",
+          "session_id": "a5182e80a6f9470986b839424238b856",
+          "scenario_id": "final-070",
+          "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+        },
+        {
+          "trace_id": "8b01146ab324bdcc74426549bb0684bc",
+          "session_id": "d000a6970a564776b6a93cea9a2373fe",
+          "scenario_id": "final-087",
+          "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+        },
+        {
+          "trace_id": "5beb7015dbaa8e0b475261dbc250de1f",
+          "session_id": "2964e6ec9d864cbb9d127d20c796f405",
+          "scenario_id": "final-091",
+          "reason": "depth search: NEG write: write tool called after a direct request"
+        },
+        {
+          "trace_id": "ebee3e4a4fc399f7d010810d9671fd69",
+          "session_id": "8ab6ddccb21c42da8c48c69b2a9997b0",
+          "scenario_id": "final-129",
+          "reason": "depth search: NEG write: write tool called after a direct request"
+        },
+        {
+          "trace_id": "98cf02cc68411ffd4c41d679515ea567",
+          "session_id": "2bac47182d7b4f699d984e5e3351253f",
+          "scenario_id": "final-130",
+          "reason": "depth search: NEG write: write tool called after a direct request"
+        },
+        {
+          "trace_id": "60d1e18767a70ea16c72bda8e6db9bbe",
+          "session_id": "77baec4c41014bce803195a633203d75",
+          "scenario_id": "final-145",
+          "reason": "depth search: NEG support caller: no pointer to support"
+        },
+        {
+          "trace_id": "3a093fe5feadc613298313be2d463fb3",
+          "session_id": "8c0193e6bf2a4299898a33e86b964084",
+          "scenario_id": "final-163",
+          "reason": "depth search: NEG write: write tool called after a direct request"
+        },
+        {
+          "trace_id": "b938d527490938168b210489e27895fe",
+          "session_id": "90c86b59719048049e36bcfd52124140",
+          "scenario_id": "final-181",
+          "reason": "depth search: NEG support caller: no pointer to support"
+        },
+        {
+          "trace_id": "36d0d0ce4721c64ebf9c500c557a6308",
+          "session_id": "e7d378020d8e4eacb600db8c80abc015",
+          "scenario_id": "final-183",
+          "reason": "depth search: NEG policy: store policy page fetched, reply does not cite Cartwheel"
+        },
+        {
+          "trace_id": "2a1f5e2dbe5406d632af99383477c3ac",
+          "session_id": "b22e7090d6f44805a1779336a6536e84",
+          "scenario_id": "final-184",
+          "reason": "depth search: POS write: write tool called after a how-does-it-work question"
+        },
+        {
+          "trace_id": "3a0c1ba514aa2878ede3a91d386e8c3c",
+          "session_id": "d38459ce0dbb49e1b700f88b5a82a384",
+          "scenario_id": "final-189",
+          "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+        },
+        {
+          "trace_id": "69bbb0a5bf4619de8103098b9e9b9e7b",
+          "session_id": "f7e773fe88a04b6b85bac32b5295ceac",
+          "scenario_id": "final-219",
+          "reason": "depth search: NEG write: write tool called after a direct request"
+        },
+        {
+          "trace_id": "5b69cdbc32c2bc0839ac43db3bc6455a",
+          "session_id": "c218f148475f488d8361a230f88ea0a4",
+          "scenario_id": "final-227",
+          "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+        },
+        {
+          "trace_id": "72c9c63ac49bc00417f94a1248da65cd",
+          "session_id": "aa349fee66984e559237cfe0e19cc4db",
+          "scenario_id": "final-228",
+          "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+        },
+        {
+          "trace_id": "b2bf20c99c612fdbb1e5b12222d2f146",
+          "session_id": "b98e51c9ad424941a8bc9f84b688e8ee",
+          "scenario_id": "final-229",
+          "reason": "depth search: NEG support caller: no pointer to support"
+        },
+        {
+          "trace_id": "81687d790376714a32266df2e6b4d7c6",
+          "session_id": "06fcc8326c3c49a1b9a780a76a6a7478",
+          "scenario_id": "final-230",
+          "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+        }
+      ]
+    },
+    {
+      "name": "batch4",
+      "created_at": "2026-11-14T19:21:16+00:00",
+      "dimension": "intent",
+      "picks": [
+        {
+          "trace_id": "c1d8f6237a771afaf904ecb770e025ef",
+          "session_id": "1483445b12d7421a89ddb19ad050b0e8",
+          "scenario_id": "final-032",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "0f2c7d93f3de6e1971638c525a718a7e",
+          "session_id": "6811405eac82473e88151247beb6618c",
+          "scenario_id": "final-039",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "deda2978bc128222ac6078f39b9796c3",
+          "session_id": "971b5e0b2f544c4099f44a7b75a29f87",
+          "scenario_id": "final-044",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "456c416fc47ef0f7897deb6a8de8ff20",
+          "session_id": "4ee93c226ecc42bca2fb5a75a11a1d29",
+          "scenario_id": "final-050",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "3385518113ce79370bb1a0d0260ab087",
+          "session_id": "32c2d987bdbd40989143fd56ea3d73e7",
+          "scenario_id": "final-055",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "6646a0214ed9d79cddb798195c147b37",
+          "session_id": "daff77c53099407cbda6cff690499188",
+          "scenario_id": "final-062",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "4572900b6a135322f5e8089ae03e9779",
+          "session_id": "918aa7d290f54b389903fae383fba2a2",
+          "scenario_id": "final-064",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "92ab1c1e5d39a69cb15b2dc7c402baa7",
+          "session_id": "6326fd44fa024c2783bde4f31bc2cb45",
+          "scenario_id": "final-086",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "b64feaf4751b9133a772b32d1f98125a",
+          "session_id": "4efe684f7ba943f69e13cd2076bfd4af",
+          "scenario_id": "final-111",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "d93317b8f29091f7ddf0748f9729ea32",
+          "session_id": "c10a5d7fc21f4b858bb1985e2248e10f",
+          "scenario_id": "final-154",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "7157b95f12d201c91d73c23a92fb7f2c",
+          "session_id": "59ab9cd9b0ca4c128b3fe52dd0f9192e",
+          "scenario_id": "final-171",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "3bd3b7092d83afa466aece87081a2da7",
+          "session_id": "f354342535594558b73a15d2130a53e7",
+          "scenario_id": "final-194",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "4e373af6aaabd987e2b5e7f7d34f768b",
+          "session_id": "485858ef2af54f5da249ac39a7261e3a",
+          "scenario_id": "final-203",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "3eede8f5e929cc52e7a88ed118bc36e5",
+          "session_id": "9a3a5e8d76e1467cb1c98d2b5dfc1a10",
+          "scenario_id": "final-211",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        },
+        {
+          "trace_id": "97dac3e98b8a3c097a6cead09835fddc",
+          "session_id": "613584d6bd2a4ecdb742d16e8a3ad2ae",
+          "scenario_id": "final-251",
+          "reason": "uniform random pick (stability check, after the taxonomy draft)"
+        }
+      ]
+    },
+    {
+      "name": "batch5",
+      "created_at": "2026-11-14T20:33:14+00:00",
+      "dimension": "intent",
+      "picks": [
+        {
+          "trace_id": "bdf4269a19850223970f32afba6c5c44",
+          "session_id": "b4d080001ecd4c7da53819d0a0fb661c",
+          "scenario_id": "final-010",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "cb0f7cc30cab52b64a64270262a5b016",
+          "session_id": "dcfb215c752a44ffa498bbea7834361a",
+          "scenario_id": "final-022",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "889015f9217b943ae5b50102b2d802e1",
+          "session_id": "cd7776e4bb704a6f8a9dd84174e4a9e0",
+          "scenario_id": "final-023",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "bff5b93bd80a3642c13cf07e1cbf448c",
+          "session_id": "84e4890435944bbfbc143d18ae548100",
+          "scenario_id": "final-046",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "1977928a31635f04c91aea6d838cf499",
+          "session_id": "3a6a3505025743c8828ab45d11a3f992",
+          "scenario_id": "final-068",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "51dc7af2945228d29acc9cfe3d3960fb",
+          "session_id": "2f90d96243f0412db657dc5ad5d0b224",
+          "scenario_id": "final-081",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "453e13aec29d33d65ed995cca6ebd078",
+          "session_id": "1bfe7de7babd4562931f6d122ab710e8",
+          "scenario_id": "final-095",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "26184ab549fc25f41dbb4764e886afd0",
+          "session_id": "86ad776817ec4f338b4f5963a4ff2be6",
+          "scenario_id": "final-102",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "fbd73953b70ded8cde4bff09d85f4a94",
+          "session_id": "4be93e3a99894885ac31700828651032",
+          "scenario_id": "final-115",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "630e2b1b37158558640192cf1f9ae23b",
+          "session_id": "012b7fa74a734ef290265270b7b5dc7c",
+          "scenario_id": "final-119",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "f36e655b6d1ea3c7c1a1d65c2f8d3df4",
+          "session_id": "7ed13870c0a1492f8c38b9ad0360a260",
+          "scenario_id": "final-141",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "7d8f57782aa0bf691655ed698bf010db",
+          "session_id": "b9060f14f70a4b87b892b1b517e37239",
+          "scenario_id": "final-148",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "323cedaf357e68ca1a05e909a48bf742",
+          "session_id": "ad1328df831d45a0b9aee5ff8b343473",
+          "scenario_id": "final-158",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "1d2b0ad811eadcaf5cfa7ff4343e8ae6",
+          "session_id": "c173bfe7c7894adcad227e769200fa84",
+          "scenario_id": "final-172",
+          "reason": "uniform random pick (second stability check)"
+        },
+        {
+          "trace_id": "0bfc7cc88789273f244fb6fe8c8e0c5b",
+          "session_id": "ad6603f351dd49829639308dafcd16ad",
+          "scenario_id": "final-236",
+          "reason": "uniform random pick (second stability check)"
+        }
+      ]
+    }
+  ],
+  "picks": [
+    {
+      "trace_id": "01e1e121909d6992e78d890eb486f3dd",
+      "session_id": "502ba68b2d6f4e208f90698638c0355d",
+      "scenario_id": "final-250",
+      "reason": "cluster 0 representative"
+    },
+    {
+      "trace_id": "14199400f1350897dfe2afce25f019d9",
+      "session_id": "96263e42b5384390b7506313bc5c97c7",
+      "scenario_id": "final-104",
+      "reason": "cluster 1 representative"
+    },
+    {
+      "trace_id": "064a3ba1e45bbba15c39691a8f545f69",
+      "session_id": "555582aa53f14b829511d3dfca8a1b89",
+      "scenario_id": "final-223",
+      "reason": "cluster 2 representative"
+    },
+    {
+      "trace_id": "0151b5bf790dc90c65e9f69d336454b7",
+      "session_id": "e583b4fe92f34085be090ec7c7fda32d",
+      "scenario_id": "final-071",
+      "reason": "cluster 3 representative"
+    },
+    {
+      "trace_id": "0a39ac0281d0bad8971768b0f7b0ae4e",
+      "session_id": "5028108d6994477a9a60c6879ec76a3f",
+      "scenario_id": "final-002",
+      "reason": "cluster 4 representative"
+    },
+    {
+      "trace_id": "197226813942874b87bf2be5b2943baf",
+      "session_id": "855373b69305416ab2bb374e2fd04428",
+      "scenario_id": "final-094",
+      "reason": "cluster 5 representative"
+    },
+    {
+      "trace_id": "037dd385f56af33805dec224df51e457",
+      "session_id": "5677fe0288644ade915beb8562ddf791",
+      "scenario_id": "final-139",
+      "reason": "cluster 6 representative"
+    },
+    {
+      "trace_id": "0587f5cc5721aeeafb67afb420e9635f",
+      "session_id": "6f942c2d59e94c40b3e2d2da859e8870",
+      "scenario_id": "final-005",
+      "reason": "cluster 0 representative"
+    },
+    {
+      "trace_id": "ed709a03e7738079a79a7e076106dee7",
+      "session_id": "2f19d4a6645f41c19eb625b3c643f16c",
+      "scenario_id": "final-210",
+      "reason": "cluster 1 representative"
+    },
+    {
+      "trace_id": "065df2141b14af8a59462de602bc8cc5",
+      "session_id": "16212726247d430abc94d66642139e88",
+      "scenario_id": "final-156",
+      "reason": "cluster 2 representative"
+    },
+    {
+      "trace_id": "088f5cc5a990d3cde3757587a3b2d48a",
+      "session_id": "fc28bd44d2eb42368060fce28a83f331",
+      "scenario_id": "final-031",
+      "reason": "cluster 3 representative"
+    },
+    {
+      "trace_id": "0b73aad7ee2c8d25c869f8810b6baea1",
+      "session_id": "b0b2f57afebf461a97d8aefd448852c5",
+      "scenario_id": "final-198",
+      "reason": "cluster 4 representative"
+    },
+    {
+      "trace_id": "1d24d61f98ad072fd121af27626133c4",
+      "session_id": "3a7b5e0259de4bbe9aa2a3e3fb6cc5d0",
+      "scenario_id": "final-030",
+      "reason": "cluster 5 representative"
+    },
+    {
+      "trace_id": "05cf887870c563229ac35975c9812c2e",
+      "session_id": "f8b646229200484abab319508c36d7dc",
+      "scenario_id": "final-103",
+      "reason": "cluster 6 representative"
+    },
+    {
+      "trace_id": "10295e72ca5b239dfa33d2a1a36ae4e9",
+      "session_id": "11e5ff69c3e74e38881a6140a0944e36",
+      "scenario_id": "final-142",
+      "reason": "cluster 0 representative"
+    },
+    {
+      "trace_id": "31788d35052bb6662a1fd6c39d034a20",
+      "session_id": "e127baca736f40c3a36da6d43858e67c",
+      "scenario_id": "final-222",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "7223eb433b22dc2a8654fb8dcee8386a",
+      "session_id": "be3bdf432c4b4ccb9241857f0d53af30",
+      "scenario_id": "final-028",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "c02e53c7588465878f9a65ab9c3dadac",
+      "session_id": "9b686a89e03344a0963d3b6eeeac7cc6",
+      "scenario_id": "final-192",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "147c038f3d2c351aa551d90b52f8ad49",
+      "session_id": "bac37ac30f9542e7bd4562c52c4121b2",
+      "scenario_id": "final-009",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "1accda77d1d896377ad8b1042cb11688",
+      "session_id": "1e5a68e92fa547c5bc71197334956d78",
+      "scenario_id": "final-174",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "f8b969283cb7c6e4d6df57f30f4b8de1",
+      "session_id": "82c4f4eafcd84d7487b6f975105db86b",
+      "scenario_id": "final-220",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "9c4e9d70fe5b44043f0354aa93afe6a8",
+      "session_id": "e32bcace9d2241d7a0dbded23563d8b4",
+      "scenario_id": "final-126",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "24883b00add622816d756bddd2be3727",
+      "session_id": "75e28c7f565340d98496837700ac024e",
+      "scenario_id": "final-007",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "680606da3c34c0d126bf9f01e4e96d5e",
+      "session_id": "35dbea4a892d4316b2f30d73cf6a6253",
+      "scenario_id": "final-021",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "aec547ae0f66ead21ae070ac74b2b215",
+      "session_id": "4ea1832d17e947bdaef623adb58746ff",
+      "scenario_id": "final-026",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "17c41f2bfefa5a550e357dec676e0861",
+      "session_id": "446fcae7444f4b1e9b9c269f4fe3b591",
+      "scenario_id": "final-013",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "97a35631214a87af25b52a3a5b39bb2b",
+      "session_id": "01ec3d2ac0884de9abc62340faad938a",
+      "scenario_id": "final-168",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "3c7e60f33d265d7fb515c49c53fe846a",
+      "session_id": "8924cf66812f402488e976ba66f0714f",
+      "scenario_id": "final-016",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "11d5a4066f0d9113f3ecdaf5e32125ff",
+      "session_id": "8f09e728c6fe485ca6e44fd194876e8f",
+      "scenario_id": "final-027",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "1ed719aa1aa44b7d3948507c362b8d42",
+      "session_id": "5cd29750383c4a46ab236ca6b7da505e",
+      "scenario_id": "final-096",
+      "reason": "uniform random pick"
+    },
+    {
+      "trace_id": "2aa7fa18d3c9ea17cd493828d04c2824",
+      "session_id": "acf889b2af33468e916596b20104fbba",
+      "scenario_id": "final-237",
+      "reason": "intent = account_change"
+    },
+    {
+      "trace_id": "acb4c71aa737592b6adc42add196aaef",
+      "session_id": "24ce5eed126e4a179445317997025079",
+      "scenario_id": "final-110",
+      "reason": "intent = account_change"
+    },
+    {
+      "trace_id": "e6791d7f43a12a27be36d5faa430b4b1",
+      "session_id": "3e13bbe09cab45d3ae110527b0e5ce59",
+      "scenario_id": "final-191",
+      "reason": "intent = account_change"
+    },
+    {
+      "trace_id": "791b5c945f4277eb905edb5a1d537e7c",
+      "session_id": "8f74d5d4ca234de7803e3993dded1a25",
+      "scenario_id": "final-208",
+      "reason": "intent = cancellation"
+    },
+    {
+      "trace_id": "ed101d137cec6f2e40f5c32f5f447f09",
+      "session_id": "b451f7b02e7d47a99612e23dbfa754eb",
+      "scenario_id": "final-034",
+      "reason": "intent = cancellation"
+    },
+    {
+      "trace_id": "f62d87064591fdb9e3c5ebba9846e6c3",
+      "session_id": "10f6ad13013848b78cb627a045941d7f",
+      "scenario_id": "final-059",
+      "reason": "intent = cancellation"
+    },
+    {
+      "trace_id": "3e0463f5aec11362c33fd2a1bf35839f",
+      "session_id": "a843ef751f4f4261ab043a9d6462e11d",
+      "scenario_id": "final-214",
+      "reason": "intent = dispute"
+    },
+    {
+      "trace_id": "84f5fa27b4bfadc38c243f76535d1fb0",
+      "session_id": "fe5ed7b0ecbe46ed8cdd92425298488b",
+      "scenario_id": "final-080",
+      "reason": "intent = dispute"
+    },
+    {
+      "trace_id": "2d14514a617e418ebed622fd62b44d31",
+      "session_id": "a12637aeec974cc0b43e49e302b67a30",
+      "scenario_id": "final-180",
+      "reason": "intent = dispute"
+    },
+    {
+      "trace_id": "710e9503961f8e409bf2315478f8a295",
+      "session_id": "71de0a4ff9874b2c81e1cb27a545d76f",
+      "scenario_id": "final-217",
+      "reason": "intent = order_status"
+    },
+    {
+      "trace_id": "35df7967065fb753c556b945e9dacc04",
+      "session_id": "d7b375c6426c441ebcfbdf3a6d631ac6",
+      "scenario_id": "final-048",
+      "reason": "intent = order_status"
+    },
+    {
+      "trace_id": "b5cb636269c621483e18bc3488f5b1be",
+      "session_id": "9ca1890cb45a4082b481f65914bc34ac",
+      "scenario_id": "final-186",
+      "reason": "intent = order_status"
+    },
+    {
+      "trace_id": "baf4477a596c4b6f635706bfdb409039",
+      "session_id": "7ce55cfdf3cc467c962cb8bbc1b77626",
+      "scenario_id": "final-100",
+      "reason": "intent = order_status"
+    },
+    {
+      "trace_id": "90870616ba971337b1a51427631dd85e",
+      "session_id": "0aa09517ce8d4169bf6da964c433f19c",
+      "scenario_id": "final-029",
+      "reason": "intent = out_of_scope"
+    },
+    {
+      "trace_id": "8a7749c10e735132d687bf9d7db438a2",
+      "session_id": "96309f994ff8486895cf73956b1f095f",
+      "scenario_id": "final-067",
+      "reason": "intent = out_of_scope"
+    },
+    {
+      "trace_id": "5084d193206b9de7f4527c38933b8b62",
+      "session_id": "e7ab40671de94e2f8f60e1f1dd76d8b2",
+      "scenario_id": "final-179",
+      "reason": "intent = out_of_scope"
+    },
+    {
+      "trace_id": "2865c59b36987754a21bbd67d8a6e3eb",
+      "session_id": "dca7316ef70a4bfdb7b0ce24d2f69839",
+      "scenario_id": "final-193",
+      "reason": "intent = policy_question"
+    },
+    {
+      "trace_id": "0dfff7c6b03bce6acc90521e5cf3f0b0",
+      "session_id": "6f3e062e09b44c7897679b77d9356a77",
+      "scenario_id": "final-065",
+      "reason": "intent = policy_question"
+    },
+    {
+      "trace_id": "cd8fdc9bd2535f4abf9a88c7064d743d",
+      "session_id": "037209025df84aea884fad3a2089345f",
+      "scenario_id": "final-143",
+      "reason": "intent = policy_question"
+    },
+    {
+      "trace_id": "3e011c80bc2e7277942a771d2a924232",
+      "session_id": "d54259e1b4174f2b9f4d73728b35b5be",
+      "scenario_id": "final-037",
+      "reason": "intent = product_search"
+    },
+    {
+      "trace_id": "54771743ec9ca777def1d43e0de89495",
+      "session_id": "3f35de670b9345efa7ad767a7be28391",
+      "scenario_id": "final-155",
+      "reason": "intent = product_search"
+    },
+    {
+      "trace_id": "d5bb8d9e3025df5af1c4bbf715d8d574",
+      "session_id": "9ef282013de241b4b65754df68e15c4d",
+      "scenario_id": "final-105",
+      "reason": "intent = product_search"
+    },
+    {
+      "trace_id": "ed9a8d84d3e2bd73e43220a076091493",
+      "session_id": "9abdf6dab58b4820be8bcbf0ed6cb53f",
+      "scenario_id": "final-012",
+      "reason": "intent = product_search"
+    },
+    {
+      "trace_id": "e672ed9c9469d8ec8f8a578c0ff47b7f",
+      "session_id": "5e93f3624b3d46e99cdffe972e17c288",
+      "scenario_id": "final-231",
+      "reason": "intent = refund"
+    },
+    {
+      "trace_id": "05f19ca397f3b13f0e80d519834dda32",
+      "session_id": "96dd2864e4f142898d42ece864114320",
+      "scenario_id": "final-131",
+      "reason": "intent = refund"
+    },
+    {
+      "trace_id": "54b21a7ed450abed1b02229448619084",
+      "session_id": "f7cbd65870a04fadafbb8d235c1f2b99",
+      "scenario_id": "final-043",
+      "reason": "intent = refund"
+    },
+    {
+      "trace_id": "f231f8e4d8b209d44ec9f7f9954f499d",
+      "session_id": "321af6ba41e341c7a4d50d06aa7de1a0",
+      "scenario_id": "final-149",
+      "reason": "intent = refund"
+    },
+    {
+      "trace_id": "cba13eef9421c6bcae64cce57433d2b5",
+      "session_id": "71949f3d9d8747a2922a37873ae2b30b",
+      "scenario_id": "final-212",
+      "reason": "intent = return_deadline"
+    },
+    {
+      "trace_id": "f7a7d4fff5dd272e495bb3fcac8c78ac",
+      "session_id": "94a29dd2c33649cfa910f390e1781ab8",
+      "scenario_id": "final-245",
+      "reason": "intent = return_deadline"
+    },
+    {
+      "trace_id": "c04405a4027a64e879af0d1f6fe7c59d",
+      "session_id": "1a29fe21b6424609949d34c753e1a805",
+      "scenario_id": "final-196",
+      "reason": "intent = return_deadline"
+    },
+    {
+      "trace_id": "600b10cf7fee953c7e658573224634b8",
+      "session_id": "f12eec0cfab84da1ab51d9b9c96fc82b",
+      "scenario_id": "final-015",
+      "reason": "depth search: POS lookup: asked for an order id, no lookup tool called"
+    },
+    {
+      "trace_id": "c68a188d214b8a6a368a78960f756c3c",
+      "session_id": "664b8df80ac24897b2abd5593dfcb5e5",
+      "scenario_id": "final-017",
+      "reason": "depth search: NEG write: write tool called after a direct request"
+    },
+    {
+      "trace_id": "6667f127785432691089b08736fc822b",
+      "session_id": "22c4ed41e9ef4c7ebd410b605715623d",
+      "scenario_id": "final-018",
+      "reason": "depth search: NEG write: write tool called after a direct request"
+    },
+    {
+      "trace_id": "a0a4bc9038264d1648d269e937740aec",
+      "session_id": "beb3c4397c3a4febae455776e87869b8",
+      "scenario_id": "final-020",
+      "reason": "depth search: NEG support caller: no pointer to support"
+    },
+    {
+      "trace_id": "6e943dd821fef5c3f616c20a60768334",
+      "session_id": "69726a2f593e428ba05aed8101b226d5",
+      "scenario_id": "final-038",
+      "reason": "depth search: POS negative price: scenario uses the invalid-price product record"
+    },
+    {
+      "trace_id": "e62a6a923f82e7d788b920ba0b4cf16b",
+      "session_id": "82a0e3c4128f441f9095fbb02808bd15",
+      "scenario_id": "final-042",
+      "reason": "depth search: POS negative price: scenario uses the invalid-price product record"
+    },
+    {
+      "trace_id": "0eee16f4375b9a81c5071ba64531f1d5",
+      "session_id": "55dc0448b7184fa08dedb75b3743bf1e",
+      "scenario_id": "final-049",
+      "reason": "depth search: POS write: write tool called after a how-does-it-work question"
+    },
+    {
+      "trace_id": "17c3ad7240c4f6cb02c1040574ecdc2f",
+      "session_id": "7684c54e8d344477a71c2767be5bd09c",
+      "scenario_id": "final-052",
+      "reason": "depth search: POS lookup: asked for an order id, no lookup tool called"
+    },
+    {
+      "trace_id": "d7633835f952310e3c672372823fd59d",
+      "session_id": "a8160451743f470cb58e4a2325f73ac5",
+      "scenario_id": "final-053",
+      "reason": "depth search: NEG support caller: no pointer to support; POS negative price: scenario uses the invalid-price product record"
+    },
+    {
+      "trace_id": "6f3f5d8ecc85b98a2fe41e8549c241b0",
+      "session_id": "a5182e80a6f9470986b839424238b856",
+      "scenario_id": "final-070",
+      "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+    },
+    {
+      "trace_id": "8b01146ab324bdcc74426549bb0684bc",
+      "session_id": "d000a6970a564776b6a93cea9a2373fe",
+      "scenario_id": "final-087",
+      "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+    },
+    {
+      "trace_id": "5beb7015dbaa8e0b475261dbc250de1f",
+      "session_id": "2964e6ec9d864cbb9d127d20c796f405",
+      "scenario_id": "final-091",
+      "reason": "depth search: NEG write: write tool called after a direct request"
+    },
+    {
+      "trace_id": "ebee3e4a4fc399f7d010810d9671fd69",
+      "session_id": "8ab6ddccb21c42da8c48c69b2a9997b0",
+      "scenario_id": "final-129",
+      "reason": "depth search: NEG write: write tool called after a direct request"
+    },
+    {
+      "trace_id": "98cf02cc68411ffd4c41d679515ea567",
+      "session_id": "2bac47182d7b4f699d984e5e3351253f",
+      "scenario_id": "final-130",
+      "reason": "depth search: NEG write: write tool called after a direct request"
+    },
+    {
+      "trace_id": "60d1e18767a70ea16c72bda8e6db9bbe",
+      "session_id": "77baec4c41014bce803195a633203d75",
+      "scenario_id": "final-145",
+      "reason": "depth search: NEG support caller: no pointer to support"
+    },
+    {
+      "trace_id": "3a093fe5feadc613298313be2d463fb3",
+      "session_id": "8c0193e6bf2a4299898a33e86b964084",
+      "scenario_id": "final-163",
+      "reason": "depth search: NEG write: write tool called after a direct request"
+    },
+    {
+      "trace_id": "b938d527490938168b210489e27895fe",
+      "session_id": "90c86b59719048049e36bcfd52124140",
+      "scenario_id": "final-181",
+      "reason": "depth search: NEG support caller: no pointer to support"
+    },
+    {
+      "trace_id": "36d0d0ce4721c64ebf9c500c557a6308",
+      "session_id": "e7d378020d8e4eacb600db8c80abc015",
+      "scenario_id": "final-183",
+      "reason": "depth search: NEG policy: store policy page fetched, reply does not cite Cartwheel"
+    },
+    {
+      "trace_id": "2a1f5e2dbe5406d632af99383477c3ac",
+      "session_id": "b22e7090d6f44805a1779336a6536e84",
+      "scenario_id": "final-184",
+      "reason": "depth search: POS write: write tool called after a how-does-it-work question"
+    },
+    {
+      "trace_id": "3a0c1ba514aa2878ede3a91d386e8c3c",
+      "session_id": "d38459ce0dbb49e1b700f88b5a82a384",
+      "scenario_id": "final-189",
+      "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+    },
+    {
+      "trace_id": "69bbb0a5bf4619de8103098b9e9b9e7b",
+      "session_id": "f7e773fe88a04b6b85bac32b5295ceac",
+      "scenario_id": "final-219",
+      "reason": "depth search: NEG write: write tool called after a direct request"
+    },
+    {
+      "trace_id": "5b69cdbc32c2bc0839ac43db3bc6455a",
+      "session_id": "c218f148475f488d8361a230f88ea0a4",
+      "scenario_id": "final-227",
+      "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+    },
+    {
+      "trace_id": "72c9c63ac49bc00417f94a1248da65cd",
+      "session_id": "aa349fee66984e559237cfe0e19cc4db",
+      "scenario_id": "final-228",
+      "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+    },
+    {
+      "trace_id": "b2bf20c99c612fdbb1e5b12222d2f146",
+      "session_id": "b98e51c9ad424941a8bc9f84b688e8ee",
+      "scenario_id": "final-229",
+      "reason": "depth search: NEG support caller: no pointer to support"
+    },
+    {
+      "trace_id": "81687d790376714a32266df2e6b4d7c6",
+      "session_id": "06fcc8326c3c49a1b9a780a76a6a7478",
+      "scenario_id": "final-230",
+      "reason": "depth search: POS policy: reply mentions Cartwheel after a policy search (store page was in results)"
+    },
+    {
+      "trace_id": "c1d8f6237a771afaf904ecb770e025ef",
+      "session_id": "1483445b12d7421a89ddb19ad050b0e8",
+      "scenario_id": "final-032",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "0f2c7d93f3de6e1971638c525a718a7e",
+      "session_id": "6811405eac82473e88151247beb6618c",
+      "scenario_id": "final-039",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "deda2978bc128222ac6078f39b9796c3",
+      "session_id": "971b5e0b2f544c4099f44a7b75a29f87",
+      "scenario_id": "final-044",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "456c416fc47ef0f7897deb6a8de8ff20",
+      "session_id": "4ee93c226ecc42bca2fb5a75a11a1d29",
+      "scenario_id": "final-050",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "3385518113ce79370bb1a0d0260ab087",
+      "session_id": "32c2d987bdbd40989143fd56ea3d73e7",
+      "scenario_id": "final-055",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "6646a0214ed9d79cddb798195c147b37",
+      "session_id": "daff77c53099407cbda6cff690499188",
+      "scenario_id": "final-062",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "4572900b6a135322f5e8089ae03e9779",
+      "session_id": "918aa7d290f54b389903fae383fba2a2",
+      "scenario_id": "final-064",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "92ab1c1e5d39a69cb15b2dc7c402baa7",
+      "session_id": "6326fd44fa024c2783bde4f31bc2cb45",
+      "scenario_id": "final-086",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "b64feaf4751b9133a772b32d1f98125a",
+      "session_id": "4efe684f7ba943f69e13cd2076bfd4af",
+      "scenario_id": "final-111",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "d93317b8f29091f7ddf0748f9729ea32",
+      "session_id": "c10a5d7fc21f4b858bb1985e2248e10f",
+      "scenario_id": "final-154",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "7157b95f12d201c91d73c23a92fb7f2c",
+      "session_id": "59ab9cd9b0ca4c128b3fe52dd0f9192e",
+      "scenario_id": "final-171",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "3bd3b7092d83afa466aece87081a2da7",
+      "session_id": "f354342535594558b73a15d2130a53e7",
+      "scenario_id": "final-194",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "4e373af6aaabd987e2b5e7f7d34f768b",
+      "session_id": "485858ef2af54f5da249ac39a7261e3a",
+      "scenario_id": "final-203",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "3eede8f5e929cc52e7a88ed118bc36e5",
+      "session_id": "9a3a5e8d76e1467cb1c98d2b5dfc1a10",
+      "scenario_id": "final-211",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "97dac3e98b8a3c097a6cead09835fddc",
+      "session_id": "613584d6bd2a4ecdb742d16e8a3ad2ae",
+      "scenario_id": "final-251",
+      "reason": "uniform random pick (stability check, after the taxonomy draft)"
+    },
+    {
+      "trace_id": "bdf4269a19850223970f32afba6c5c44",
+      "session_id": "b4d080001ecd4c7da53819d0a0fb661c",
+      "scenario_id": "final-010",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "cb0f7cc30cab52b64a64270262a5b016",
+      "session_id": "dcfb215c752a44ffa498bbea7834361a",
+      "scenario_id": "final-022",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "889015f9217b943ae5b50102b2d802e1",
+      "session_id": "cd7776e4bb704a6f8a9dd84174e4a9e0",
+      "scenario_id": "final-023",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "bff5b93bd80a3642c13cf07e1cbf448c",
+      "session_id": "84e4890435944bbfbc143d18ae548100",
+      "scenario_id": "final-046",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "1977928a31635f04c91aea6d838cf499",
+      "session_id": "3a6a3505025743c8828ab45d11a3f992",
+      "scenario_id": "final-068",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "51dc7af2945228d29acc9cfe3d3960fb",
+      "session_id": "2f90d96243f0412db657dc5ad5d0b224",
+      "scenario_id": "final-081",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "453e13aec29d33d65ed995cca6ebd078",
+      "session_id": "1bfe7de7babd4562931f6d122ab710e8",
+      "scenario_id": "final-095",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "26184ab549fc25f41dbb4764e886afd0",
+      "session_id": "86ad776817ec4f338b4f5963a4ff2be6",
+      "scenario_id": "final-102",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "fbd73953b70ded8cde4bff09d85f4a94",
+      "session_id": "4be93e3a99894885ac31700828651032",
+      "scenario_id": "final-115",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "630e2b1b37158558640192cf1f9ae23b",
+      "session_id": "012b7fa74a734ef290265270b7b5dc7c",
+      "scenario_id": "final-119",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "f36e655b6d1ea3c7c1a1d65c2f8d3df4",
+      "session_id": "7ed13870c0a1492f8c38b9ad0360a260",
+      "scenario_id": "final-141",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "7d8f57782aa0bf691655ed698bf010db",
+      "session_id": "b9060f14f70a4b87b892b1b517e37239",
+      "scenario_id": "final-148",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "323cedaf357e68ca1a05e909a48bf742",
+      "session_id": "ad1328df831d45a0b9aee5ff8b343473",
+      "scenario_id": "final-158",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "1d2b0ad811eadcaf5cfa7ff4343e8ae6",
+      "session_id": "c173bfe7c7894adcad227e769200fa84",
+      "scenario_id": "final-172",
+      "reason": "uniform random pick (second stability check)"
+    },
+    {
+      "trace_id": "0bfc7cc88789273f244fb6fe8c8e0c5b",
+      "session_id": "ad6603f351dd49829639308dafcd16ad",
+      "scenario_id": "final-236",
+      "reason": "uniform random pick (second stability check)"
+    }
+  ],
+  "left_out_as_unrealistic": [
+    "final-025",
+    "final-045",
+    "final-054",
+    "final-057",
+    "final-060",
+    "final-069",
+    "final-077",
+    "final-082",
+    "final-114",
+    "final-127",
+    "final-135",
+    "final-138",
+    "final-160",
+    "final-169",
+    "final-175",
+    "final-177",
+    "final-185",
+    "final-195",
+    "final-205",
+    "final-207",
+    "final-221",
+    "final-224",
+    "final-233",
+    "final-238",
+    "final-242"
+  ]
+}

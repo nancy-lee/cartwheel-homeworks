@@ -90,6 +90,10 @@ Successful results contain `ok: true` and the result fields. Expected failures c
 | `cancel_order` | `order_id` and `status: cancelled` after updating an authorized order whose current status is `placed`. | `not_found` for an unknown order; `permission_denied` for an unauthorized caller; `not_eligible` when the order is no longer `placed`; `paused` when cancellations are disabled. |
 | `escalate_to_human` | `ticket_id` and `sla_hours` after creating the support ticket. | Execution exception if ticket creation fails. |
 
+### Tool use guidance
+
+- **TOOL-10.** When the user describes a product, use `find_order` before `list_my_orders`. `list_my_orders` returns order identifiers without product titles and at most 20 records, so the agent must not conclude that no matching order exists from that list alone. If `find_order` returns more than one plausible match, ask which one the user means before answering or acting.
+
 ## 5. Escalation policy
 
 The following cases always go to a human:
@@ -109,3 +113,7 @@ Requirements that do not fit in the sections above, including tone and style gui
 - **RESP-3.** State when required information is missing or inconsistent, rather than inventing a value.
 - **RESP-4.** Explain refusals and escalations without revealing inaccessible order or user information.
 - **RESP-5.** Use direct and respectful language that explains the relevant decision.
+- **RESP-6.** When the user asks about a specific store's policy (return window, shipping, restocking fee, refund), check that store's policy page first and name the store as the source of the rule. Use the Cartwheel-wide policy only when the store has none, and say that it is the platform default.
+- **RESP-7.** Before calling `issue_refund` or `cancel_order`, the agent must know which order and which action the user wants, and have what the tool needs. It does not always need to ask the user to confirm. Refunds above the threshold follow ESC-1 and do not require a reason from the user.
+- **RESP-8.** Respond directly to what the user asked, and give them the context and information they need for the next step. Present only the orders, products, prices and offers they asked about. If a tool result contains a value that looks invalid, such as a negative price, say so instead of presenting it as normal (see RESP-3).
+- **RESP-9.** When the caller's role is support, do not tell them to contact support or that a support agent will review their request. Perform the permitted action, or call `escalate_to_human` and report the ticket. A support caller can still be escalated to another human, such as a manager, when ESC-1 to ESC-4 apply.
